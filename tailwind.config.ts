@@ -17,6 +17,7 @@ const config: Config = {
       colors: {
         primary: '#FEF7F0',
         dark: '#121212',
+        silverText: '#F5F7FA',
         grey: '#868686',
         orange: '#F17C04',
         yellow: '#FDC700',
@@ -49,6 +50,7 @@ const config: Config = {
       width: {
         '180px': '180px',
         '65%': '65%',
+        '80%': '80%',
       },
       boxShadow: {
         button: '0px 0px 12px 0px rgba(18, 18, 18, 0.40)',
@@ -61,6 +63,7 @@ const config: Config = {
       },
       spacing: {
         '29px': '29px',
+        '30px': '30px',
         '128px': '128px',
         '72px': '72px',
         '84px': '84px',

@@ -6,7 +6,10 @@ import MOBILE from './mobile.svg';
 import WEBSITE from './web.svg';
 import SETTINGS from './settings.svg';
 import ASTRONAUT_WAVING from './astronaut-waving.svg';
-
+import LOGO_WHITE from './logowhite.svg';
+import CALL from './call.svg';
+import MESSAGE from './message.svg';
+import POSITION from './position.svg';
 export {
   LOGO,
   ASTRONAUT_RIDING,
@@ -15,5 +18,9 @@ export {
   MOBILE,
   WEBSITE,
   SETTINGS,
+  CALL,
+  MESSAGE,
+  POSITION,
   ASTRONAUT_WAVING,
+  LOGO_WHITE,
 };

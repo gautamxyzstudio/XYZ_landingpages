@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import { poppins } from '../ui/fonts';
+import Footer from './websitedevelopment/components/footer';
 
 export const metadata: Metadata = {
   title: 'Xyz Studio',
@@ -15,7 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>{children}</body>
+      <body className={`${poppins.className} antialiased`}>
+        <>
+          {children}
+          <Footer />
+        </>
+      </body>
     </html>
   );
 }
