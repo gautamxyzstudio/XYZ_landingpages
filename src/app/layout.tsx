@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
-import { poppins } from './ui/fonts';
+import { poppins } from '../ui/fonts';
 
 export const metadata: Metadata = {
   title: 'Xyz Studio',
