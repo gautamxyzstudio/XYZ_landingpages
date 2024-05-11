@@ -4,6 +4,7 @@ import Intro from './components/Intro';
 import About from './components/about';
 import Info from './components/Info';
 import FormView from './components/formView';
+import Services from './components/services';
 
 const Web = () => {
   return (
@@ -19,6 +20,9 @@ const Web = () => {
       </div>
       <div className="ml-20 mt-128px mb-72px">
         <Info />
+      </div>
+      <div>
+        <Services />
       </div>
       <div className="my-124px mx-20">
         <FormView />

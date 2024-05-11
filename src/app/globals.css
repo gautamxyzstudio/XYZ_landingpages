@@ -16,6 +16,10 @@
   }
 }
 
+body{
+  background-color:#FEF7F0;
+}
+
 
 
 @layer utilities {
