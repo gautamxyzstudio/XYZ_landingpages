@@ -1,0 +1,15 @@
+.ellipse {
+  height: 228px;
+  width: 456px;
+  border-radius: 456px 456px 0 0;
+  margin-left: 36px;
+  background-color:#0775C6;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  top: 0;
+  left: 0;
+}
