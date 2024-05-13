@@ -46,8 +46,8 @@ const Services = () => {
             </p>
           </div>
         </div>
-        <div className="mt:94px">
-          <div className="flex flex-row">
+        <div className="mt-94px">
+          <div className="flex items-center flex-row">
             <AstronautTab />
             <ServicesContentTab />
           </div>

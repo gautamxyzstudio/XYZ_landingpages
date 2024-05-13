@@ -4,7 +4,7 @@ import { chau_philomene } from '@/ui/fonts';
 import { IInfoCardProps } from './types';
 const InfoCard: React.FC<IInfoCardProps> = ({ icon, title, count, alt }) => {
   return (
-    <div className="flex  items-center px-6 py-4 ">
+    <div className="flex w-max  items-center px-6 py-4 ">
       <Image src={icon} alt={alt} />
       <div className="ml-4">
         <p

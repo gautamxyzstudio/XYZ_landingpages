@@ -5,7 +5,6 @@ import PEOPLE from './people.svg';
 import MOBILE from './mobile.svg';
 import WEBSITE from './web.svg';
 import SETTINGS from './settings.svg';
-import ASTRONAUT_WAVING from './astronaut-waving.svg';
 import LOGO_WHITE from './logowhite.svg';
 import CALL from './call.svg';
 import MESSAGE from './message.svg';
@@ -17,14 +16,21 @@ import ASTRONAUT_TYPING from './astronaut-typing.svg';
 import MOBILE_DEV from './mobiledev.svg';
 import WEB_SEARCH from './websearch.svg';
 import WEB_DEV from './websitedev.svg';
+import FRAME from './frame.svg';
+import ASTRONAUT_HII from './astronaut-hi.svg';
+import ASTRONAUT_ROCKET from './astronaut-rocket.gif';
+import ASTRONAUT_WAVING from './astronaut-wave.gif';
 export {
   LOGO,
   ASTRONAUT_RIDING,
   ASTRONAUT_SITTING,
   PEOPLE,
+  ASTRONAUT_HII,
   ASTRONAUT_PAINTING,
+  ASTRONAUT_ROCKET,
   MOBILE_DEV,
   WEB_SEARCH,
+  FRAME,
   WEB_DEV,
   ASTRONAUT_SPEAKINGS,
   ASTRONAUT_TYPING,

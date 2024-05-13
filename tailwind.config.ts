@@ -22,6 +22,7 @@ const config: Config = {
         silverText: '#F5F7FA',
         borderGrey: '#F2F2F2',
         grey: '#868686',
+        borderCircle: 'rgba(219, 219, 219, 0.20)',
         orange: '#F17C04',
         yellow: '#FDC700',
       },
@@ -49,11 +50,13 @@ const config: Config = {
       },
       height: {
         '370px': '370px',
+        '66px': '66px',
       },
       width: {
         '180px': '180px',
         '65%': '65%',
         '80%': '80%',
+        '66px': '66px',
       },
       inset: {
         '20%': '20%',
@@ -67,6 +70,7 @@ const config: Config = {
       },
       borderRadius: {
         '4xl': '30px',
+        '80px': '80px',
       },
       fontSize: {
         '40px': '40px',
@@ -76,16 +80,30 @@ const config: Config = {
       spacing: {
         '29px': '29px',
         '30px': '30px',
-        '128px': '128px',
+        '45px': '45px',
         '72px': '72px',
         '84px': '84px',
         '68px': '68px',
-        '124px': '128px',
+        '124px': '124px',
         '90px': '90px',
         '94px': '94px',
       },
       borderWidth: {
         '1px': '1px',
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-10deg)' },
+          '50%': { transform: 'rotate(6deg)' },
+        },
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
       },
     },
   },

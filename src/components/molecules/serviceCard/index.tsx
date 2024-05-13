@@ -4,7 +4,7 @@ import { MOBILE_DEV } from '../../../../public/exporter';
 
 const ServiceCard = () => {
   return (
-    <div className="bg-white max-w-prose border-1px border-borderGrey rounded-xl py-4 pl-4 pr-9">
+    <div className="bg-white w-[48%]  max-w-prose border-1px border-borderGrey rounded-xl py-4 pl-4 pr-9">
       <div className="flex flex-row items-center">
         <Image
           className="bg-primary p-2 w-12 h-12 rounded-lg"

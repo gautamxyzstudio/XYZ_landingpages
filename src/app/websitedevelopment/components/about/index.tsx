@@ -4,11 +4,12 @@ import { chau_philomene } from '@/ui/fonts';
 import React from 'react';
 import Image from 'next/image';
 import { ASTRONAUT_SITTING } from '../../../../../public/exporter';
+import BgCircles from '@/components/organisms/bgCircles';
 
 const About = () => {
   return (
-    <div className="flex-1 md:py-10 md:pl-10 md:mx-20 bg-dark rounded-4xl">
-      <div className="flex flex-row items-center justify-center">
+    <div className="flex-1 overflow-hidden relative md:py-10 md:pl-10 md:mx-20 bg-dark rounded-4xl">
+      <div className="flex flex-row justify-center  items-center">
         <p
           className={`text-orange ${chau_philomene.className} font-bold leading-44px text-4xl`}
         >
@@ -38,7 +39,7 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="md:mt-29px items-center flex flex-row">
+      <div className="md:mt-29px items-center justify-between flex flex-row">
         <div className="w-6/12">
           <p className="text-white text-2xl leading-36px font-regular">
             XYZ Studio transcends the traditional digital agency; we're your
@@ -53,10 +54,12 @@ const About = () => {
             <Button width="w-180px" buttonType={'black'} title={'Learn More'} />
           </div>
         </div>
-        <div className="background-red">
+        <div className="background-red z-10 mr-[76px]">
           <Image src={ASTRONAUT_SITTING} alt="ASTRONAUT SITTING" />
         </div>
       </div>
+
+      <BgCircles />
     </div>
   );
 };

@@ -43,4 +43,32 @@ export const infoData: IInfoCardData[] = [
     alt: 'Support',
     title: 'Technical Support',
   },
+  {
+    id: 5,
+    icon: PEOPLE,
+    count: '150+',
+    alt: 'People',
+    title: 'Satisfied Clients',
+  },
+  {
+    id: 6,
+    icon: MOBILE,
+    count: '35+',
+    alt: 'Mobile',
+    title: 'Mobile apps',
+  },
+  {
+    id: 7,
+    icon: WEBSITE,
+    count: '42+',
+    alt: 'Website',
+    title: 'Web apps',
+  },
+  {
+    id: 8,
+    icon: SETTINGS,
+    count: '24 hrs',
+    alt: 'Support',
+    title: 'Technical Support',
+  },
 ];
