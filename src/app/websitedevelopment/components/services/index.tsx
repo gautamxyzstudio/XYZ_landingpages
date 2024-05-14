@@ -52,8 +52,8 @@ const Services = () => {
             <AstronautTab />
             <div>
               <ServicesContentTab />
-              <ServicesContentTab />
-              <ServicesContentTab />
+              {/* <ServicesContentTab />
+              <ServicesContentTab /> */}
             </div>
           </div>
         </div>
