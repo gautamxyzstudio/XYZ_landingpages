@@ -6,10 +6,11 @@ const YellowCircle: React.FC<IYellowCircleProps> = ({
   left = undefined,
   right = undefined,
   bottom = undefined,
+  animation = undefined,
 }) => {
   return (
     <div
-      className={`absolute ${top} ${right} ${left} ${bottom} bg-yellow w-66px h-66px rounded-full `}
+      className={`absolute ${top} ${right} ${left} ${bottom} bg-yellow  w-66px h-66px rounded-full ${animation} `}
     />
   );
 };

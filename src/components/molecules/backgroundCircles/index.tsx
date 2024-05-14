@@ -10,11 +10,25 @@ interface BackgroundCirclesProps {
 const BackgroundCircles: React.FC<BackgroundCirclesProps> = ({ children }) => {
   return (
     <div className="bg-white  overflow-hidden  flex items-center justify-center rounded-4xl relative  w-full h-full">
-      <YellowCircle bottom="bottom-[200px]" left="left-[30px]" />
-      <YellowCircle bottom="bottom-[80px]" left="right-[70px]" />
-      <YellowCircle bottom="top-[100px]" left="right-[120px]" />
-      <div className={styles.radialGradient}>
-        <div className={styles.radialGradientTwo} />
+      <div className={styles.radialGradientOuter}>
+        <YellowCircle
+          animation="animate-[spin_2s_linear_infinite]"
+          bottom="bottom-[29%]"
+          left="left-[0]"
+        />
+        <YellowCircle
+          animation="animate-[spinSec_2s_linear_infinite]"
+          bottom="bottom-[0%]"
+          left="right-[30%]"
+        />
+        <YellowCircle
+          animation="animate-[spinThree_2s_linear_infinite]"
+          bottom="top-[20%]"
+          left="right-[5%]"
+        />
+        <div className={styles.radialGradient}>
+          <div className={styles.radialGradientTwo} />
+        </div>
       </div>
       {children}
     </div>
