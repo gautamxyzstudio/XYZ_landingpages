@@ -3,7 +3,11 @@ import React, { useState } from 'react';
 import styles from './astronaut.module.css';
 import { chau_philomene } from '@/ui/fonts';
 import Image from 'next/image';
-import { ASTRONAUT_PAINTING } from '../../../../public/exporter';
+import {
+  ASTRONAUT_PAINTING,
+  ASTRONAUT_SPEAKINGS,
+  ASTRONAUT_TYPING,
+} from '../../../../public/exporter';
 import SliderButtons from '@/components/molecules/sliderButtons';
 import { IAstronautTabProps } from './types';
 const AstronautTab: React.FC<IAstronautTabProps> = ({
@@ -20,8 +24,18 @@ const AstronautTab: React.FC<IAstronautTabProps> = ({
           Creation
         </p>
         <Image
-          className="absolute top-[-165px]"
+          className="absolute top-[-185px]"
           src={ASTRONAUT_PAINTING}
+          alt="Astronaut Painting"
+        />
+        <Image
+          className="absolute bottom-[-50px] opacity-[0.8] w-[102px] h-[134px] left-[-30px]"
+          src={ASTRONAUT_TYPING}
+          alt="Astronaut Painting"
+        />
+        <Image
+          className="absolute bottom-[-50px] opacity-[0.8] w-[102px] h-[134px] right-[-30px]"
+          src={ASTRONAUT_SPEAKINGS}
           alt="Astronaut Painting"
         />
       </div>
