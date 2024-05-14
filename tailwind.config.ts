@@ -1,3 +1,4 @@
+import { transform } from 'next/dist/build/swc';
 import type { Config } from 'tailwindcss';
 const defaultTheme = require('tailwindcss/defaultTheme');
 
@@ -22,6 +23,7 @@ const config: Config = {
         silverText: '#F5F7FA',
         borderGrey: '#F2F2F2',
         grey: '#868686',
+        borderCircleSec: 'rgba(250, 132, 67, 0.06)',
         borderCircle: 'rgba(219, 219, 219, 0.20)',
         orange: '#F17C04',
         yellow: '#FDC700',
@@ -93,8 +95,20 @@ const config: Config = {
       },
       keyframes: {
         wiggle: {
-          '0%, 100%': { transform: 'rotate(-10deg)' },
-          '50%': { transform: 'rotate(6deg)' },
+          '0%, 100%': { transform: 'rotate(10deg)' },
+          '50%': { transform: 'rotate(-6deg)' },
+        },
+        spin: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(200%) translateX(100%)' },
+        },
+        spinSec: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-100%) translateX(200%)' },
+        },
+        spinThree: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-200%) translateX(-200%)' },
         },
         'infinite-scroll': {
           from: { transform: 'translateX(0)' },

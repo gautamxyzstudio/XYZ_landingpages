@@ -3,23 +3,18 @@ import React, { useState } from 'react';
 import styles from './astronaut.module.css';
 import { chau_philomene } from '@/ui/fonts';
 import Image from 'next/image';
-import { ASTRONAUT_PAINTING } from '../../../../public/exporter';
+import {
+  ASTRONAUT_PAINTING,
+  ASTRONAUT_SPEAKINGS,
+  ASTRONAUT_TYPING,
+} from '../../../../public/exporter';
 import SliderButtons from '@/components/molecules/sliderButtons';
-const AstronautTab = () => {
-  const [sliderIndex, updateSliderIndex] = useState<number>(0);
-
-  const changeTab = (type: 'increment' | 'decrement') => {
-    if (type === 'increment') {
-      if (sliderIndex <= 2) {
-        updateSliderIndex(sliderIndex + 1);
-      }
-    } else {
-      if (sliderIndex > 0) {
-        updateSliderIndex(sliderIndex - 1);
-      }
-    }
-  };
-
+import { IAstronautTabProps } from './types';
+const AstronautTab: React.FC<IAstronautTabProps> = ({
+  onPressNext,
+  onPressPrev,
+  index,
+}) => {
   return (
     <div className="flex flex-col items-center">
       <div className={styles.ellipse}>
@@ -29,16 +24,26 @@ const AstronautTab = () => {
           Creation
         </p>
         <Image
-          className="absolute top-[-165px]"
+          className="absolute top-[-185px]"
           src={ASTRONAUT_PAINTING}
+          alt="Astronaut Painting"
+        />
+        <Image
+          className="absolute bottom-[-50px] opacity-[0.8] w-[102px] h-[134px] left-[-30px]"
+          src={ASTRONAUT_TYPING}
+          alt="Astronaut Painting"
+        />
+        <Image
+          className="absolute bottom-[-50px] opacity-[0.8] w-[102px] h-[134px] right-[-30px]"
+          src={ASTRONAUT_SPEAKINGS}
           alt="Astronaut Painting"
         />
       </div>
       <div className="mt-[80px]">
         <SliderButtons
-          index={sliderIndex}
-          onPressPrev={() => changeTab('decrement')}
-          onPressNext={() => changeTab('increment')}
+          index={index}
+          onPressPrev={onPressPrev}
+          onPressNext={onPressNext}
         />
       </div>
     </div>

@@ -16,7 +16,7 @@ const TextArea: React.FC<ITextAreaProps> = ({
 }) => {
   return (
     <div className="mb-8">
-      <p className="text-white">{title}</p>
+      <p className="text-white text-[16px] leading-5 font-medium">{title}</p>
       <textarea
         value={value}
         className="mt-2 resize-none outline-none w-full rounded-lg  py-4 px-5 flex-1"

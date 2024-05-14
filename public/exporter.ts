@@ -20,10 +20,26 @@ import FRAME from './frame.svg';
 import ASTRONAUT_HII from './astronaut-hi.svg';
 import ASTRONAUT_ROCKET from './astronaut-rocket.gif';
 import ASTRONAUT_WAVING from './astronaut-wave.gif';
+import WEB_VIDEO from './webScreen.gif';
+import MOBILE_VIDEO from './mved.mp4';
+import STAR_BG from './starbg.png';
+import CROSS from './cross.svg';
+import FRAME_BOTTOM from './frame-bottom.svg';
+import CIRCLES_FRAME from './circles.png';
+import LAPTOP_FRAME from './laptop.svg';
+import WEBSITE_VIDEO from './webved.mp4';
 export {
   LOGO,
+  CROSS,
   ASTRONAUT_RIDING,
+  LAPTOP_FRAME,
+  CIRCLES_FRAME,
+  STAR_BG,
+  WEB_VIDEO,
   ASTRONAUT_SITTING,
+  WEBSITE_VIDEO,
+  MOBILE_VIDEO,
+  FRAME_BOTTOM,
   PEOPLE,
   ASTRONAUT_HII,
   ASTRONAUT_PAINTING,

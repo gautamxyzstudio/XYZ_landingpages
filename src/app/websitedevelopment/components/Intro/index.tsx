@@ -1,13 +1,12 @@
 import Button from '@/components/atoms/button';
 import { chau_philomene } from '@/ui/fonts';
 import React from 'react';
-import {
-  ASTRONAUT_RIDING,
-  ASTRONAUT_ROCKET,
-} from '../../../../../public/exporter';
+import { ASTRONAUT_ROCKET } from '../../../../../public/exporter';
 import Image from 'next/image';
 import DisplayComponent from '@/components/organisms/displayComponent';
-const Intro = () => {
+import { IIntroProps } from './types';
+
+const Intro: React.FC<IIntroProps> = ({ type }) => {
   return (
     <div className="flex w-full  flex-row max-w-screen-2xl justify-between">
       <div>
@@ -46,7 +45,7 @@ const Intro = () => {
         </div>
       </div>
       <div className="ml-45px w-full">
-        <DisplayComponent />
+        <DisplayComponent type={type} />
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import { poppins } from '../ui/fonts';
 import Footer from './websitedevelopment/components/footer';
+import { Providers } from './provider';
 
 export const metadata: Metadata = {
   title: 'Xyz Studio',
@@ -18,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
         <>
-          {children}
+          <Providers>{children}</Providers>
           <Footer />
         </>
       </body>
