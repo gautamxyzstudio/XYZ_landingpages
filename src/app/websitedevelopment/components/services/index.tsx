@@ -2,19 +2,20 @@ import Header from '@/components/atoms/header';
 import AstronautTab from '@/components/organisms/astronautServiceView';
 import ServicesContentTab from '@/components/organisms/servicesContentTab';
 import { chau_philomene } from '@/ui/fonts';
-import React from 'react';
+import React, { useMemo } from 'react';
 
 const Services = () => {
+  const servicesStyle = useMemo(() => {
+    return {
+      backgroundImage: 'url(service.png)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+    };
+  }, []);
+
   return (
-    <div
-      className="pt-12"
-      style={{
-        backgroundImage: 'url(service.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
+    <div className="pt-12 pb-[70px]" style={servicesStyle}>
       <div>
         <div className="flex flex-row items-center justify-center">
           <p
@@ -49,7 +50,11 @@ const Services = () => {
         <div className="mt-94px">
           <div className="flex items-center flex-row">
             <AstronautTab />
-            <ServicesContentTab />
+            <div>
+              <ServicesContentTab />
+              <ServicesContentTab />
+              <ServicesContentTab />
+            </div>
           </div>
         </div>
       </div>

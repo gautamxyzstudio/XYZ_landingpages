@@ -21,9 +21,9 @@ const DisplayComponent: React.FC<IDisplayComponentProps> = ({ type }) => {
         />
 
         {type === 'mobile' && (
-          <div className="absolute flex items-center overflow-hidden bottom-0 w-[382px] h-[722px]  z-[1]">
+          <div className="absolute flex items-center overflow-hidden bottom-0 w-[372px] h-[722px]  z-[1]">
             <video
-              className="absolute left-[-5px] rounded-[63px] top-[58px] w-full h-full"
+              className="absolute  rounded-[63px] top-[89px] w-full h-full"
               loop
               muted
               autoPlay
@@ -36,7 +36,7 @@ const DisplayComponent: React.FC<IDisplayComponentProps> = ({ type }) => {
         {type === 'website' && (
           <div className="absolute  flex flex-row justify-center items-center w-[700px]  h-[446px]">
             <video
-              className="absolute  z-10 rounded-[20px] bottom-[10px]  w-[80%] h-full"
+              className="absolute  z-10 rounded-[20px] bottom-[5px]  w-[79%] h-full"
               loop
               muted
               autoPlay
