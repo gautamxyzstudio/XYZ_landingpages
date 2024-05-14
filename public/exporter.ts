@@ -20,10 +20,20 @@ import FRAME from './frame.svg';
 import ASTRONAUT_HII from './astronaut-hi.svg';
 import ASTRONAUT_ROCKET from './astronaut-rocket.gif';
 import ASTRONAUT_WAVING from './astronaut-wave.gif';
+import WEB_VIDEO from './webScreen.gif';
+import MOBILE_VIDEO from './mved.mp4';
+import STAR_BG from './starbg.png';
+import CROSS from './cross.svg';
+import FRAME_BOTTOM from './frame-bottom.svg';
 export {
   LOGO,
+  CROSS,
   ASTRONAUT_RIDING,
+  STAR_BG,
+  WEB_VIDEO,
   ASTRONAUT_SITTING,
+  MOBILE_VIDEO,
+  FRAME_BOTTOM,
   PEOPLE,
   ASTRONAUT_HII,
   ASTRONAUT_PAINTING,

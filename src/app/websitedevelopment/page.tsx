@@ -1,18 +1,19 @@
 import Header from '@/components/atoms/header';
-import React from 'react';
+import React, { useState } from 'react';
 import Intro from './components/Intro';
 import About from './components/about';
 import Info from './components/Info';
 import FormView from './components/formView';
 import Services from './components/services';
-import BgCircles from '@/components/organisms/bgCircles';
+import CustomModal from '@/components/molecules/modal';
 
 const Web = () => {
   return (
     <div>
+      <CustomModal />
       <div className="w-full md:pl-20 pl-10 rounded-s-2xl bg-primary">
         <Header />
-        <div className=" flex  flex-row md:mt-5">
+        <div className=" flex justify-center flex-row md:mt-5">
           <Intro />
         </div>
       </div>

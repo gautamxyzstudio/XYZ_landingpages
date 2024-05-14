@@ -1,21 +1,22 @@
 import React, { InputHTMLAttributes, memo } from 'react';
 import { ITextInputProps } from './types';
 
-type textInputProps = ITextInputProps & InputHTMLAttributes<HTMLInputElement>;
-
 const TextInput: React.FC<ITextInputProps> = ({
   title,
   placeholder,
   value,
+  containerStylesClasses,
+  titleStylesClasses,
+  inputStylesClasses,
   onChange,
   ...textInputProps
 }) => {
   return (
-    <div className="mb-8">
-      <p className="text-white">{title}</p>
+    <div className={`mb-8 ${containerStylesClasses}!`}>
+      <p className={`text-white text-[16px] leading-5 font-medium`}>{title}</p>
       <input
         value={value}
-        className="mt-2 outline-none w-full rounded-lg  py-4 px-5 flex-1"
+        className={`mt-2 outline-none w-full rounded-lg  py-4 px-5 flex-1 ${inputStylesClasses}`}
         placeholder={placeholder}
         onChange={onChange}
         title="name"
