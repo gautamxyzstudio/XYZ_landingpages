@@ -7,6 +7,7 @@ import {
 } from '../../../../../public/exporter';
 import Image from 'next/image';
 import DisplayComponent from '@/components/organisms/displayComponent';
+import BackgroundCircles from '@/components/molecules/backgroundCircles';
 const Intro = () => {
   return (
     <div className="flex w-full  flex-row max-w-screen-2xl justify-between">

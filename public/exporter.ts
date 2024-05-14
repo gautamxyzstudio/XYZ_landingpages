@@ -25,10 +25,12 @@ import MOBILE_VIDEO from './mved.mp4';
 import STAR_BG from './starbg.png';
 import CROSS from './cross.svg';
 import FRAME_BOTTOM from './frame-bottom.svg';
+import CIRCLES_FRAME from './circles.png';
 export {
   LOGO,
   CROSS,
   ASTRONAUT_RIDING,
+  CIRCLES_FRAME,
   STAR_BG,
   WEB_VIDEO,
   ASTRONAUT_SITTING,

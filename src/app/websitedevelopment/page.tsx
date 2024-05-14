@@ -10,7 +10,7 @@ import CustomModal from '@/components/molecules/modal';
 const Web = () => {
   return (
     <div>
-      <CustomModal />
+      {/* <CustomModal /> */}
       <div className="w-full md:pl-20 pl-10 rounded-s-2xl bg-primary">
         <Header />
         <div className=" flex justify-center flex-row md:mt-5">
