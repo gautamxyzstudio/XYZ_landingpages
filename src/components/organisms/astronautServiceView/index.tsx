@@ -5,21 +5,12 @@ import { chau_philomene } from '@/ui/fonts';
 import Image from 'next/image';
 import { ASTRONAUT_PAINTING } from '../../../../public/exporter';
 import SliderButtons from '@/components/molecules/sliderButtons';
-const AstronautTab = () => {
-  const [sliderIndex, updateSliderIndex] = useState<number>(0);
-
-  const changeTab = (type: 'increment' | 'decrement') => {
-    if (type === 'increment') {
-      if (sliderIndex <= 2) {
-        updateSliderIndex(sliderIndex + 1);
-      }
-    } else {
-      if (sliderIndex > 0) {
-        updateSliderIndex(sliderIndex - 1);
-      }
-    }
-  };
-
+import { IAstronautTabProps } from './types';
+const AstronautTab: React.FC<IAstronautTabProps> = ({
+  onPressNext,
+  onPressPrev,
+  index,
+}) => {
   return (
     <div className="flex flex-col items-center">
       <div className={styles.ellipse}>
@@ -36,9 +27,9 @@ const AstronautTab = () => {
       </div>
       <div className="mt-[80px]">
         <SliderButtons
-          index={sliderIndex}
-          onPressPrev={() => changeTab('decrement')}
-          onPressNext={() => changeTab('increment')}
+          index={index}
+          onPressPrev={onPressPrev}
+          onPressNext={onPressNext}
         />
       </div>
     </div>
