@@ -1,40 +1,41 @@
 'use client';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import React, { useMemo, useRef, useState } from 'react';
+import Slider from 'react-slick';
 import Header from '@/components/atoms/header';
 import AstronautTab from '@/components/organisms/astronautServiceView';
 import ServicesContentTab from '@/components/organisms/servicesContentTab';
 import { chau_philomene } from '@/ui/fonts';
-import React, { useMemo, useRef, useState } from 'react';
-import Slider from 'react-slick';
+import { throttle } from '@/utility/contants';
 
 const Services = () => {
   const sliderRef = useRef<Slider | null>(null);
   const [sliderIndex, updateSliderIndex] = useState<number>(0);
 
+  // Function to change the slider index
   const changeTab = (type: 'increment' | 'decrement') => {
-    if (type === 'increment') {
-      if (sliderIndex <= 1) {
-        updateSliderIndex(sliderIndex + 1);
-        sliderRef.current?.slickGoTo(sliderIndex + 1);
-      }
-    } else {
-      if (sliderIndex > 0) {
-        updateSliderIndex(sliderIndex - 1);
-        sliderRef.current?.slickGoTo(sliderIndex - 1);
-      }
+    if (type === 'increment' && sliderIndex < 2) {
+      updateSliderIndex(sliderIndex + 1);
+      sliderRef.current?.slickGoTo(sliderIndex + 1);
+    } else if (type === 'decrement' && sliderIndex > 0) {
+      updateSliderIndex(sliderIndex - 1);
+      sliderRef.current?.slickGoTo(sliderIndex - 1);
     }
   };
 
+  const throttledChangeTab = throttle(changeTab, 300);
+
   // Memoized style for the background image
-  const servicesStyle = useMemo(() => {
-    return {
+  const servicesStyle = useMemo(
+    () => ({
       backgroundImage: 'url(service.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
-    };
-  }, []);
+    }),
+    []
+  );
 
   // Slider settings
   const settings = {
@@ -48,12 +49,13 @@ const Services = () => {
     speed: 500,
     centerPadding: '0px',
     slidesToShow: 1,
+    easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
     vertical: true,
     slidesToScroll: 1,
   };
 
   return (
-    <div className="pt-12 pb-[70px]" style={servicesStyle}>
+    <div className="pt-12" style={servicesStyle}>
       <div>
         {/* Header Section */}
         <div className="flex flex-row items-center justify-center">
@@ -81,10 +83,7 @@ const Services = () => {
             <p className="text-blackText leading-38px text-3xl font-medium">
               Fusion of creativity and
             </p>
-            <p
-              className="text-blackText leading-38
-               px text-3xl font-medium"
-            >
+            <p className="text-blackText leading-38px text-3xl font-medium">
               functionality
             </p>
           </div>
@@ -93,21 +92,17 @@ const Services = () => {
         <div className="pt-94px">
           <div className="flex items-center flex-row">
             <AstronautTab
-              onPressNext={() => changeTab('increment')}
-              onPressPrev={() => changeTab('decrement')}
+              onPressNext={() => throttledChangeTab('increment')}
+              onPressPrev={() => throttledChangeTab('decrement')}
               index={sliderIndex}
             />
             <div className="slider-container">
               <Slider ref={sliderRef} {...settings}>
-                <div>
-                  <ServicesContentTab />
-                </div>
-                <div>
-                  <ServicesContentTab />
-                </div>
-                <div>
-                  <ServicesContentTab />
-                </div>
+                {[0, 1, 2].map((index) => (
+                  <div key={index} className="mb-[70px]">
+                    <ServicesContentTab />
+                  </div>
+                ))}
               </Slider>
             </div>
           </div>
