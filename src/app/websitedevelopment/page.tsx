@@ -7,6 +7,8 @@ import Info from './components/Info';
 import FormView from './components/formView';
 import Services from './components/services';
 import CustomModal from '@/components/molecules/modal';
+import FormMobile from './components/formmobile';
+import Form from '@/components/organisms/form';
 
 const Web = () => {
   const divRef = useRef<HTMLDivElement | null>(null);
@@ -34,7 +36,15 @@ const Web = () => {
       {/* <div>
         <Services />
       </div> */}
-      <FormView />
+      <div className="block sm:hidden">
+        <FormMobile />
+        <div className="mt-[-72px] mb-[56px] relative ">
+          <Form />
+        </div>
+      </div>
+      <div className="hidden sm:block">
+        <FormView />
+      </div>
     </div>
   );
 };

@@ -32,10 +32,12 @@ import FRAME_TOP from './frameTop.svg';
 import FRAME_LEFT from './frameLeft.svg';
 import FRAME_RIGHT from './farmeRight.svg';
 import ASTRONAUT_MOON from './astronuat-moon.svg';
+import FRAME_TOP_SMALL from './frame-top-small.svg';
 export {
   LOGO,
   FRAME_TOP,
   FRAME_LEFT,
+  FRAME_TOP_SMALL,
   FRAME_RIGHT,
   ASTRONAUT_MOON,
   CROSS,

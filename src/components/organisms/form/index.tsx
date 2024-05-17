@@ -15,11 +15,15 @@ const Form = () => {
     message: '',
   });
   return (
-    <div className="bg-black max-w-[1240px]  w-full z-10  py-[40px]  px-[76px] rounded-3xl">
-      <FormHeader />
-      <div className="mt-[48px] flex justify-between flex-row">
-        <Image src={ASTRONAUT_MOON} alt="ASTRONAUT MOON" />
-        <div className="w-6/12">
+    <div className="bg-black mx-6 sm:mx-0 max-w-[1240px] sm:w-full z-10 py-[32px] sm:py-[40px] px-[16px] sm:px-[76px] rounded-3xl">
+      <div className="hidden sm:block">
+        <FormHeader />
+      </div>
+      <div className=" mt-0 sm:mt-[48px] flex justify-between flex-row">
+        <div className="hidden sm:block">
+          <Image src={ASTRONAUT_MOON} alt="ASTRONAUT MOON" />
+        </div>
+        <div className="w-full sm:w-6/12">
           <TextInput
             value={state.name}
             onChange={(e) =>
@@ -55,8 +59,10 @@ const Form = () => {
           <Button
             buttonType={'orange'}
             title={'Send'}
-            width="w-[180px]"
-            height="h-[56px]"
+            widthSmall="w-[94px]"
+            heightSmall="h-[32px]"
+            width="sm:w-[180px]"
+            height="sm:h-[56px]"
             onPress={() => console.log('pressed')}
           />
         </div>

@@ -7,6 +7,7 @@ import {
   FRAME_TOP,
 } from '../../../../../public/exporter';
 import Image from 'next/image';
+import FormHeader from '@/components/molecules/formHeader';
 const FormView = () => {
   return (
     <div className="flex px-[148px] relative pt-[108px] pb-[86px] flex-row  justify-center">
