@@ -12,11 +12,13 @@ const TextInput: React.FC<ITextInputProps> = ({
   ...textInputProps
 }) => {
   return (
-    <div className={`mb-8 ${containerStylesClasses}!`}>
-      <p className={`text-white text-[16px] leading-5 font-medium`}>{title}</p>
+    <div className={`mb-10 ${containerStylesClasses}!`}>
+      <p className={`text-[#868686] text-[16px] leading-5 font-medium`}>
+        {title}
+      </p>
       <input
         value={value}
-        className={`mt-2 outline-none w-full rounded-lg  py-4 px-5 flex-1 ${inputStylesClasses}`}
+        className={`mt-2 outline-none w-full text-white bg-transparent border-b-[1px] border-b-inputGrey  pb-1 pr-5 flex-1 ${inputStylesClasses}`}
         placeholder={placeholder}
         onChange={onChange}
         title="name"

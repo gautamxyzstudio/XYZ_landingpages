@@ -18,7 +18,7 @@ const Web = () => {
   return (
     <div>
       {/* <CustomModal /> */}
-      <div className="w-full md:pl-20 pl-10 rounded-s-2xl bg-primary">
+      <div className="w-full pl-[24px] sm:pl-20   bg-primary">
         <Header />
         {/* <div className="flex justify-center flex-row md:mt-5">
           <Intro type={'website'} onPress={scrollToComp} />
@@ -34,9 +34,7 @@ const Web = () => {
       {/* <div>
         <Services />
       </div> */}
-      <div ref={divRef} className="my-124px mx-20">
-        <FormView />
-      </div>
+      <FormView />
     </div>
   );
 };

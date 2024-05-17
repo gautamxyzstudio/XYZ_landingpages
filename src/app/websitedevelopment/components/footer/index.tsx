@@ -7,7 +7,7 @@ import { footerDetails } from './types';
 const Footer = () => {
   const currentYear = getCurrentYear();
   return (
-    <div className="bg-dark flex-wrap py-12 md:px-20 flex justify-between flex-row">
+    <div className="bg-dark flex-wrap py-12 px-20 flex justify-between flex-row">
       <div>
         <Image src={LOGO_WHITE} alt="LOGO" />
         <p className="mt-30px text-silverText  font-regular text-sm">
