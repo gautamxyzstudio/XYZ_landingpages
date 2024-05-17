@@ -9,6 +9,8 @@ import Services from './components/services';
 import CustomModal from '@/components/molecules/modal';
 import FormMobile from './components/formmobile';
 import Form from '@/components/organisms/form';
+import Image from 'next/image';
+import { LOGO_WHITE } from '../../../public/exporter';
 
 const Web = () => {
   const divRef = useRef<HTMLDivElement | null>(null);
@@ -30,7 +32,7 @@ const Web = () => {
         <div className="h-370px bg-primary absolute  z-[-1] top-0 left-0 w-full rounded-b-80px" />
         <About />
       </div>
-      {/* <div className="pl-20 bg-white pt-124px pb-72px">
+      {/* <div className="pl-20 overflow-hidden bg-white pt-124px pb-72px">
         <Info />
       </div> */}
       {/* <div>
@@ -38,7 +40,7 @@ const Web = () => {
       </div> */}
       <div className="block sm:hidden">
         <FormMobile />
-        <div className="mt-[-72px] mb-[56px] relative ">
+        <div className="mt-[-132px] mb-[56px] relative ">
           <Form />
         </div>
       </div>

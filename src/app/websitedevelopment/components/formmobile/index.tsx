@@ -10,7 +10,7 @@ import FormHeader from '@/components/molecules/formHeader';
 
 const FormMobile = () => {
   return (
-    <div className="w-full flex pt-[56px] relative flex-row  justify-center pb-[112px]">
+    <div className="w-full flex pt-[56px] relative flex-row  justify-center pb-[165px]">
       <Image className="absolute top-0" src={FRAME_TOP_SMALL} alt="FRAME TOP" />
       <Image
         src={FRAME_LEFT}

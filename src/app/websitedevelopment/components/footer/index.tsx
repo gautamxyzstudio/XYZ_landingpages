@@ -7,9 +7,13 @@ import { footerDetails } from './types';
 const Footer = () => {
   const currentYear = getCurrentYear();
   return (
-    <div className="bg-dark flex-wrap py-12 px-20 flex justify-between flex-row">
-      <div>
-        <Image src={LOGO_WHITE} alt="LOGO" />
+    <div className="bg-dark flex-wrap justify-start py-6 px-6 sm:py-12 sm:px-20 flex sm:justify-between flex-row">
+      <div className="hidden sm:block">
+        <Image
+          className="w-6 h-6  sm:w-41 sm:h-41"
+          src={LOGO_WHITE}
+          alt="LOGO"
+        />
         <p className="mt-30px text-silverText  font-regular text-sm">
           {`Copyright © ${currentYear} The XYZ Studio`}
         </p>
@@ -18,19 +22,20 @@ const Footer = () => {
         </p>
       </div>
       <div>
-        <p className="mb-6 text-white text-xl">Quick Links</p>
-        <p className="mt-3 text-silverText font-regular text-sm cursor-pointer">
+        <p className="mb-[4px] font-semibold sm:mb-6 text-base text-white sm:text-xl">
+          Quick Links
+        </p>
+        <p className="mt-2 sm:mt-3  text-xs text-silverText font-regular sm:text-sm cursor-pointer">
           About us
         </p>
-
-        <p className="mt-3 text-silverText font-regular text-sm cursor-pointer">
+        <p className="mt-2 sm:mt-3 text-xs text-silverText font-regular sm:text-sm cursor-pointer">
           Services
         </p>
-
-        <p className="mt-3 text-silverText font-regular text-sm cursor-pointer">
+        <p className="mt-2 sm:mt-3 text-silverText text-xs font-regular sm:text-sm cursor-pointer">
           Contact us
         </p>
       </div>
+      <div className="block sm:hidden w-full my-4 h-[1px] bg-[#383838]" />
       <div>
         {footerDetails.map((details, index) => {
           const isLast = footerDetails.length - 1 === index;
@@ -41,6 +46,9 @@ const Footer = () => {
             </div>
           );
         })}
+      </div>
+      <div>
+        <div className="block sm:hidden w-full my-4 h-[1px] bg-[#383838]" />
       </div>
     </div>
   );
