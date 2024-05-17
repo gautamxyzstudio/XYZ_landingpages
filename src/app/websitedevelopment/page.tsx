@@ -17,23 +17,23 @@ const Web = () => {
   };
   return (
     <div>
-      {/* <CustomModal /> */}
+      <CustomModal />
       <div className="w-full md:pl-20 pl-10 rounded-s-2xl bg-primary">
         <Header />
-        {/* <div className="flex justify-center flex-row md:mt-5">
+        <div className="flex justify-center flex-row md:mt-5">
           <Intro type={'website'} onPress={scrollToComp} />
-        </div> */}
+        </div>
       </div>
       <div className="w-full bg-white z-[-2] relative pt-124px">
         <div className="h-370px bg-primary absolute  z-[-1] top-0 left-0 w-full rounded-b-80px" />
         <About />
       </div>
-      {/* <div className="pl-20 bg-white pt-124px pb-72px">
+      <div className="pl-20 bg-white pt-124px pb-72px">
         <Info />
-      </div> */}
-      {/* <div>
+      </div>
+      <div>
         <Services />
-      </div> */}
+      </div>
       <div ref={divRef} className="my-124px mx-20">
         <FormView />
       </div>
