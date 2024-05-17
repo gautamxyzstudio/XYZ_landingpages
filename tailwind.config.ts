@@ -29,9 +29,9 @@ const config: Config = {
         yellow: '#FDC700',
       },
       screen: {
-        sm: { min: '375px', max: '767px' },
+        sm: { min: '375px', max: '820px' },
 
-        md: { min: '768px', max: '1023px' },
+        md: { min: '820', max: '1023px' },
 
         lg: { min: '1024px', max: '1279px' },
 

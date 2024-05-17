@@ -6,7 +6,7 @@ import Image from 'next/image';
 import DisplayComponent from '@/components/organisms/displayComponent';
 import { IIntroProps } from './types';
 
-const Intro: React.FC<IIntroProps> = ({ type }) => {
+const Intro: React.FC<IIntroProps> = ({ type, onPress }) => {
   return (
     <div className="flex w-full  flex-row max-w-screen-2xl justify-between">
       <div>
@@ -29,9 +29,13 @@ const Intro: React.FC<IIntroProps> = ({ type }) => {
             </p>
           </div>
         </div>
-        <div className="md:mt-9">
+        <div className="mt-3 sm:mt-5 md:mt-9">
           <Button
-            width="w-180px"
+            width="sm:w-[180px]"
+            height="sm:h-[56px]"
+            widthSmall="w-[94px]"
+            heightSmall="h-[32px]"
+            onPress={onPress}
             buttonType={'orange'}
             title={'Get in touch'}
           />
