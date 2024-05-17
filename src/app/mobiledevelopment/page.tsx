@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import Header from '@/components/atoms/header';
 import CustomModal from '@/components/molecules/modal';
@@ -9,12 +11,17 @@ import Services from '../websitedevelopment/components/services';
 
 const Mobile = () => {
   return (
-    <div>
-      {/* <CustomModal /> */}
+    <>
+      <CustomModal />
       <div className="w-full md:pl-20 pl-10 rounded-s-2xl bg-primary">
         <Header />
-        <div className=" flex justify-center flex-row md:mt-5">
-          <Intro type={'mobile'} />
+        <div className="flex justify-center flex-row md:mt-5">
+          <Intro
+            type={'mobile'}
+            onPress={function (): void {
+              throw new Error('Function not implemented.');
+            }}
+          />
         </div>
       </div>
       <div className="w-full bg-white z-[-2] relative pt-124px">
@@ -30,7 +37,7 @@ const Mobile = () => {
       <div className="my-124px mx-20">
         <FormView />
       </div>
-    </div>
+    </>
   );
 };
 
