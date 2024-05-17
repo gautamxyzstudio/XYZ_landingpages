@@ -38,7 +38,12 @@ const Form = () => {
         />
       </div>
       <div className="mt-4">
-        <Button buttonType={'orange'} title={'Send'} />
+        <Button
+          buttonType={'orange'}
+          height="h-[52px]"
+          title={'Send'}
+          onPress={() => console.log('pressed')}
+        />
       </div>
     </div>
   );
