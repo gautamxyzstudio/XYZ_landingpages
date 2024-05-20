@@ -5,13 +5,8 @@ import Intro from './components/Intro';
 import About from './components/about';
 import Info from './components/Info';
 import FormView from './components/formView';
-import Services from './components/services';
-import CustomModal from '@/components/molecules/modal';
 import FormMobile from './components/formmobile';
 import Form from '@/components/organisms/form';
-import Image from 'next/image';
-import { LOGO_WHITE } from '../../../public/exporter';
-
 const Web = () => {
   const divRef = useRef<HTMLDivElement | null>(null);
   const scrollToComp = () => {
@@ -22,22 +17,22 @@ const Web = () => {
   return (
     <div>
       {/* <CustomModal /> */}
-      <div className="w-full pl-[24px] sm:pl-20   bg-primary">
+      <div className="w-full px-[24px] sm:pl-20   bg-primary">
         <Header />
-        {/* <div className="flex justify-center flex-row md:mt-5">
+        <div className="flex justify-between flex-row md:mt-5">
           <Intro type={'website'} onPress={scrollToComp} />
-        </div> */}
+        </div>
       </div>
-      <div className="w-full bg-white z-[-2] relative pt-124px">
+      <div className="w-full flex justify-center bg-white z-[-2] relative pt-124px">
         <div className="h-370px bg-primary absolute  z-[-1] top-0 left-0 w-full rounded-b-80px" />
         <About />
       </div>
-      {/* <div className="pl-20 overflow-hidden bg-white pt-124px pb-72px">
+      <div className="pl-20 overflow-hidden bg-white pt-14 pb-14 sm:pt-124px sm:pb-72px">
         <Info />
-      </div> */}
+      </div>
       {/* <div>
-        <Services />
-      </div> */}
+                <Services />
+            </div> */}
       <div className="block sm:hidden">
         <FormMobile />
         <div className="mt-[-132px] mb-[56px] relative ">

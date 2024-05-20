@@ -47,8 +47,12 @@ const Footer = () => {
           );
         })}
       </div>
-      <div>
+      <div className="block w-full sm-hidden">
         <div className="block sm:hidden w-full my-4 h-[1px] bg-[#383838]" />
+        <p className="text-silverText text-xs  font-regular text-sm">{`Copyright © ${currentYear} The XYZ Studio`}</p>
+        <p className="text-silverText text-xs  mt-2 font-regular text-sm">
+          All rights reserved
+        </p>
       </div>
     </div>
   );

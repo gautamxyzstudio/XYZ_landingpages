@@ -8,8 +8,8 @@ import { IIntroProps } from './types';
 
 const Intro: React.FC<IIntroProps> = ({ type, onPress }) => {
   return (
-    <div className="flex w-full  flex-row max-w-screen-2xl justify-between">
-      <div>
+    <div className="flex w-full   flex-wrap flex-row  justify-between">
+      <div className="max-w-[45%]">
         <div className="md:mt-[122px]">
           <p
             className={`text-5xl font-normal ${chau_philomene.className} leading-70px text-dark`}
@@ -28,17 +28,17 @@ const Intro: React.FC<IIntroProps> = ({ type, onPress }) => {
               development, and promotion expertise.
             </p>
           </div>
-        </div>
-        <div className="mt-3 sm:mt-5 md:mt-9">
-          <Button
-            width="sm:w-[180px]"
-            height="sm:h-[56px]"
-            widthSmall="w-[94px]"
-            heightSmall="h-[32px]"
-            onPress={onPress}
-            buttonType={'orange'}
-            title={'Get in touch'}
-          />
+          <div className="mt-3 sm:mt-5 md:mt-9">
+            <Button
+              width="sm:w-[180px]"
+              height="sm:h-[56px]"
+              widthSmall="w-[94px]"
+              heightSmall="h-[32px]"
+              onPress={onPress}
+              buttonType={'orange'}
+              title={'Get in touch'}
+            />
+          </div>
         </div>
         <div className="flex flex-row justify-center">
           <Image
@@ -48,7 +48,7 @@ const Intro: React.FC<IIntroProps> = ({ type, onPress }) => {
           />
         </div>
       </div>
-      <div className="ml-45px w-full">
+      <div className="ml-45px h-[856px]  w-[50%]">
         <DisplayComponent type={type} />
       </div>
     </div>

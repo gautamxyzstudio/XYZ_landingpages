@@ -13,7 +13,7 @@ import { IDisplayComponentProps } from './types';
 const DisplayComponent: React.FC<IDisplayComponentProps> = ({ type }) => {
   return (
     <BackgroundCircles>
-      <div className=" relative top-0  flex items-center justify-center w-full h-full ">
+      <div className="relative w-full flex items-center justify-center h-full ">
         <Image
           className="absolute  animate-[wiggle_2s_ease-in-out_infinite] top-0 left-9"
           src={ASTRONAUT_HII}
@@ -34,7 +34,7 @@ const DisplayComponent: React.FC<IDisplayComponentProps> = ({ type }) => {
           </div>
         )}
         {type === 'website' && (
-          <div className="absolute  flex flex-row justify-center items-center w-[700px]  h-[446px]">
+          <div className="absolute  flex flex-row justify-center items-center w-[577px]  h-[446px]">
             <video
               className="absolute  z-10 rounded-[20px] bottom-[5px]  w-[79%] h-full"
               loop

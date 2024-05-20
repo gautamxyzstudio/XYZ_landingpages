@@ -8,8 +8,8 @@ import BgCircles from '@/components/organisms/bgCircles';
 
 const About = () => {
   return (
-    <div className="flex-1 overflow-hidden relative py-8 pl-4 pr-4 sm:pr-4 md:pr-0 sm:py-10 sm:pl-10 mx-6 sm:mx-20 bg-dark rounded-4xl">
-      <div className="flex flex-row justify-center  items-center">
+    <div className="max-w-[1240px] overflow-hidden relative py-8 pl-4 pr-4 sm:pr-4 md:pr-0 sm:py-10 sm:pl-10 mx-6 sm:mx-20 bg-dark rounded-4xl">
+      <div className="flex   flex-row justify-center  items-center">
         <p
           className={`text-orange ${chau_philomene.className} text-xl sm:text-3xl md:text-4xl leading-7 sm:leading-10 md:leading-44px `}
         >
