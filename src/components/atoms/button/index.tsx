@@ -17,16 +17,13 @@ const Button: React.FC<IButtonProps> = ({
   const blackButtonText =
     'text-orange text-xs leading-5 sm:text-xl sm-leading-7 font-medium';
   return (
-    <button
-      onClick={onPress}
-      className={buttonType === 'black' ? black : orange}
-    >
+    <div onClick={onPress} className={buttonType === 'black' ? black : orange}>
       <span
         className={buttonType === 'black' ? blackButtonText : orangeButtonText}
       >
         {title}
       </span>
-    </button>
+    </div>
   );
 };
 

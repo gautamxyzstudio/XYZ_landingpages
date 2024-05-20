@@ -8,14 +8,14 @@ import BgCircles from '@/components/organisms/bgCircles';
 
 const About = () => {
   return (
-    <div className="max-w-[1240px] overflow-hidden relative py-8 pl-4 pr-4 sm:pr-4 md:pr-0 sm:py-10 sm:pl-10 mx-6 sm:mx-20 bg-dark rounded-4xl">
-      <div className="flex   flex-row justify-center  items-center">
+    <div className="max-w-[1240px] overflow-hidden relative py-8 pl-4 pr-4 sm:pr-4 lg:pr-0 sm:py-10 sm:pl-10 mx-6 sm:mx-20 bg-dark rounded-4xl">
+      <div className="flex  flex-row justify-center  items-center">
         <p
-          className={`text-orange ${chau_philomene.className} text-xl sm:text-3xl md:text-4xl leading-7 sm:leading-10 md:leading-44px `}
+          className={`text-orange ${chau_philomene.className} text-xl leading-7  sm:text-2xl sm:leading-8 md:text-3xl md:text-10 lg:text-4xl lg:leading-44px `}
         >
           About Us
         </p>
-        <div className="block sm:hidden">
+        <div className="block md:hidden">
           <svg
             className="mx-3 sm-20 md:mx-6"
             xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ const About = () => {
             />
           </svg>
         </div>
-        <div className="hidden sm:block">
+        <div className="hidden md:block">
           <svg
             className="mx-3 sm-20 md:mx-6"
             xmlns="http://www.w3.org/2000/svg"
@@ -50,21 +50,21 @@ const About = () => {
           </svg>
         </div>
         <div>
-          <p className="text-white text-xs leading-5 sm:text-2xl sm:leading-8  md:leading-38px md:text-3xl font-medium">
+          <p className="text-white text-xs leading-5 sm:text-xl sm:leading-6  md:text-2xl  md:leading-8 lg:text-3xl lg:leading-9 font-medium">
             Cosmic Companion in the
           </p>
-          <p className="text-white text-xs leading-5 sm:text-2xl sm:leading-8  md:leading-38px md:text-3xl font-medium">
+          <p className="text-white text-xs leading-5 sm:text-xl sm:leading-6  md:text-2xl  md:leading-8 lg:text-3xl lg:leading-9 font-medium">
             Digital Odyssey
           </p>
         </div>
       </div>
-      <div className="mt-10 sm:mt-[30px] items-center justify-between flex flex-row">
-        <div className="w-full  sm:w-6/12">
-          <p className="text-white text-xs leading-5 sm:text-base  sm:leading-6  md:text-2xl md:leading-36px font-regular">
+      <div className="mt-10 md:mt-[30px] items-center justify-between flex flex-row">
+        <div className="w-full lg:w-6/12">
+          <p className="text-white text-xs leading-5 sm:text-base  sm:leading-6 md:text-xl md:leading-6   lg:text-2xl lg:leading-36px font-regular">
             XYZ Studio transcends the traditional digital agency; we're your
             cosmic companion in the digital odyssey.
           </p>
-          <p className="text-white mt-2  sm:mt-4 text-xs leading-5 sm:text-base  sm:leading-6  md:text-2xl md:leading-36px font-regular">
+          <p className="text-white text-xs leading-5 sm:text-base  sm:leading-6 md:text-xl md:leading-6   lg:text-2xl lg:leading-36px font-regular">
             We crave a captivating website, a high-flying mobile app,
             streamlined web applications, or a powerful digital marketing
             strategy, our expertise is poised to manifest your celestial visit
@@ -83,7 +83,7 @@ const About = () => {
             />
           </div>
         </div>
-        <div className="background-red hidden sm:block z-10 mr-[76px]">
+        <div className="background-red hidden lg:block z-10 mr-[76px]">
           <Image src={ASTRONAUT_SITTING} alt="ASTRONAUT SITTING" />
         </div>
       </div>

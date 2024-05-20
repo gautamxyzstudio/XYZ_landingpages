@@ -15,15 +15,15 @@ const DisplayComponent: React.FC<IDisplayComponentProps> = ({ type }) => {
     <BackgroundCircles>
       <div className="relative w-full flex items-center justify-center h-full ">
         <Image
-          className="absolute  animate-[wiggle_2s_ease-in-out_infinite] top-0 left-9"
+          className="absolute w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] xl:w-[400px] xl:h-[400px] animate-[wiggle_2s_ease-in-out_infinite] top-0  left-9 sm:left-11 md:left-[89px] lg:left-[177px] xl:left-[80px]"
           src={ASTRONAUT_HII}
           alt="Astronaut hi"
         />
 
         {type === 'mobile' && (
-          <div className="absolute flex items-center overflow-hidden bottom-0 w-[372px] h-[722px]  z-[1]">
+          <div className="absolute flex items-center overflow-hidden bottom-0 w-[195px] h-[394px]  sm:w-[250px] sm:h-[494px] md:w-[297px] md:h-[594px] lg:w-[335px] lg:h-[658px]   z-[1]">
             <video
-              className="absolute  rounded-[63px] top-[89px] w-full h-full"
+              className="absolute top-[60px] rounded-[45px] md:rounded-[63px] sm:top-[65px] md:top-[89px] w-full h-full"
               loop
               muted
               autoPlay
@@ -34,7 +34,7 @@ const DisplayComponent: React.FC<IDisplayComponentProps> = ({ type }) => {
           </div>
         )}
         {type === 'website' && (
-          <div className="absolute  flex flex-row justify-center items-center w-[577px]  h-[446px]">
+          <div className="absolute  w-[90%] h-[90%] flex flex-row justify-center items-center">
             <video
               className="absolute  z-10 rounded-[20px] bottom-[5px]  w-[79%] h-full"
               loop
