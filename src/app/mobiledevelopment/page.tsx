@@ -46,9 +46,9 @@ const Mobile = () => {
       <div className="pl-20 overflow-hidden bg-white pt-14 pb-14 sm:pt-124px sm:pb-72px">
         <Info />
       </div>
-      {/* <div>
+      <div className="hidden lg:block">
         <Services />
-      </div> */}
+      </div>
       <div id="form" ref={divRef} className="block sm:hidden">
         <FormMobile />
         <div className="mt-[-132px] mb-[56px] relative ">
