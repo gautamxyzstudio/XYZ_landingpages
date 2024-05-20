@@ -90,13 +90,13 @@ const Services = () => {
         </div>
         {/* Content Section */}
         <div className="pt-94px">
-          <div className="flex items-center flex-row">
+          <div className="flex flex-wrap justify-center lg:mb-[100px] xl:mb-0  lg:mt-[100px] xl:mt-0 items-center flex-row">
             <AstronautTab
               onPressNext={() => throttledChangeTab('increment')}
               onPressPrev={() => throttledChangeTab('decrement')}
               index={sliderIndex}
             />
-            <div className="slider-container">
+            <div className="slider-container w-[65%]">
               <Slider ref={sliderRef} {...settings}>
                 {[0, 1, 2].map((index) => (
                   <div key={index} className="mb-[70px]">

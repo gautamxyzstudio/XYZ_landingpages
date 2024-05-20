@@ -3,47 +3,69 @@ import Button from '@/components/atoms/button';
 import TextArea from '@/components/atoms/textArea';
 import TextInput from '@/components/atoms/textInput';
 import FormHeader from '@/components/molecules/formHeader';
-import React from 'react';
+import Image from 'next/image';
+import React, { useState } from 'react';
+import { ASTRONAUT_MOON } from '../../../../public/exporter';
 
 const Form = () => {
+  const [state, dispatch] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: '',
+  });
   return (
-    <div className="bg-black  p-14 rounded-3xl">
-      <div className="mx-68px">
+    <div className="bg-black mx-6 sm:mx-0 max-w-[1240px] sm:w-full z-10 py-[32px] sm:py-[40px] px-[16px] sm:px-[76px] rounded-3xl">
+      <div className="hidden sm:block">
         <FormHeader />
       </div>
-      <div className="mt-20">
-        <TextInput
-          value={''}
-          onChange={(e) => console.log(e.target.value)}
-          placeholder={'Enter your name'}
-          title={'Name'}
-        />
-        <TextInput
-          value={''}
-          onChange={(e) => console.log(e.target.value)}
-          placeholder={'Enter your email'}
-          title={'Email'}
-        />
-        <TextInput
-          value={''}
-          onChange={(e) => console.log(e.target.value)}
-          placeholder={'Enter your company name'}
-          title={'Company'}
-        />
-        <TextArea
-          value={''}
-          onChange={(e) => console.log(e.target.value)}
-          placeholder={'Describe'}
-          title={'Message'}
-        />
-      </div>
-      <div className="mt-4">
-        <Button
-          buttonType={'orange'}
-          height="h-[52px]"
-          title={'Send'}
-          onPress={() => console.log('pressed')}
-        />
+      <div className=" mt-0 sm:mt-[48px] flex justify-between flex-row">
+        <div className="hidden sm:block">
+          <Image src={ASTRONAUT_MOON} alt="ASTRONAUT MOON" />
+        </div>
+        <div className="w-full sm:w-6/12">
+          <TextInput
+            value={state.name}
+            onChange={(e) =>
+              dispatch((prev) => ({ ...prev, name: e.target.value }))
+            }
+            placeholder={''}
+            title={'Name'}
+          />
+          <TextInput
+            value={state.email}
+            onChange={(e) =>
+              dispatch((prev) => ({ ...prev, email: e.target.value }))
+            }
+            placeholder={''}
+            title={'Email'}
+          />
+          <TextInput
+            value={state.company}
+            onChange={(e) =>
+              dispatch((prev) => ({ ...prev, company: e.target.value }))
+            }
+            placeholder={''}
+            title={'Company'}
+          />
+          <TextInput
+            value={state.message}
+            onChange={(e) =>
+              dispatch((prev) => ({ ...prev, message: e.target.value }))
+            }
+            placeholder={''}
+            title={'Message'}
+          />
+          <Button
+            buttonType={'orange'}
+            title={'Send'}
+            widthSmall="w-[94px]"
+            heightSmall="h-[32px]"
+            width="sm:w-[180px]"
+            height="sm:h-[56px]"
+            onPress={() => console.log('pressed')}
+          />
+        </div>
       </div>
     </div>
   );

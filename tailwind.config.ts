@@ -22,22 +22,16 @@ const config: Config = {
         blackText: '#181818',
         silverText: '#F5F7FA',
         borderGrey: '#F2F2F2',
+        inputGrey: '#383838',
         grey: '#868686',
         borderCircleSec: 'rgba(250, 132, 67, 0.06)',
         borderCircle: 'rgba(219, 219, 219, 0.20)',
         orange: '#F17C04',
         yellow: '#FDC700',
       },
-      screen: {
-        sm: { min: '375px', max: '820px' },
-
-        md: { min: '820', max: '1023px' },
-
-        lg: { min: '1024px', max: '1279px' },
-
-        xl: { min: '1280px', max: '1535px' },
-
-        '2xl': { min: '1536px' },
+      screens: {
+        xl: '1300px',
+        ...defaultTheme.screens,
       },
       margin: {
         '122px': '122px',
