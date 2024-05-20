@@ -10,20 +10,29 @@ import FormView from '../websitedevelopment/components/formView';
 import Services from '../websitedevelopment/components/services';
 import Form from '@/components/organisms/form';
 import FormMobile from '../websitedevelopment/components/formmobile';
-
+import { scrollIntoView } from 'seamless-scroll-polyfill';
 const Mobile = () => {
   const divRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToComp = () => {
+    var comp = document.getElementById('form');
+    if (comp)
+      setTimeout(function () {
+        comp!.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }, 100);
     if (divRef.current) {
-      divRef.current.scrollIntoView({ behavior: 'smooth' });
+      scrollIntoView(divRef.current, {
+        behavior: 'smooth',
+        block: 'start',
+      });
     }
   };
   return (
     <div>
-      <div className="hidden lg:block">
-        <CustomModal />
-      </div>
+      <CustomModal />
       <div className="w-full pl-[24px] pr-[24px]  sm:pl-20 sm:pr-20 md:pl-20 md:pr-20 lg:pl-20 lg:pl-20   bg-primary">
         <Header />
         <div className="flex justify-center mt-[50px]  flex-row">
@@ -40,7 +49,7 @@ const Mobile = () => {
       {/* <div>
         <Services />
       </div> */}
-      <div ref={divRef} className="block sm:hidden">
+      <div id="form" ref={divRef} className="block sm:hidden">
         <FormMobile />
         <div className="mt-[-132px] mb-[56px] relative ">
           <Form />

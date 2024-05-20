@@ -23,6 +23,7 @@ const DisplayComponent: React.FC<IDisplayComponentProps> = ({ type }) => {
         {type === 'mobile' && (
           <div className="absolute flex items-center overflow-hidden bottom-0 w-[195px] h-[394px]  sm:w-[250px] sm:h-[494px] md:w-[297px] md:h-[594px] lg:w-[335px] lg:h-[658px]   z-[1]">
             <video
+              playsInline
               className="absolute top-[60px] rounded-[45px] md:rounded-[63px] sm:top-[65px] md:top-[89px] w-full h-full"
               loop
               muted
@@ -30,12 +31,13 @@ const DisplayComponent: React.FC<IDisplayComponentProps> = ({ type }) => {
             >
               <source src={MOBILE_VIDEO} type="video/mp4" />
             </video>
-            <Image className="absolute  bottom-0" src={FRAME} alt="" />
+            <Image priority className="absolute  bottom-0" src={FRAME} alt="" />
           </div>
         )}
         {type === 'website' && (
           <div className="absolute  w-[90%] h-[90%] flex flex-row justify-center items-center">
             <video
+              playsInline
               className="absolute  z-10 rounded-[20px] bottom-[5px]  w-[79%] h-full"
               loop
               muted
@@ -43,7 +45,7 @@ const DisplayComponent: React.FC<IDisplayComponentProps> = ({ type }) => {
             >
               <source src={WEBSITE_VIDEO} type="video/mp4" />
             </video>
-            <Image className="absolute" src={LAPTOP_FRAME} alt="" />
+            <Image priority className="absolute" src={LAPTOP_FRAME} alt="" />
           </div>
         )}
       </div>
