@@ -7,7 +7,7 @@ export const throttle = <T extends (...args: any[]) => void>(
   limit: number
 ): ((...args: Parameters<T>) => void) => {
   let inThrottle: boolean;
-  return function (...args: Parameters<T>) {
+  return function (this: unknown, ...args: Parameters<T>) {
     const context = this;
     if (!inThrottle) {
       func.apply(context, args);
