@@ -1,7 +1,6 @@
 import React from 'react';
 import Form from '../../../../components/organisms/form';
 import {
-  ASTRONAUT_WAVING,
   FRAME_LEFT,
   FRAME_RIGHT,
   FRAME_TOP,
@@ -10,7 +9,7 @@ import Image from 'next/image';
 import FormHeader from '@/components/molecules/formHeader';
 const FormView = () => {
   return (
-    <div className="flex px-[148px] relative pt-[108px] pb-[86px] flex-row  justify-center">
+    <div className="flex pl-[24px] pr-[24px]  sm:pl-20 sm:pr-20 md:pl-20 md:pr-20 lg:pl-20 lg:pl-20 relative pt-[108px] pb-[86px] flex-row  justify-center">
       <Image src={FRAME_TOP} className="absolute top-0" alt="FRAME TOP" />
       <Form />
       <Image

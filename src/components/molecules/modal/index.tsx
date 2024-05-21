@@ -33,14 +33,13 @@ const CustomModal = () => {
     return {
       padding: 0,
       borderRadius: 0,
-      overflow: 'hidden',
     };
   }, []);
 
   const modalMainStyles: any = useMemo(() => {
     return {
       position: 'absolute',
-      bottom: -24.5,
+      bottom: -28,
       right: -24.95,
     };
   }, []);
@@ -118,9 +117,9 @@ const CustomModal = () => {
                       />
                     </div>
                     <Button
-                      height={'h-10'}
+                      height={'sm:h-[48px]'}
                       buttonType={'orange'}
-                      title={'send'}
+                      title={'Send'}
                       onPress={() => console.log('pressed')}
                     />
                     <Image
@@ -130,15 +129,16 @@ const CustomModal = () => {
                     />
                   </div>
                 </div>
-                <div className="flex  relative items-center justify-center">
+                <div className="flex bg-black  relative items-center justify-center">
                   <Image
                     onClick={() => updateIsModalVisible(false)}
                     className="absolute top-6 right-6 cursor-pointer"
                     src={CROSS}
                     alt="CROSS"
                   />
-                  <Image width={427} src={STAR_BG} alt="STAT BG" />
+                  <Image width={450} height={450} src={STAR_BG} alt="STAT BG" />
                   <Image
+                    priority
                     className="absolute w-[60%] h-auto"
                     src={ASTRONAUT_WAVING}
                     alt="ASTRONAUT WAVING"

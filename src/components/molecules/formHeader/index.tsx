@@ -1,15 +1,20 @@
 import { chau_philomene } from '@/ui/fonts';
 import React from 'react';
+import { IFormHeaderProps } from './types';
 
-const FormHeader = () => {
+const FormHeader: React.FC<IFormHeaderProps> = ({
+  title,
+  secondarySubTitle,
+  subtitle,
+}) => {
   return (
     <div className="flex z-10 w-full items-center justify-center flex-row">
       <p
-        className={`text-orange ${chau_philomene.className} text-xl  whitespace-nowrap font-bold sm:text-4xl`}
+        className={`text-orange ${chau_philomene.className} text-xl sm:text-xl md:text-2xl lg:text-3xl whitespace-nowrap font-bold xl:text-4xl`}
       >
-        Contact Us
+        {title ?? 'Contact Us'}
       </p>
-      <div className="block sm:hidden">
+      <div className="block lg:hidden">
         <svg
           className="mx-3 sm-20 md:mx-6"
           xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +31,7 @@ const FormHeader = () => {
           />
         </svg>
       </div>
-      <div className="hidden sm:block">
+      <div className="hidden lg:block">
         <svg
           className="mx-3 sm-20 md:mx-6"
           xmlns="http://www.w3.org/2000/svg"
@@ -44,11 +49,11 @@ const FormHeader = () => {
         </svg>
       </div>
       <div>
-        <p className="sm:text-white text-textBlack text-xs leading-5   sm:leading-38px sm:text-3xl font-medium">
-          Provide your detail
+        <p className="sm:text-white text-textBlack text-xs sm:text-sm md:text-base lg:text-lg   xl:text-3xl font-medium">
+          {subtitle ?? 'Provide your detail'}
         </p>
-        <p className="sm:text-white text-textBlack text-xs leading-5   sm:leading-38px sm:text-3xl font-medium">
-          to join with our team
+        <p className="sm:text-white text-textBlack  text-xs sm:text-sm md:text-base lg:text-lg   xl:text-3xl  font-medium">
+          {secondarySubTitle ?? 'to join with our team'}
         </p>
       </div>
     </div>
