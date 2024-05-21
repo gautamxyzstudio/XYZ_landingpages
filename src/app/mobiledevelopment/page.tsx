@@ -11,6 +11,7 @@ import Services from '../websitedevelopment/components/services';
 import Form from '@/components/organisms/form';
 import FormMobile from '../websitedevelopment/components/formmobile';
 import { scrollIntoView } from 'seamless-scroll-polyfill';
+import ServicesMobile from '../websitedevelopment/components/servicesMobile';
 const Mobile = () => {
   const divRef = useRef<HTMLDivElement | null>(null);
 
@@ -48,6 +49,9 @@ const Mobile = () => {
       </div>
       <div className="hidden lg:block">
         <Services />
+      </div>
+      <div className="block md:hidden">
+        <ServicesMobile />
       </div>
       <div id="form" ref={divRef} className="block sm:hidden">
         <FormMobile />

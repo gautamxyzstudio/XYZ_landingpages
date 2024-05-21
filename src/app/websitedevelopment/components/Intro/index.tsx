@@ -31,7 +31,7 @@ const Intro: React.FC<IIntroProps> = ({ type, onPress }) => {
           <div className="mt-3 sm:mt-5 md:mt-9">
             <Button
               width="sm:w-[180px]"
-              height="sm:h-[56px]"
+              height="sm:h-[48px]"
               widthSmall="w-[94px]"
               heightSmall="h-[32px]"
               onPress={onPress}

@@ -19,13 +19,12 @@ import WEB_DEV from './websitedev.svg';
 import FRAME from './frame.svg';
 import ASTRONAUT_HII from './astronaut-hi.svg';
 import ASTRONAUT_ROCKET from './astronaut-rocket.gif';
-import ASTRONAUT_WAVING from './astronaut-wave.gif';
+import ASTRONAUT_WAVING from './astronaut-waving.svg';
 import WEB_VIDEO from './webScreen.gif';
 import MOBILE_VIDEO from './mved.mp4';
 import STAR_BG from './starbg.png';
 import CROSS from './cross.svg';
 import FRAME_BOTTOM from './frame-bottom.svg';
-import CIRCLES_FRAME from './circles.png';
 import LAPTOP_FRAME from './laptop.svg';
 import WEBSITE_VIDEO from './webved.mp4';
 import FRAME_TOP from './frameTop.svg';
@@ -43,7 +42,6 @@ export {
   CROSS,
   ASTRONAUT_RIDING,
   LAPTOP_FRAME,
-  CIRCLES_FRAME,
   STAR_BG,
   WEB_VIDEO,
   ASTRONAUT_SITTING,
@@ -59,6 +57,7 @@ export {
   FRAME,
   WEB_DEV,
   ASTRONAUT_SPEAKINGS,
+  ASTRONAUT_WAVING,
   ASTRONAUT_TYPING,
   MOBILE,
   WEBSITE,
@@ -66,7 +65,6 @@ export {
   CALL,
   MESSAGE,
   POSITION,
-  ASTRONAUT_WAVING,
   SERVICES_BG,
   LOGO_WHITE,
 };

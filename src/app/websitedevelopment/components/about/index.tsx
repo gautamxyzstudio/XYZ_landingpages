@@ -72,7 +72,7 @@ const About = () => {
           <div className="mt-6">
             <Button
               width="sm:w-[180px]"
-              height="sm:h-[56px]"
+              height="sm:h-[48px]"
               widthSmall="w-[94px]"
               heightSmall="h-[32px]"
               buttonType={'black'}

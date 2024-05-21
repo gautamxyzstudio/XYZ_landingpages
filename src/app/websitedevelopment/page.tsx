@@ -9,12 +9,25 @@ import FormMobile from './components/formmobile';
 import Form from '@/components/organisms/form';
 import CustomModal from '@/components/molecules/modal';
 import Services from './components/services';
+import { scrollIntoView } from 'seamless-scroll-polyfill';
+import ServicesMobile from './components/servicesMobile';
 const Web = () => {
   const divRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToComp = () => {
+    var comp = document.getElementById('form');
+    if (comp)
+      setTimeout(function () {
+        comp!.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }, 100);
     if (divRef.current) {
-      divRef.current.scrollIntoView({ behavior: 'smooth' });
+      scrollIntoView(divRef.current, {
+        behavior: 'smooth',
+        block: 'start',
+      });
     }
   };
   return (
@@ -38,13 +51,16 @@ const Web = () => {
       <div className="hidden lg:block">
         <Services />
       </div>
-      <div ref={divRef} className="block sm:hidden">
+      <div className="block md:hidden">
+        <ServicesMobile />
+      </div>
+      <div ref={divRef} id="form" className="block sm:hidden">
         <FormMobile />
         <div className="mt-[-132px] mb-[56px] relative ">
           <Form />
         </div>
       </div>
-      <div ref={divRef} className="hidden sm:block">
+      <div ref={divRef} className="hidden  sm:block">
         <FormView />
       </div>
     </div>

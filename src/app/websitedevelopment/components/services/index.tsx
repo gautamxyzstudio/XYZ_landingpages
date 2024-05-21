@@ -12,19 +12,23 @@ import { throttle } from '@/utility/contants';
 const Services = () => {
   const sliderRef = useRef<Slider | null>(null);
   const [sliderIndex, updateSliderIndex] = useState<number>(0);
-
+  const [clickable, updateIsClickable] = useState<boolean>(false);
   // Function to change the slider index
   const changeTab = (type: 'increment' | 'decrement') => {
-    if (type === 'increment' && sliderIndex < 2) {
-      updateSliderIndex(sliderIndex + 1);
-      sliderRef.current?.slickGoTo(sliderIndex + 1);
-    } else if (type === 'decrement' && sliderIndex > 0) {
-      updateSliderIndex(sliderIndex - 1);
-      sliderRef.current?.slickGoTo(sliderIndex - 1);
+    if (clickable === true) {
+      if (type === 'increment' && sliderIndex < 2) {
+        updateSliderIndex(sliderIndex + 1);
+        sliderRef.current?.slickGoTo(sliderIndex + 1);
+      } else if (type === 'decrement' && sliderIndex > 0) {
+        updateSliderIndex(sliderIndex - 1);
+        sliderRef.current?.slickGoTo(sliderIndex - 1);
+      }
+      updateIsClickable(false);
     }
+    setTimeout(() => {
+      updateIsClickable(true);
+    }, 500);
   };
-
-  const throttledChangeTab = throttle(changeTab, 300);
 
   // Memoized style for the background image
   const servicesStyle = useMemo(
@@ -92,8 +96,8 @@ const Services = () => {
         <div className="pt-94px">
           <div className="flex flex-wrap justify-center lg:mb-[100px] xl:mb-0  lg:mt-[100px] xl:mt-0 items-center flex-row">
             <AstronautTab
-              onPressNext={() => throttledChangeTab('increment')}
-              onPressPrev={() => throttledChangeTab('decrement')}
+              onPressNext={() => changeTab('increment')}
+              onPressPrev={() => changeTab('decrement')}
               index={sliderIndex}
             />
             <div className="slider-container w-[65%]">
