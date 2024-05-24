@@ -1,0 +1,27 @@
+.expand-enter {
+    max-height: 0;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out;
+  }
+  .expand-enter-active {
+    max-height: 150px; /* Adjust as per your content */
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  .expand-exit {
+    max-height: 150px; /* Adjust as per your content */
+    opacity: 1;
+    transform: scaleY(1);
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out;
+  }
+  .expand-exit-active {
+    max-height: 0;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: max-height 0.3s ease-in, opacity 0.3s ease-in, transform 0.3s ease-in;
+  }
+  .additional-content {
+    overflow: hidden;
+  }
+  
