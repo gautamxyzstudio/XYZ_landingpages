@@ -1,3 +1,4 @@
+'use client';
 import Button from '@/components/atoms/button';
 import { chau_philomene } from '@/ui/fonts';
 import React from 'react';
@@ -6,7 +7,22 @@ import Image from 'next/image';
 import DisplayComponent from '@/components/organisms/displayComponent';
 import { IIntroProps } from './types';
 
-const Intro: React.FC<IIntroProps> = ({ type, onPress }) => {
+const Intro: React.FC<IIntroProps> = ({ type }) => {
+  const scrollToComp = () => {
+    var comp = document.getElementById('form');
+    var compSec = document.getElementById('formSec');
+    comp?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+    if (compSec) {
+      compSec?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <div className="flex w-full max-w-[1240px] flex-wrap flex-row  justify-between">
       <div className="w-full  xl:w-[45%]">
@@ -28,13 +44,13 @@ const Intro: React.FC<IIntroProps> = ({ type, onPress }) => {
               development, and promotion expertise.
             </p>
           </div>
-          <div className="mt-3 sm:mt-5 md:mt-9">
+          <div className="mt-3 hidden md:block sm:mt-5 md:mt-9">
             <Button
               width="sm:w-[180px]"
               height="sm:h-[48px]"
               widthSmall="w-[94px]"
               heightSmall="h-[32px]"
-              onPress={onPress}
+              onPress={scrollToComp}
               buttonType={'orange'}
               title={'Get in touch'}
             />

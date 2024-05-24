@@ -15,7 +15,7 @@ const DisplayComponent: React.FC<IDisplayComponentProps> = ({ type }) => {
     <BackgroundCircles>
       <div className="relative w-full flex items-center justify-center h-full ">
         <Image
-          className="absolute w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] xl:w-[400px] xl:h-[400px] animate-[wiggle_2s_ease-in-out_infinite] top-0  left-9 sm:left-11 md:left-[89px] lg:left-[177px] xl:left-[80px]"
+          className="absolute w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] xl:w-[400px] xl:h-[400px] animate-[wiggle_2s_ease-in-out_infinite] top-6  left-9 sm:left-11 md:left-[89px] lg:left-[177px] xl:left-[80px]"
           src={ASTRONAUT_HII}
           alt="Astronaut hi"
         />

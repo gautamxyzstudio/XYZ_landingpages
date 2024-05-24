@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+'use client';
 import Button from '@/components/atoms/button';
 import { chau_philomene } from '@/ui/fonts';
 import React from 'react';
@@ -77,9 +78,7 @@ const About = () => {
               heightSmall="h-[32px]"
               buttonType={'black'}
               title={'Learn More'}
-              onPress={function (): void {
-                throw new Error('Function not implemented.');
-              }}
+              onPress={() => console.log('Learn More')}
             />
           </div>
         </div>

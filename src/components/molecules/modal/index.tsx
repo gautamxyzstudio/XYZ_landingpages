@@ -1,5 +1,4 @@
 'use client';
-import TextInput from '@/components/atoms/textInput';
 import { chau_philomene } from '@/ui/fonts';
 import {
   Modal,

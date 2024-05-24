@@ -23,19 +23,16 @@ const AstronautTab: React.FC<IAstronautTabProps> = ({
           a: {
             transform: `translate(0,0)`,
             scale: 1,
-            opacity: 1,
             transitionDuration: '700ms',
           },
           b: {
             transform: `translate(0,0)`,
             scale: 0.3,
             transitionDuration: '700ms',
-            opacity: 0.8,
           },
           c: {
             transform: `translate(0,0)`,
             scale: 0.3,
-            opacity: 0.8,
             transitionDuration: '700ms',
           },
         };
@@ -43,22 +40,19 @@ const AstronautTab: React.FC<IAstronautTabProps> = ({
       case 1: {
         return {
           a: {
-            transform: `translate(180%,150%)`,
+            transform: `translate(200%,150%)`,
             transitionDuration: '700ms',
             scale: 0.4,
-            opacity: 0.8,
           },
           b: {
             transform: `translate(-360%,0%)`,
             transitionDuration: '700ms',
             scale: 0.4,
-            opacity: 0.8,
           },
           c: {
             transform: `translate(80%,-70%)`,
             transitionDuration: '700ms',
             scale: 1,
-            opacity: 1,
           },
         };
       }
@@ -68,19 +62,16 @@ const AstronautTab: React.FC<IAstronautTabProps> = ({
             transform: `translate(-180%,140%)`,
             transitionDuration: '700ms',
             scale: 0.4,
-            opacity: 0.8,
           },
           b: {
             transform: `translate(-75%,-70%)`,
             transitionDuration: '700ms',
             scale: 1,
-            opacity: 1,
           },
           c: {
             transform: `translate(380%,-20%)`,
             transitionDuration: '700ms',
             scale: 0.4,
-            opacity: 0.8,
           },
         };
       }
