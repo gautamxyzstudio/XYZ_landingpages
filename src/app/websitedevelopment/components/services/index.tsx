@@ -12,7 +12,7 @@ import { throttle } from '@/utility/contants';
 const Services = () => {
   const sliderRef = useRef<Slider | null>(null);
   const [sliderIndex, updateSliderIndex] = useState<number>(0);
-  const [clickable, updateIsClickable] = useState<boolean>(false);
+  const [clickable, updateIsClickable] = useState<boolean>(true);
   // Function to change the slider index
   const changeTab = (type: 'increment' | 'decrement') => {
     if (clickable === true) {

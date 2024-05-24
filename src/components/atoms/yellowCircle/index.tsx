@@ -10,7 +10,7 @@ const YellowCircle: React.FC<IYellowCircleProps> = ({
 }) => {
   return (
     <div
-      className={`absolute ${top} ${right} ${left} ${bottom} bg-yellow  w-[30px] h-[30px]  sm:w-[40px] sm:h-[40px]  md:w-[50px] md:h-[50px] lg:w-66px lg:h-66px rounded-full ${animation} `}
+      className={`absolute ${top} ${right} ${left} ${bottom} bg-yellow  w-[40px] h-[40px]  sm:w-[40px] sm:h-[40px]  md:w-[50px] md:h-[50px] lg:w-66px lg:h-66px rounded-full ${animation} `}
     />
   );
 };

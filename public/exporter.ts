@@ -20,7 +20,6 @@ import FRAME from './frame.svg';
 import ASTRONAUT_HII from './astronaut-hi.svg';
 import ASTRONAUT_ROCKET from './astronaut-rocket.gif';
 import ASTRONAUT_WAVING from './astronaut-waving.svg';
-import WEB_VIDEO from './webScreen.gif';
 import MOBILE_VIDEO from './mved.mp4';
 import STAR_BG from './starbg.png';
 import CROSS from './cross.svg';
@@ -43,7 +42,6 @@ export {
   ASTRONAUT_RIDING,
   LAPTOP_FRAME,
   STAR_BG,
-  WEB_VIDEO,
   ASTRONAUT_SITTING,
   WEBSITE_VIDEO,
   MOBILE_VIDEO,

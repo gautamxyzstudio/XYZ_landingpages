@@ -1,12 +1,20 @@
 /* eslint-disable react/no-unescaped-entities */
+'use client';
 import Button from '@/components/atoms/button';
 import { chau_philomene } from '@/ui/fonts';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { ASTRONAUT_SITTING } from '../../../../../public/exporter';
 import BgCircles from '@/components/organisms/bgCircles';
+import { CSSTransition } from 'react-transition-group';
+import './about.css';
 
 const About = () => {
+  const [expanded, setExpanded] = useState(false);
+  const toggleExpand = () => {
+    setExpanded(!expanded);
+  };
+
   return (
     <div className="max-w-[1240px] overflow-hidden relative py-8 pl-4 pr-4 sm:pr-4 lg:pr-0 sm:py-10 sm:pl-10 mx-6 sm:mx-20 bg-dark rounded-4xl">
       <div className="flex  flex-row justify-center  items-center">
@@ -69,6 +77,18 @@ const About = () => {
             streamlined web applications, or a powerful digital marketing
             strategy, our expertise is poised to manifest your celestial visit
           </p>
+          <CSSTransition
+            in={expanded}
+            unmountOnExit
+            timeout={300}
+            classNames="expand"
+          >
+            <p className="text-white mt-6 text-xs additional-content  leading-5 sm:text-base  sm:leading-6 md:text-xl md:leading-6   lg:text-2xl lg:leading-36px font-regular">
+              We crave a captivating website, a high-flying mobile app,
+              streamlined web applications, or a powerful digital marketing
+              strategy, our expertise is poised to manifest your celestial visit
+            </p>
+          </CSSTransition>
           <div className="mt-6">
             <Button
               width="sm:w-[180px]"
@@ -76,10 +96,8 @@ const About = () => {
               widthSmall="w-[94px]"
               heightSmall="h-[32px]"
               buttonType={'black'}
-              title={'Learn More'}
-              onPress={function (): void {
-                throw new Error('Function not implemented.');
-              }}
+              title={expanded ? 'Minimize' : 'Read More'}
+              onPress={toggleExpand}
             />
           </div>
         </div>
