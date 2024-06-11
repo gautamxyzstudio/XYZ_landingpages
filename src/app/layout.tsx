@@ -4,6 +4,9 @@ import './globals.css';
 import { poppins } from '../ui/fonts';
 import Footer from './websitedevelopment/components/footer';
 import { Providers } from './provider';
+import Image from 'next/image';
+import { Suspense } from 'react';
+import Loading from './loading';
 
 export const metadata: Metadata = {
   title: 'XYZ Studio',
@@ -24,10 +27,10 @@ export default function RootLayout({
         <link rel="icon" href="favicon.ico" sizes="any" />
       </head>
       <body className={`${poppins.className} antialiased`}>
-        <>
+        <Suspense fallback={<Loading />}>
           <Providers>{children}</Providers>
           <Footer />
-        </>
+        </Suspense>
       </body>
     </html>
   );

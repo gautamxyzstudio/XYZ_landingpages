@@ -31,9 +31,11 @@ import FRAME_LEFT from './frameLeft.svg';
 import FRAME_RIGHT from './farmeRight.svg';
 import ASTRONAUT_MOON from './astronuat-moon.svg';
 import FRAME_TOP_SMALL from './frame-top-small.svg';
+import LOADER from './loading.gif';
 export {
   LOGO,
   FRAME_TOP,
+  LOADER,
   FRAME_LEFT,
   FRAME_TOP_SMALL,
   FRAME_RIGHT,

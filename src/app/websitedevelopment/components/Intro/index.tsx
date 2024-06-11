@@ -64,7 +64,7 @@ const Intro: React.FC<IIntroProps> = ({ type }) => {
           />
         </div>
       </div>
-      <div className=" xl:ml-45px mt-[56px] xl:mt-0 flex items-center w-full h-[450px] sm:h-[550px]  md:h-[650px] lg:h-[750px] xl:h-[750px] xl:w-[637px]">
+      <div className="xl:ml-45px mt-[56px] xl:mt-0 flex items-center w-full h-[450px] sm:h-[550px]  md:h-[650px] lg:h-[750px] xl:h-[750px] xl:w-[637px]">
         <DisplayComponent type={type} />
       </div>
     </div>
