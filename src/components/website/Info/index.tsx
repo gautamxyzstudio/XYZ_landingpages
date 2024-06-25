@@ -1,12 +1,7 @@
 import React from 'react';
 import InfoCard from '@/components/molecules/infoCard';
 import { infoData } from './data';
-import {
-  MOBILE,
-  PEOPLE,
-  SETTINGS,
-  WEBSITE,
-} from '../../../../../public/exporter';
+import { PEOPLE, MOBILE, WEBSITE, SETTINGS } from '../../../../public/exporter';
 
 const Info = () => {
   return (

@@ -4,10 +4,11 @@ import Button from '@/components/atoms/button';
 import { chau_philomene } from '@/ui/fonts';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { ASTRONAUT_SITTING } from '../../../../../public/exporter';
+
 import BgCircles from '@/components/organisms/bgCircles';
 import { CSSTransition } from 'react-transition-group';
 import './about.css';
+import { ASTRONAUT_SITTING } from '../../../../public/exporter';
 
 const About = () => {
   const [expanded, setExpanded] = useState(false);

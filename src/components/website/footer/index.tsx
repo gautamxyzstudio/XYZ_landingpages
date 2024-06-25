@@ -1,9 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import { LOGO_WHITE, POSITION } from '../../../../../public/exporter';
+
 import { getCurrentYear } from '@/utility/contants';
 import DetailCard from '@/components/molecules/detailCard';
 import { footerDetails } from './types';
+import { LOGO_WHITE } from '../../../../public/exporter';
 const Footer = () => {
   const currentYear = getCurrentYear();
   return (

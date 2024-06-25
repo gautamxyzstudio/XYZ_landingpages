@@ -20,14 +20,23 @@ import {
 import Button from '@/components/atoms/button';
 
 const CustomModal = () => {
-  const [isModalVisible, updateIsModalVisible] = useState(true);
+  const [isModalVisible, updateIsModalVisible] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (isModalVisible) {
-        sessionStorage.setItem('modalShown', 'true');
-      }
-    }, 1000);
+    const modalShown = sessionStorage.getItem('modalShown');
+    if (!modalShown) {
+      const timer = setTimeout(() => {
+        updateIsModalVisible(true);
+      }, 1200);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isModalVisible) {
+      sessionStorage.setItem('modalShown', 'true');
+    }
   }, [isModalVisible]);
 
   const [state, dispatch] = useState({

@@ -1,11 +1,11 @@
 'use client';
 import Button from '@/components/atoms/button';
 import { chau_philomene } from '@/ui/fonts';
-import React from 'react';
-import { ASTRONAUT_ROCKET } from '../../../../../public/exporter';
+
 import Image from 'next/image';
 import DisplayComponent from '@/components/organisms/displayComponent';
 import { IIntroProps } from './types';
+import { ASTRONAUT_ROCKET } from '../../../../public/exporter';
 
 const Intro: React.FC<IIntroProps> = ({ type }) => {
   const scrollToComp = () => {
