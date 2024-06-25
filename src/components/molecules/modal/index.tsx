@@ -8,7 +8,7 @@ import {
   Show,
 } from '@chakra-ui/react';
 
-import React, { memo, useMemo, useState } from 'react';
+import React, { memo, useEffect, useMemo, useState } from 'react';
 import ModalTextInput from './components/modalTextInput';
 import Image from 'next/image';
 import {
@@ -20,7 +20,25 @@ import {
 import Button from '@/components/atoms/button';
 
 const CustomModal = () => {
-  const [isModalVisible, updateIsModalVisible] = useState(true);
+  const [isModalVisible, updateIsModalVisible] = useState(false);
+
+  useEffect(() => {
+    const modalShown = sessionStorage.getItem('modalShown');
+    if (!modalShown) {
+      const timer = setTimeout(() => {
+        updateIsModalVisible(true);
+      }, 1200);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isModalVisible) {
+      sessionStorage.setItem('modalShown', 'true');
+    }
+  }, [isModalVisible]);
+
   const [state, dispatch] = useState({
     name: '',
     email: '',

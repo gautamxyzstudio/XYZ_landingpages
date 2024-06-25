@@ -2,8 +2,11 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import { poppins } from '../ui/fonts';
-import Footer from './websitedevelopment/components/footer';
+
 import { Providers } from './provider';
+import { usePathname } from 'next/navigation';
+import Footer from '@/components/website/footer';
+import Loading from '@/components/organisms/loadingScreen';
 
 export const metadata: Metadata = {
   title: 'XYZ Studio',
@@ -24,10 +27,10 @@ export default function RootLayout({
         <link rel="icon" href="favicon.ico" sizes="any" />
       </head>
       <body className={`${poppins.className} antialiased`}>
-        <>
+        <Loading>
           <Providers>{children}</Providers>
           <Footer />
-        </>
+        </Loading>
       </body>
     </html>
   );

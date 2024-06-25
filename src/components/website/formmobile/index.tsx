@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import React from 'react';
+
+import FormHeader from '@/components/molecules/formHeader';
 import {
+  FRAME_TOP_SMALL,
   FRAME_LEFT,
   FRAME_RIGHT,
-  FRAME_TOP,
-  FRAME_TOP_SMALL,
-} from '../../../../../public/exporter';
-import FormHeader from '@/components/molecules/formHeader';
+} from '../../../../public/exporter';
 
 const FormMobile = () => {
   return (

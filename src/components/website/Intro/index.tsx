@@ -1,11 +1,11 @@
 'use client';
 import Button from '@/components/atoms/button';
 import { chau_philomene } from '@/ui/fonts';
-import React from 'react';
-import { ASTRONAUT_ROCKET } from '../../../../../public/exporter';
+
 import Image from 'next/image';
 import DisplayComponent from '@/components/organisms/displayComponent';
 import { IIntroProps } from './types';
+import { ASTRONAUT_ROCKET } from '../../../../public/exporter';
 
 const Intro: React.FC<IIntroProps> = ({ type }) => {
   const scrollToComp = () => {
@@ -64,7 +64,7 @@ const Intro: React.FC<IIntroProps> = ({ type }) => {
           />
         </div>
       </div>
-      <div className=" xl:ml-45px mt-[56px] xl:mt-0 flex items-center w-full h-[450px] sm:h-[550px]  md:h-[650px] lg:h-[750px] xl:h-[750px] xl:w-[637px]">
+      <div className="xl:ml-45px mt-[56px] xl:mt-0 flex items-center w-full h-[450px] sm:h-[550px]  md:h-[650px] lg:h-[750px] xl:h-[750px] xl:w-[637px]">
         <DisplayComponent type={type} />
       </div>
     </div>

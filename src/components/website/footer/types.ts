@@ -1,5 +1,5 @@
 import { IDetailCardProps } from '@/components/molecules/detailCard/types';
-import { CALL, MESSAGE, POSITION } from '../../../../../public/exporter';
+import { CALL, MESSAGE, POSITION } from '../../../../public/exporter';
 
 export interface IFooterDetailsData extends IDetailCardProps {
   id: number;
