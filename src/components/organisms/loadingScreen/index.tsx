@@ -10,29 +10,21 @@ const Loading = ({ children }: { children: ReactNode }) => {
     const timeout = setTimeout(() => {
       setShowSplash(false);
     }, 1000);
-    return () => clearInterval(timeout);
+    return () => clearTimeout(timeout);
   }, []);
-
-  console.log(window.innerHeight, window.outerHeight);
 
   const initialStyles: React.CSSProperties = useMemo(() => {
     return {
-      overflow: 'hidden',
-      height: window.innerHeight,
-    };
-  }, []);
-
-  const afterLoadingStyles: React.CSSProperties = useMemo(() => {
-    return {
-      height: '100%',
+      overflow: 'scroll',
+      height: '100vh',
     };
   }, []);
 
   return (
-    <div style={showSplash ? initialStyles : afterLoadingStyles}>
+    <div style={initialStyles}>
       {showSplash && (
         <div className="absolute bg-white flex justify-center items-center z-20 w-full h-screen">
-          <Image width={240} height={240} src={LOADER} alt="" />
+          <Image width={240} height={240} src={LOADER} alt="Loading" />
         </div>
       )}
       {children}
