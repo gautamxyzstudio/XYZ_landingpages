@@ -147,7 +147,13 @@ const CustomModal = () => {
                     src={CROSS}
                     alt="CROSS"
                   />
-                  <Image width={450} height={450} src={STAR_BG} alt="STAT BG" />
+                  <Image
+                    priority
+                    width={450}
+                    height={450}
+                    src={STAR_BG}
+                    alt="STAT BG"
+                  />
                   <Image
                     priority
                     className="absolute"
