@@ -1,10 +1,5 @@
 import { IInfoCardProps } from '@/components/molecules/infoCard/types';
-import {
-  MOBILE,
-  PEOPLE,
-  SETTINGS,
-  WEBSITE,
-} from '../../../../../public/exporter';
+import { PEOPLE, MOBILE, WEBSITE, SETTINGS } from '../../../../public/exporter';
 
 export interface IInfoCardData extends IInfoCardProps {
   icon: string;

@@ -27,17 +27,12 @@ const CustomModal = () => {
     if (!modalShown) {
       const timer = setTimeout(() => {
         updateIsModalVisible(true);
+        sessionStorage.setItem('modalShown', 'true');
       }, 1200);
 
       return () => clearTimeout(timer);
     }
   }, []);
-
-  useEffect(() => {
-    if (isModalVisible) {
-      sessionStorage.setItem('modalShown', 'true');
-    }
-  }, [isModalVisible]);
 
   const [state, dispatch] = useState({
     name: '',
@@ -61,13 +56,11 @@ const CustomModal = () => {
     };
   }, []);
 
+  const onClose = () => updateIsModalVisible(false);
+
   return (
     <Show above="lg">
-      <Modal
-        size={'xl'}
-        isOpen={isModalVisible}
-        onClose={() => updateIsModalVisible(false)}
-      >
+      <Modal size={'xl'} isOpen={isModalVisible} onClose={onClose}>
         <ModalOverlay />
         <ModalContent maxH="554px" maxW="810px">
           <ModalBody borderRadius={12} style={modalBodyStyles}>
@@ -141,6 +134,7 @@ const CustomModal = () => {
                     />
                     <Image
                       style={modalMainStyles}
+                      priority
                       src={FRAME_BOTTOM}
                       alt="FRAME BOTTOM"
                     />
@@ -148,16 +142,19 @@ const CustomModal = () => {
                 </div>
                 <div className="flex bg-black  relative items-center justify-center">
                   <Image
-                    onClick={() => updateIsModalVisible(false)}
-                    className="absolute top-6 right-6 cursor-pointer"
+                    onClick={onClose}
+                    className="absolute top-6 right-6 cursor-pointer z"
                     src={CROSS}
                     alt="CROSS"
                   />
                   <Image width={450} height={450} src={STAR_BG} alt="STAT BG" />
                   <Image
                     priority
-                    className="absolute w-[60%] h-auto"
+                    className="absolute"
+                    width={194}
+                    height={248}
                     src={ASTRONAUT_WAVING}
+                    loading="eager"
                     alt="ASTRONAUT WAVING"
                   />
                 </div>
