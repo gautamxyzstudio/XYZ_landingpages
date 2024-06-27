@@ -21,7 +21,7 @@ import ASTRONAUT_HII from './astronaut-hi.svg';
 import ASTRONAUT_ROCKET from './astronaut-rocket.gif';
 import ASTRONAUT_WAVING from './astronaut-waving.svg';
 import MOBILE_VIDEO from './mved.mp4';
-import STAR_BG from './starbg.jpg';
+import STAR_BG from './starbg.webp';
 import CROSS from './cross.svg';
 import FRAME_BOTTOM from './frame-bottom.svg';
 import LAPTOP_FRAME from './laptop.svg';
@@ -38,12 +38,12 @@ export {
   LOADER,
   FRAME_LEFT,
   FRAME_TOP_SMALL,
+  STAR_BG,
   FRAME_RIGHT,
   ASTRONAUT_MOON,
   CROSS,
   ASTRONAUT_RIDING,
   LAPTOP_FRAME,
-  STAR_BG,
   ASTRONAUT_SITTING,
   WEBSITE_VIDEO,
   MOBILE_VIDEO,
