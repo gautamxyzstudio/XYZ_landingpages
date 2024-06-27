@@ -113,6 +113,12 @@ const config: Config = {
         'spin-slow': 'spin 3s linear infinite',
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
       },
+      flex: {
+        '3': '2 2 0%',
+      },
+      lineClamp: {
+        2: '2',
+      },
     },
   },
   plugins: [],

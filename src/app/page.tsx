@@ -12,6 +12,7 @@ import FormMobile from '@/components/website/formmobile';
 import Services from '@/components/website/services';
 import ServicesMobile from '@/components/website/servicesMobile';
 import { useEffect, useState } from 'react';
+import Platform from '@/components/website/platform';
 
 export default function Home() {
   return (
@@ -27,6 +28,9 @@ export default function Home() {
         <div className="w-full flex justify-center bg-white  z-[0] relative pt-[50px]  md:pt-84px">
           <div className="h-[90px]  md:h-370px bg-primary absolute  z-[-1] top-0 left-0 w-full rounded-b-80px" />
           <About />
+        </div>
+        <div>
+          <Platform />
         </div>
         <div className="pl-20 overflow-hidden bg-white pt-14 pb-14 sm:pt-124px sm:pb-72px">
           <Info />
