@@ -114,7 +114,7 @@ const config: Config = {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
       },
       flex: {
-        '3': '2 2 0%',
+        '2': '1.5 1 0%',
       },
       lineClamp: {
         2: '2',
