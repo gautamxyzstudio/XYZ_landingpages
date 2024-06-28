@@ -1,56 +1,55 @@
 'use client';
 import FormHeader from '@/components/molecules/formHeader';
-import ServiceCardMobile from '@/components/molecules/serviceCardMobile';
+import PlatformCardMobile from '@/components/organisms/PlatformCardMobile';
 import React, { useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import { EffectCoverflow } from 'swiper/modules';
-import './styles.css';
-const ServicesMobile = () => {
+const PlatformMobile = () => {
   const servicesStyle = useMemo(
     () => ({
       backgroundImage: 'url(service.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
+      marginTop: 56,
     }),
     []
   );
   return (
     <div style={servicesStyle} className="py-6">
       <FormHeader
-        title="Services"
-        subtitle="Fusion of creativity and"
-        secondarySubTitle="functionality"
+        title="Platform"
+        subtitle="Provide independent"
+        secondarySubTitle="web/mobile/tablet"
       />
-      <div className="mt-10">
+      <div className="mt-10 mb-6">
         <Swiper
-          effect={'coverflow'}
           grabCursor={true}
+          effect="fade"
           centeredSlides={true}
           updateOnWindowResize={true}
+          cssMode
+          spaceBetween={20}
           slidesPerView={'auto'}
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: false,
-          }}
           pagination={true}
-          modules={[EffectCoverflow]}
           className="mySwiper"
         >
           <SwiperSlide>
-            <ServiceCardMobile />
+            <PlatformCardMobile />
           </SwiperSlide>
           <SwiperSlide>
-            <ServiceCardMobile />
+            <PlatformCardMobile />
           </SwiperSlide>
           <SwiperSlide>
-            <ServiceCardMobile />
+            <PlatformCardMobile />
+          </SwiperSlide>
+          <SwiperSlide>
+            <PlatformCardMobile />
+          </SwiperSlide>
+          <SwiperSlide>
+            <PlatformCardMobile />
+          </SwiperSlide>
+          <SwiperSlide>
+            <PlatformCardMobile />
           </SwiperSlide>
         </Swiper>
       </div>
@@ -58,4 +57,4 @@ const ServicesMobile = () => {
   );
 };
 
-export default ServicesMobile;
+export default PlatformMobile;
