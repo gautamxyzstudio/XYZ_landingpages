@@ -9,17 +9,8 @@ import 'swiper/css/pagination';
 import { EffectCoverflow } from 'swiper/modules';
 import './styles.css';
 const ServicesMobile = () => {
-  const servicesStyle = useMemo(
-    () => ({
-      backgroundImage: 'url(service.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-    }),
-    []
-  );
   return (
-    <div style={servicesStyle} className="py-6">
+    <div>
       <FormHeader
         title="Services"
         subtitle="Fusion of creativity and"

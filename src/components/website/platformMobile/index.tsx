@@ -4,18 +4,8 @@ import PlatformCardMobile from '@/components/organisms/PlatformCardMobile';
 import React, { useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 const PlatformMobile = () => {
-  const servicesStyle = useMemo(
-    () => ({
-      backgroundImage: 'url(service.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      marginTop: 56,
-    }),
-    []
-  );
   return (
-    <div style={servicesStyle} className="py-6">
+    <div>
       <FormHeader
         title="Platform"
         subtitle="Provide independent"

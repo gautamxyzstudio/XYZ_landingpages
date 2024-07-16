@@ -15,11 +15,11 @@ const Form = () => {
     message: '',
   });
   return (
-    <div className="bg-black mx-6 sm:mx-0 max-w-[1240px] sm:w-full z-10 py-[32px]  px-[16px] sm:py-[40px] sm:px-[76px]  rounded-3xl">
+    <div className=" mx-6   bg-[#121212] md-bg-black  shadow-2xl sm:mx-0 max-w-[1240px] sm:w-full z-10 py-[32px]  px-[16px] sm:py-[40px] sm:px-[76px]  rounded-3xl">
       <div className="hidden sm:block">
         <FormHeader />
       </div>
-      <div className=" mt-0 sm:mt-[48px] flex justify-between flex-row">
+      <div className=" mt-0  flex items-center sm:mt-[48px] flex justify-between flex-row">
         <div className="hidden lg:block">
           <Image
             className="w-[472px] h-[406px] md:w-[372px] md:h-[306px]"
@@ -27,7 +27,7 @@ const Form = () => {
             alt="ASTRONAUT MOON"
           />
         </div>
-        <div className="w-full lg:w-6/12">
+        <div className="w-full  lg:w-6/12">
           <TextInput
             value={state.name}
             onChange={(e) =>

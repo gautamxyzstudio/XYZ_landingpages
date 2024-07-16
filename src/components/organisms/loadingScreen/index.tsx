@@ -23,7 +23,7 @@ const Loading = ({ children }: { children: ReactNode }) => {
   return (
     <div style={initialStyles}>
       {showSplash && (
-        <div className="absolute bg-white flex justify-center items-center z-20 w-full h-screen">
+        <div className="absolute flex bg-contain bg-main-bg justify-center items-center z-50 w-full h-screen">
           <Image width={240} height={240} src={LOADER} alt="Loading" />
         </div>
       )}

@@ -1,0 +1,8 @@
+.home{
+height: -webkit-fill-available; 
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+margin-top: 56px;
+width: '100%';
+}

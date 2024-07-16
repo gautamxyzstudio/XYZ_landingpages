@@ -14,7 +14,9 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'background-stars': 'url(/starbg.webp)',
+        'services-bg': 'url(services.png)',
+        'main-bg': 'url(/bg.jpg)',
+        'info-bg': 'url(/infobg.jpg)',
       },
       colors: {
         primary: '#FEF7F0',
@@ -63,6 +65,8 @@ const config: Config = {
       },
       boxShadow: {
         button: '0px 0px 12px 0px rgba(18, 18, 18, 0.40)',
+        custom: '0px 0px 4px 0px rgba(255, 199, 39, 0.20)',
+        customWhite: '0px 0px 8px 0px rgba(255, 255, 255, 0.12)',
       },
       borderRadius: {
         '4xl': '30px',
@@ -114,7 +118,7 @@ const config: Config = {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
       },
       flex: {
-        '2': '1.5 1 0%',
+        '3': '2 2 0%',
       },
       lineClamp: {
         2: '2',

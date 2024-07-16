@@ -12,7 +12,7 @@ const InfoCard: React.FC<IInfoCardProps> = ({ icon, title, count, alt }) => {
       />
       <div className="ml-2 sm:ml-4">
         <p
-          className={`text-dark ${chau_philomene.className} text-[20px]  md:text-40px leading-[28px] md:leading-40px`}
+          className={`text-white ${chau_philomene.className} text-[20px]  md:text-40px leading-[28px] md:leading-40px`}
         >
           {count}
         </p>

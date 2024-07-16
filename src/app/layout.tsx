@@ -1,16 +1,14 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
-import { poppins } from '../ui/fonts';
 
-import { Providers } from './provider';
-import { usePathname } from 'next/navigation';
-import Footer from '@/components/website/footer';
-import Loading from '@/components/organisms/loadingScreen';
+import { poppins } from '../ui/fonts';
+import { HOME_BG_VIDEO } from '../../public/exporter';
+import SmoothScroll from '@/components/molecules/smoothScroll';
 
 export const metadata: Metadata = {
-  title: 'Website Development XYZ Studio',
-  description: 'Website Development XYZ Studio',
+  title: 'Mobile Development XYZ Studio',
+  description: 'Mobile Development XYZ Studio',
   icons: {
     icon: '/favicon.ico',
   },
@@ -26,11 +24,22 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="favicon.ico" sizes="any" />
       </head>
-      <body className={`${poppins.className} antialiased`}>
-        <Loading>
-          <Providers>{children}</Providers>
-          <Footer />
-        </Loading>
+      <body className={`${poppins.className} bg-black  antialiased`}>
+        <div className="bg-contain  overflow-y-hidden">
+          <video
+            className="w-screen  hidden md-block video h-full  absolute object-contain"
+            loop
+            muted
+            autoPlay
+            playsInline
+          >
+            <source src={HOME_BG_VIDEO} type="video/mp4" />
+          </video>
+          <SmoothScroll>{children}</SmoothScroll>
+        </div>
+
+        {/* {children} */}
+        {/* <Footer /> */}
       </body>
     </html>
   );

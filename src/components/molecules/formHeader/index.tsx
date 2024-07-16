@@ -49,10 +49,10 @@ const FormHeader: React.FC<IFormHeaderProps> = ({
         </svg>
       </div>
       <div>
-        <p className="md:text-white text-textBlack text-xs sm:text-sm md:text-base lg:text-lg   xl:text-3xl font-medium">
+        <p className="md:text-white text-white text-xs sm:text-sm md:text-base lg:text-lg  xl:text-3xl font-medium">
           {subtitle ?? 'Provide your detail'}
         </p>
-        <p className="md:text-white text-textBlack  text-xs sm:text-sm md:text-base lg:text-lg   xl:text-3xl  font-medium">
+        <p className="md:text-white text-white  text-xs sm:text-sm md:text-base lg:text-lg   xl:text-3xl  font-medium">
           {secondarySubTitle ?? 'to join with our team'}
         </p>
       </div>

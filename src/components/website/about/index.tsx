@@ -17,7 +17,7 @@ const About = () => {
   };
 
   return (
-    <div className="max-w-[1240px] overflow-hidden relative py-8 pl-4 pr-4 sm:pr-4 lg:pr-0 sm:py-10 sm:pl-10 mx-6 sm:mx-20 bg-dark rounded-4xl">
+    <div className="max-w-[1240px] overflow-hidden aboutMain relative py-8 pl-4 pr-4 sm:pr-4 lg:pr-0 sm:py-10 sm:pl-10 mx-6 sm:mx-20 bg-dark rounded-4xl">
       <div className="flex  flex-row justify-center  items-center">
         <p
           className={`text-orange ${chau_philomene.className} text-xl leading-7  sm:text-2xl sm:leading-8 md:text-3xl md:text-10 lg:text-4xl lg:leading-44px `}

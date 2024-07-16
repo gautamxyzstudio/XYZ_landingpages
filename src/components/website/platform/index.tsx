@@ -20,8 +20,8 @@ const Platform = () => {
   );
 
   return (
-    <div style={servicesStyle}>
-      <div className="flex flex-row  items-center justify-center">
+    <div>
+      <div className="flex flex-row items-center justify-center">
         <p
           className={`text-orange ${chau_philomene.className} font-bold leading-44px text-4xl`}
         >
@@ -43,10 +43,10 @@ const Platform = () => {
           />
         </svg>
         <div>
-          <p className="text-blackText leading-38px text-3xl font-medium">
+          <p className="text-white leading-38px text-3xl font-medium">
             Provide independent
           </p>
-          <p className="text-blackText leading-38px text-3xl font-medium">
+          <p className="text-white leading-38px text-3xl font-medium">
             Web/Mobile/Tablet
           </p>
         </div>

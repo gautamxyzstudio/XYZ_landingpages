@@ -1,60 +1,66 @@
-// 'use client';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Header from '@/components/atoms/header';
-import Form from '@/components/organisms/form';
-import CustomModal from '@/components/molecules/modal';
-import Info from '@/components/website/Info';
-import Intro from '@/components/website/Intro';
+import React from 'react';
 import About from '@/components/website/about';
+import Footer from '@/components/website/footer';
 import FormView from '@/components/website/formView';
-import FormMobile from '@/components/website/formmobile';
-import Services from '@/components/website/services';
-import ServicesMobile from '@/components/website/servicesMobile';
-import { useEffect, useState } from 'react';
+import HomeView from '@/components/website/homeView';
+import Info from '@/components/website/Info';
 import Platform from '@/components/website/platform';
+import Services from '@/components/website/services';
+import WebsiteView from '@/components/website/websiteView';
 import PlatformMobile from '@/components/website/platformMobile';
+import ServicesMobile from '@/components/website/servicesMobile';
+import FormMobile from '@/components/website/formmobile';
+import Form from '@/components/organisms/form';
+import WebFrameMobile from '@/components/website/webFrameMobile';
 
+// Continue with your Home component implementation...
 export default function Home() {
   return (
-    <>
-      <div>
-        <CustomModal />
-        <div className="w-full pl-[24px] pr-[24px]  sm:pl-20 sm:pr-20 md:pl-20 md:pr-20 lg:pl-20 lg:pl-20   bg-primary">
-          <Header />
-          <div className="flex justify-center mt-[50px]  flex-row">
-            <Intro type={'website'} />
-          </div>
-        </div>
-        <div className="w-full flex justify-center bg-white  z-[0] relative pt-[50px]  md:pt-84px">
-          <div className="h-[90px]  md:h-370px bg-primary absolute  z-[-1] top-0 left-0 w-full rounded-b-80px" />
+    <div className="w-full mw- h-full">
+      <HomeView />
+      <div className=" hidden md:block web">
+        <WebsiteView />
+      </div>
+      <div className=" block my-14 md:hidden">
+        <WebFrameMobile />
+      </div>
+      {/* <div className="block grid-place content-center  md:hidden"></div> */}
+      <div className="about">
+        <div className="  md:w-screen md:h-screen z-10 relative flex items-center justify-center bg-cover bg-no-repeat md:bg-info-bg">
           <About />
         </div>
-        <div className="block md:hidden">
-          <PlatformMobile />
-        </div>
-        <div className="hidden lg:block">
+      </div>
+      <div className="platform bg-contain bg-main-bg  z-11 relative ">
+        <div className="px-20 hidden md:block  pt-10 pb-[112px]">
           <Platform />
         </div>
-        <div className="pl-20 overflow-hidden bg-white pt-14 pb-14 sm:pt-124px sm:pb-72px">
-          <Info />
-        </div>
-        <div className="hidden lg:block">
-          <Services />
-        </div>
-        <div className="block md:hidden">
-          <ServicesMobile />
-        </div>
-        <div id="form" className="block sm:hidden">
-          <FormMobile />
-          <div className="mt-[-132px] mb-[56px] relative ">
-            <Form />
-          </div>
-        </div>
-        <div id="formSec" className="hidden sm:block">
-          <FormView />
+        <div className="block mt-14 md:hidden">
+          <PlatformMobile />
         </div>
       </div>
-    </>
+      <div className="overflow-hidden border-1 bg-[red] border-white bg-contain bg-main-bg mb-14 sm:mb-[72px]">
+        <Info />
+      </div>
+      <div className="bg-contain  hidden md:block bg-main-bg">
+        <Services />
+      </div>
+      <div className="block md:hidden">
+        <ServicesMobile />
+      </div>
+      <div id="form" className="block mt-[56px] pb-[56px] md:hidden">
+        <FormMobile />
+        <div className="mt-[-132px]  relative">
+          <Form />
+        </div>
+      </div>
+      <div className="hidden  md:block">
+        <FormView />
+      </div>
+      <div className="bg-contain bg-main-bg">
+        <Footer />
+      </div>
+    </div>
   );
 }

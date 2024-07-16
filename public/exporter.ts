@@ -1,4 +1,4 @@
-import LOGO from './logo.svg';
+import LOGO from './logo.png';
 import ASTRONAUT_RIDING from './astronaut-riding.svg';
 import ASTRONAUT_SITTING from './astronaut-sitting.svg';
 import PEOPLE from './people.svg';
@@ -8,6 +8,7 @@ import SETTINGS from './settings.svg';
 import LOGO_WHITE from './logowhite.svg';
 import CALL from './call.svg';
 import MESSAGE from './message.svg';
+import HOME_BG_VIDEO from './homebg.mp4';
 import POSITION from './position.svg';
 import SERVICES_BG from './service.png';
 import ASTRONAUT_PAINTING from './astronaut-paint.svg';
@@ -33,26 +34,37 @@ import ASTRONAUT_MOON from './astronuat-moon.svg';
 import FRAME_TOP_SMALL from './frame-top-small.svg';
 import LOADER from './loading.gif';
 import PLATFORM from './platform.svg';
+import UFO from './ufo.svg';
+import MOBILE_SEC from './mobileSec.svg';
+import MOBILE_THIRD from './mobileThird.svg';
+import WEBSITE_VIEW from './website.mp4';
+import WEBSITE_SEV from './website2.mp4';
 export {
   LOGO,
   FRAME_TOP,
+  MOBILE_SEC,
+  WEBSITE_VIEW,
+  WEBSITE_SEV,
+  MOBILE_THIRD,
   LOADER,
-  PLATFORM,
   FRAME_LEFT,
   FRAME_TOP_SMALL,
-  STAR_BG,
+  PLATFORM,
   FRAME_RIGHT,
   ASTRONAUT_MOON,
   CROSS,
   ASTRONAUT_RIDING,
   LAPTOP_FRAME,
+  STAR_BG,
   ASTRONAUT_SITTING,
   WEBSITE_VIDEO,
   MOBILE_VIDEO,
   FRAME_BOTTOM,
   PEOPLE,
+  HOME_BG_VIDEO,
   ASTRONAUT_HII,
   ASTRONAUT_PAINTING,
+  UFO,
   ASTRONAUT_ROCKET,
   MOBILE_DEV,
   WEB_SEARCH,

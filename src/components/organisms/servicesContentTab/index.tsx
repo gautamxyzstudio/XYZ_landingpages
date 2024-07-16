@@ -7,7 +7,7 @@ const ServicesContentTab = () => {
       <h1 className="text-yellow  leading-10 text-36px font-semibold">
         Creation
       </h1>
-      <p className="mt-3 text-xl text-wrap leading-7 text-dark">
+      <p className="mt-3 text-xl text-wrap leading-7 text-white">
         We understand that design plays a critical role in the success of any
         digital product, and our team of talented designers is dedicated to
         creating visually stunning and user-friendly experiences.

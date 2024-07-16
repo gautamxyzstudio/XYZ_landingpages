@@ -16,11 +16,20 @@
   }
 }
 
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 body{
   background-color:#FEF7F0;
+
 }
 
 
+.bg{
+  background-color: red;
+}
 
 @layer utilities {
   .text-balance {

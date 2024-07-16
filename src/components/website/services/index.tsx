@@ -30,17 +30,6 @@ const Services = () => {
     }, 500);
   };
 
-  // Memoized style for the background image
-  const servicesStyle = useMemo(
-    () => ({
-      backgroundImage: 'url(service.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-    }),
-    []
-  );
-
   // Slider settings
   const settings = {
     dots: false,
@@ -59,7 +48,7 @@ const Services = () => {
   };
 
   return (
-    <div className="pt-12" style={servicesStyle}>
+    <div className="pt-12">
       <div>
         {/* Header Section */}
         <div className="flex flex-row items-center justify-center">
@@ -84,10 +73,10 @@ const Services = () => {
             />
           </svg>
           <div>
-            <p className="text-blackText leading-38px text-3xl font-medium">
+            <p className="text-white leading-38px text-3xl font-medium">
               Fusion of creativity and
             </p>
-            <p className="text-blackText leading-38px text-3xl font-medium">
+            <p className="text-white leading-38px text-3xl font-medium">
               functionality
             </p>
           </div>
