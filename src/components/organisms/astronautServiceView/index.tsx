@@ -27,16 +27,19 @@ const AstronautTab: React.FC<IAstronautTabProps> = ({
   useGSAP(() => {
     gsap.set(stepOneRef.current, {
       top: '-75%',
+      opacity: 1,
     });
     gsap.set(stepTwoRef.current, {
       scale: 0.4,
       x: width / 2,
       y: height / 5,
+      opacity: 1,
     });
     gsap.set(stepThreeRef.current, {
       scale: 0.35,
       x: -width / 2,
       y: height / 8,
+      opacity: 1,
     });
   });
 
@@ -147,12 +150,12 @@ const AstronautTab: React.FC<IAstronautTabProps> = ({
           height={astronautHeight}
           width={astronautWidth}
           ref={stepOneRef}
-          className="absolute"
+          className="absolute opacity-0"
           src={ASTRONAUT_PAINTING}
           alt="Astronaut Painting"
         />
         <Image
-          className="absolute"
+          className="absolute opacity-0"
           src={ASTRONAUT_SPEAKINGS}
           height={astronautHeight}
           width={astronautWidth}
@@ -160,7 +163,7 @@ const AstronautTab: React.FC<IAstronautTabProps> = ({
           alt="Astronaut Painting"
         />
         <Image
-          className="absolute"
+          className="absolute opacity-0"
           height={astronautHeight}
           width={astronautWidth}
           src={ASTRONAUT_TYPING}

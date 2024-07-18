@@ -16,14 +16,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HOME_BG_VIDEO } from '../../public/exporter';
 import Footer from '@/components/website/footer';
 import Mobile from '@/components/website/mobile';
+import WebsiteView from '@/components/website/websiteView';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   return (
-    <div className="w-full h-full">
+    <div className="w-full  overflow-x-hidden   h-full">
       <HomeView />
-      <div className="w-screen hidden xl:block mobileDiv opacity-0 relative">
+      <div className="w-screen overflow-x-hidden    hidden xl:block  relative">
         <video
           className="w-screen video h-full absolute object-contain"
           loop
@@ -33,8 +34,8 @@ export default function Home() {
         >
           <source src={HOME_BG_VIDEO} type="video/mp4" />
         </video>
-
-        <MobilePhoneView />
+        <WebsiteView />
+        {/* <MobilePhoneView /> */}
       </div>
       <div className="block flex my-[7vh] justify-center items-center px-auto xl:hidden">
         <Mobile height="h-[45.46vh]" width="w-[50vw]" />

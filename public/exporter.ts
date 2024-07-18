@@ -30,10 +30,14 @@ import UFO from './ufo.svg';
 import MOBILE_SEC from './mobileSec.svg';
 import MOBILE_THIRD from './mobileThird.svg';
 import FRAME_BOTTOM from './frame-bottom.svg';
+import DESK_ONE from './deskOne.jpg';
+import DESK_TWO from './deskTwo.jpg';
 export {
   LOGO,
   MOBILE_SEC,
   MOBILE_THIRD,
+  DESK_ONE,
+  DESK_TWO,
   FRAME_BOTTOM,
   LOADER,
   PLATFORM,

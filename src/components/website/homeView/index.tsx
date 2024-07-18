@@ -6,7 +6,7 @@ import { chau_philomene } from '@/ui/fonts';
 import React, { useRef } from 'react';
 import { UFO } from '../../../../public/exporter';
 import Image from 'next/image';
-
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -17,6 +17,7 @@ const HomeView = () => {
   const ufoImageRef = useRef<HTMLImageElement | null>(null);
   const htmlSourceElement = useRef<HTMLDivElement | null>(null);
   const upperDivRef = useRef<HTMLDivElement | null>(null);
+  gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
     gsap.from(ufoImageRef.current, {
@@ -50,7 +51,7 @@ const HomeView = () => {
     });
     gsap.to(upperDivRef.current, {
       scrollTrigger: {
-        trigger: '.mobileDiv',
+        trigger: '.website',
         start: 'top 65%',
         end: 'top 10%',
         scrub: 1,
@@ -75,12 +76,9 @@ const HomeView = () => {
             src={UFO}
             alt="UFO"
           />
-          We bring together creative minds and technical prowess to develop
-          mobile apps that Engage users and deliver measurable results for your
-          business.
           <p
             ref={headingRef}
-            className={`text-center mt-[9vh]  scale-[0.5] opacity-0 text-[7.39vh] leading-[10.43vh] text-white ${chau_philomene.className}`}
+            className={`text-center mt-[6vh]  scale-[0.5] opacity-0 text-[7.39vh] leading-[10.43vh] text-white ${chau_philomene.className}`}
           >
             "Where <span className="text-orange">Imagination</span> Meets
             <br />

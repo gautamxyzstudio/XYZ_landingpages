@@ -30,7 +30,7 @@ const Loading = ({ children }: { children: ReactNode }) => {
   return (
     <div>
       {showSplash && (
-        <div className="absolute flex bg-contain bg-main-bg justify-center items-center z-50 w-full h-screen">
+        <div className="absolute flex bg-contain bg-main-bg justify-center items-center z-50 w-full h-full">
           <video
             className="w-[240px] bg-opacity-0 video h-[240px] object-contain"
             loop
