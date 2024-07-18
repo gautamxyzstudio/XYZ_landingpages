@@ -15,8 +15,8 @@ const Form = () => {
     message: '',
   });
   return (
-    <div className=" mx-6   bg-[#121212] md-bg-black  shadow-2xl sm:mx-0 max-w-[1240px] sm:w-full z-10 py-[32px]  px-[16px] sm:py-[40px] sm:px-[76px]  rounded-3xl">
-      <div className="hidden sm:block">
+    <div className=" bg-[#121212] shadow-2xl sm:mx-0 max-w-[1240px] sm:w-full z-10 py-[32px]  px-[16px] sm:py-[40px] sm:px-[76px] mx-6  rounded-3xl">
+      <div className="hidden lg:block">
         <FormHeader />
       </div>
       <div className=" mt-0  flex items-center sm:mt-[48px] flex justify-between flex-row">

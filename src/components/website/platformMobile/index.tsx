@@ -18,7 +18,7 @@ const PlatformMobile = () => {
           centeredSlides={true}
           updateOnWindowResize={true}
           cssMode
-          spaceBetween={20}
+          spaceBetween={'32vw'}
           slidesPerView={'auto'}
           pagination={true}
           className="mySwiper"

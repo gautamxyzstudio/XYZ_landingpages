@@ -8,7 +8,7 @@ import { LOGO_WHITE } from '../../../../public/exporter';
 const Footer = () => {
   const currentYear = getCurrentYear();
   return (
-    <div className="flex-wrap    py-6 px-6 sm:py-12 sm:px-20 flex sm:justify-between flex-row">
+    <div className="flex-wrap  mx-auto max-w-[1440px]    py-6 px-6 sm:py-12 sm:px-20 flex sm:justify-between flex-row">
       <div className="hidden sm:block">
         <Image
           className="w-[41px] h-[41px]  sm:w-41 sm:h-41"
@@ -22,7 +22,7 @@ const Footer = () => {
           All rights reserved
         </p>
       </div>
-      <div>
+      <div className="text-center">
         <p className="mb-[4px] font-semibold sm:mb-6 text-base text-white sm:text-xl">
           Quick Links
         </p>
@@ -37,16 +37,14 @@ const Footer = () => {
         </p>
       </div>
       <div className="block sm:hidden w-full my-4 h-[1px] bg-[#383838]" />
-      <div>
-        {footerDetails.map((details, index) => {
-          const isLast = footerDetails.length - 1 === index;
-          const style = isLast ? 'mb-0' : 'mb-7';
-          return (
-            <div className={style} key={index}>
-              <DetailCard icon={details.icon} title={details.title} />
-            </div>
-          );
-        })}
+      <div className="flex flex-col items-start  lg:items-end gap-y-[28px]">
+        {footerDetails.map((details, index) => (
+          <DetailCard
+            key={details.id}
+            icon={details.icon}
+            title={details.title}
+          />
+        ))}
       </div>
       <div className="block w-full sm:hidden">
         <div className="block sm:hidden w-full my-4 h-[1px] bg-[#383838]" />

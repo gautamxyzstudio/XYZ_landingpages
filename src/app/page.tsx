@@ -1,61 +1,82 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import React from 'react';
-import About from '@/components/website/about';
-import Footer from '@/components/website/footer';
-import FormView from '@/components/website/formView';
-import HomeView from '@/components/website/homeView';
-import Info from '@/components/website/Info';
-import Platform from '@/components/website/platform';
-import Services from '@/components/website/services';
-import WebsiteView from '@/components/website/websiteView';
-import PlatformMobile from '@/components/website/platformMobile';
-import ServicesMobile from '@/components/website/servicesMobile';
-import FormMobile from '@/components/website/formmobile';
 import Form from '@/components/organisms/form';
-import WebFrameMobile from '@/components/website/webFrameMobile';
+import Info from '@/components/website/Info';
+import About from '@/components/website/about';
+import FormView from '@/components/website/formView';
+import FormMobile from '@/components/website/formmobile';
+import Services from '@/components/website/services';
+import ServicesMobile from '@/components/website/servicesMobile';
+import Platform from '@/components/website/platform';
+import PlatformMobile from '@/components/website/platformMobile';
+import HomeView from '@/components/website/homeView';
+import MobilePhoneView from '@/components/website/mobilePhonesView';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { HOME_BG_VIDEO } from '../../public/exporter';
+import Footer from '@/components/website/footer';
+import Mobile from '@/components/website/mobile';
 
-// Continue with your Home component implementation...
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Home() {
   return (
-    <div className="w-full mw- h-full">
+    <div className="w-full h-full">
       <HomeView />
-      <div className=" hidden md:block web">
-        <WebsiteView />
+      <div className="w-screen hidden xl:block mobileDiv opacity-0 relative">
+        <video
+          className="w-screen video h-full absolute object-contain"
+          loop
+          muted
+          autoPlay
+          playsInline
+        >
+          <source src={HOME_BG_VIDEO} type="video/mp4" />
+        </video>
+
+        <MobilePhoneView />
       </div>
-      <div className=" block my-14 md:hidden">
-        <WebFrameMobile />
+      <div className="block flex my-[7vh] justify-center items-center px-auto xl:hidden">
+        <Mobile height="h-[45.46vh]" width="w-[50vw]" />
       </div>
-      {/* <div className="block grid-place content-center  md:hidden"></div> */}
       <div className="about">
-        <div className="  md:w-screen md:h-screen z-10 relative flex items-center justify-center bg-cover bg-no-repeat md:bg-info-bg">
+        <div className=" w-screen hidden xl:flex h-screen z-10  relative items-center justify-center bg-cover bg-no-repeat bg-info-bg">
           <About />
         </div>
       </div>
-      <div className="platform bg-contain bg-main-bg  z-11 relative ">
-        <div className="px-20 hidden md:block  pt-10 pb-[112px]">
-          <Platform />
+      <div className=" flex xl:hidden py-0  md:py-[3vh] z-10  relative  bg-none items-center justify-center bg-center  bg-no-repeat  md:bg-info-bg">
+        <About />
+      </div>
+      <div className="bg-contain bg-main-bg z-11 relative">
+        <div className="platform hidden lg:flex ">
+          <div className="px-20  w-full  mx-auto max-w-[1440px] md:pt-[9vh] lg:pt-[112px] xl:pt-10 pb-[112px]">
+            <Platform />
+          </div>
         </div>
-        <div className="block mt-14 md:hidden">
+        <div className="block mt-14 lg:hidden">
           <PlatformMobile />
         </div>
+
+        <div className="overflow-hidden relative z-100 border-white bg-contain mb-14 sm:mb-[72px]">
+          <Info />
+        </div>
+        <div className="bg-contain mx-auto max-w-[1440px] px-[70px] hidden lg:block bg-main-bg">
+          <Services />
+        </div>
+        <div className="block lg:hidden">
+          <ServicesMobile />
+        </div>
       </div>
-      <div className="overflow-hidden border-1 bg-[red] border-white bg-contain bg-main-bg mb-14 sm:mb-[72px]">
-        <Info />
-      </div>
-      <div className="bg-contain  hidden md:block bg-main-bg">
-        <Services />
-      </div>
-      <div className="block md:hidden">
-        <ServicesMobile />
-      </div>
-      <div id="form" className="block mt-[56px] pb-[56px] md:hidden">
+      <div
+        id="form"
+        className="block mt-[56px] pb-[56px] mx-auto  w-full sm:w-[80%] lg:hidden"
+      >
         <FormMobile />
         <div className="mt-[-132px]  relative">
           <Form />
         </div>
       </div>
-      <div className="hidden  md:block">
+      <div className="hidden lg:block">
         <FormView />
       </div>
       <div className="bg-contain bg-main-bg">

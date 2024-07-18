@@ -22,11 +22,7 @@ const Header = () => {
   };
   return (
     <div className="pt-6 flex flex-row justify-between items-center">
-      <Image
-        className="w-[38px] h-[38px] sm:w-[80px] sm:h-[80px]"
-        src={LOGO}
-        alt="Logo"
-      />
+      <Image className="w-[7.6vh] h-[7.6vh]" src={LOGO} alt="Logo" />
       <p className="block md:hidden">
         <Button
           width="sm:w-[180px]"

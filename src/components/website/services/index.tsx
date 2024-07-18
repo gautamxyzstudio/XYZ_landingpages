@@ -83,16 +83,33 @@ const Services = () => {
         </div>
         {/* Content Section */}
         <div className="pt-94px">
-          <div className="flex flex-wrap justify-center lg:mb-[100px] xl:mb-0  lg:mt-[100px] xl:mt-0 items-center flex-row">
-            <AstronautTab
-              onPressNext={() => changeTab('increment')}
-              onPressPrev={() => changeTab('decrement')}
-              index={sliderIndex}
-            />
-            <div className="slider-container w-[65%]">
+          <div className="flex justify-center lg:mb-[100px] xl:mb-0  xl:mt-0 items-center flex-row">
+            <div className="hidden xl:flex">
+              <AstronautTab
+                onPressNext={() => changeTab('increment')}
+                onPressPrev={() => changeTab('decrement')}
+                index={sliderIndex}
+                height={228}
+                width={456}
+                astronautHeight={340}
+                astronautWidth={256}
+              />
+            </div>
+            <div className="hidden lg:flex xl:hidden">
+              <AstronautTab
+                onPressNext={() => changeTab('increment')}
+                onPressPrev={() => changeTab('decrement')}
+                index={sliderIndex}
+                height={168.75}
+                width={342}
+                astronautHeight={255}
+                astronautWidth={192}
+              />
+            </div>
+            <div className="slider-container flex">
               <Slider ref={sliderRef} {...settings}>
                 {[0, 1, 2].map((index) => (
-                  <div key={index} className="mb-[70px]">
+                  <div key={index}>
                     <ServicesContentTab />
                   </div>
                 ))}

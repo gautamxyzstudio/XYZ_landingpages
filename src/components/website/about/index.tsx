@@ -67,16 +67,18 @@ const About = () => {
           </p>
         </div>
       </div>
+
       <div className="mt-10 md:mt-[30px] items-center justify-between flex flex-row">
         <div className="w-full lg:w-6/12">
           <p className="text-white text-xs leading-5 sm:text-base  sm:leading-6 md:text-xl md:leading-6   lg:text-2xl lg:leading-36px font-regular">
-            XYZ Studio transcends the traditional digital agency; we're your
-            cosmic companion in the digital odyssey.
+            Welcome to XYZ Studio, a premier mobile app development company
+            dedicated to crafting innovative and user-friendly applications that
+            enhance the digital experience of our clients.
           </p>
           <p className="text-white text-xs leading-5 sm:text-base  sm:leading-6 md:text-xl md:leading-6   lg:text-2xl lg:leading-36px font-regular">
-            We crave a captivating website, a high-flying mobile app,
-            streamlined web applications, or a powerful digital marketing
-            strategy, our expertise is poised to manifest your celestial visit
+            Our team of skilled professionals is committed to delivering
+            exceptional solutions that meet the evolving needs of the modern
+            market.
           </p>
           <CSSTransition
             in={expanded}

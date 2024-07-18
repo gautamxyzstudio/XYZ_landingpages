@@ -3,7 +3,7 @@ import React from 'react';
 
 const ServicesContentTab = () => {
   return (
-    <div className="flex-1  ml-94px mr-[81px]">
+    <div className="ml-94px xl:mb-94px">
       <h1 className="text-yellow  leading-10 text-36px font-semibold">
         Creation
       </h1>
@@ -12,7 +12,7 @@ const ServicesContentTab = () => {
         digital product, and our team of talented designers is dedicated to
         creating visually stunning and user-friendly experiences.
       </p>
-      <div className="flex justify-center  flex-row gap-6 mt-[36px] flex-wrap">
+      <div className="flex justify-center  flex-row  md:gap-2  lg:gap-4  xl:gap-6 mt-[36px] flex-wrap">
         <ServiceCard />
         <ServiceCard />
         {/* <ServiceCard /> */}

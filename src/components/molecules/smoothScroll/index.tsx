@@ -8,8 +8,7 @@ const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
       options={{
         duration: 1.5,
 
-        // smoothWheel: true,
-        // infinite: true,
+        smoothWheel: true,
       }}
       root
     >

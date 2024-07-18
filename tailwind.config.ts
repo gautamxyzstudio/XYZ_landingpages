@@ -71,6 +71,7 @@ const config: Config = {
       borderRadius: {
         '4xl': '30px',
         '80px': '80px',
+        custom: '228px 228px 0 0',
       },
       fontSize: {
         '40px': '40px',

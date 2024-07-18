@@ -1,30 +1,45 @@
 'use client';
-import Image from 'next/image';
 import React, { ReactNode, useEffect, useMemo, useState } from 'react';
-import { LOADER } from '../../../../public/exporter';
+import { LOADING } from '../../../../public/exporter';
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
 
 const Loading = ({ children }: { children: ReactNode }) => {
   const [showSplash, setShowSplash] = useState(true);
+
+  // Use the useLenis hook to interact with Lenis
+  useLenis(
+    (lenis) => {
+      if (showSplash) {
+        lenis.stop();
+      } else {
+        lenis.start();
+      }
+    },
+    [showSplash]
+  );
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowSplash(false);
     }, 1000);
-    return () => clearTimeout(timeout);
-  }, []);
 
-  const initialStyles: React.CSSProperties = useMemo(() => {
-    return {
-      overflow: 'scroll',
-      height: '100vh',
+    return () => {
+      clearTimeout(timeout);
     };
   }, []);
-
   return (
-    <div style={initialStyles}>
+    <div>
       {showSplash && (
         <div className="absolute flex bg-contain bg-main-bg justify-center items-center z-50 w-full h-screen">
-          <Image width={240} height={240} src={LOADER} alt="Loading" />
+          <video
+            className="w-[240px] bg-opacity-0 video h-[240px] object-contain"
+            loop
+            muted
+            autoPlay
+            playsInline
+          >
+            <source src={LOADING} type="video/mp4" />
+          </video>
         </div>
       )}
       {children}

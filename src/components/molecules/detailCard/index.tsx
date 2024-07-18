@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { IDetailCardProps } from './types';
 const DetailCard: React.FC<IDetailCardProps> = ({ title, icon }) => {
   return (
-    <div className="flex w-80% flex-row items-center">
+    <div className="flex  w-80% flex-row items-center">
       <Image
         className="w-[14px]  h-[14px] sm:w-[16px] sm:h-[16px]"
         src={icon}

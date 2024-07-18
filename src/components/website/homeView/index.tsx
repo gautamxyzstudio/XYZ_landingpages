@@ -4,17 +4,11 @@ import Button from '@/components/atoms/button';
 import Header from '@/components/atoms/header';
 import { chau_philomene } from '@/ui/fonts';
 import React, { useRef } from 'react';
-import {
-  FRAME,
-  HOME_BG_VIDEO,
-  MOBILE_THIRD,
-  UFO,
-} from '../../../../public/exporter';
+import { UFO } from '../../../../public/exporter';
 import Image from 'next/image';
+
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import styles from './styles.module.css';
 
 const HomeView = () => {
   const headingRef = useRef<HTMLParagraphElement | null>(null);
@@ -23,94 +17,93 @@ const HomeView = () => {
   const ufoImageRef = useRef<HTMLImageElement | null>(null);
   const htmlSourceElement = useRef<HTMLDivElement | null>(null);
   const upperDivRef = useRef<HTMLDivElement | null>(null);
-  const subHeadingSmallRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
     gsap.from(ufoImageRef.current, {
       bottom: 0,
       top: '100%',
       left: 0,
+      delay: 1,
       opacity: 0,
       rotate: 0,
     });
     gsap.to(buttonDivRef.current, {
       opacity: 1,
       scale: 1,
+      delay: 1,
       duration: 1.5,
       ease: 'power3.inOut',
     });
     gsap.to(headingRef.current, {
       opacity: 1,
       scale: 1,
+      delay: 1,
       duration: 1.5,
       ease: 'power3.inOut',
     });
     gsap.to(subHeadingRef.current, {
       opacity: 1,
+      delay: 1,
       scale: 1,
       duration: 1.5,
       ease: 'power3.inOut',
     });
-    gsap.to(subHeadingSmallRef.current, {
-      opacity: 1,
-      scale: 1,
-      duration: 1.5,
-      ease: 'power3.inOut',
+    gsap.to(upperDivRef.current, {
+      scrollTrigger: {
+        trigger: '.mobileDiv',
+        start: 'top 65%',
+        end: 'top 10%',
+        scrub: 1,
+      },
+      filter: 'blur(8px)',
+      scale: 0.5,
+      opacity: 0,
     });
   });
 
   return (
-    <div className="w-full bg-opacity-0 main relative">
+    <div className="w-full  max-w-screen-2xl  mx-auto bg-opacity-0 relative">
       <div
         ref={upperDivRef}
-        className="pl-[24px] md:h-screen  pr-[24px] sm:pl-20  sm:pr-20 md:pl-20 md:pr-20 lg:pl-20 lg:pl-20  top-0 "
+        className="pl-[24px] hidden xl:block   pr-[24px] sm:pl-20  sm:pr-20 md:pl-20 md:pr-20 lg:pl-20 lg:pl-20"
       >
         <Header />
-        <div className="flex flex-col items-center">
+        <div>
           <Image
             ref={ufoImageRef}
-            className="absolute hidden md:block  rotate-45 top-[-3%] right-[100px]"
+            className="absolute rotate-45 top-[-3%] right-[100px]"
             src={UFO}
             alt="UFO"
           />
+          We bring together creative minds and technical prowess to develop
+          mobile apps that Engage users and deliver measurable results for your
+          business.
           <p
             ref={headingRef}
-            className={`text-center hidden md:block mt-[81px] lg:mt-[110px] scale-[0.5] opacity-0 text-[20px]  md-text-[66px]  text-[68px] leading-[96px] text-white ${chau_philomene.className}`}
+            className={`text-center mt-[9vh]  scale-[0.5] opacity-0 text-[7.39vh] leading-[10.43vh] text-white ${chau_philomene.className}`}
           >
-            "Where <span className="text-orange">Vision</span> Meets
+            "Where <span className="text-orange">Imagination</span> Meets
             <br />
-            Reality, Your Brand Shines
-            <br /> Bright!"
-          </p>
-          <p
-            className={`text-center block md:hidden mt-[81px] lg:mt-[110px]   text-[20px] text-[24px] sm:text-[44px]  leading-[32px] sm:leading-[52px]  text-white ${chau_philomene.className}`}
-          >
-            "Where <span className="text-orange">Vision</span> Meets Reality,
-            Your Brand Shines Bright!"
+            Functionality: Exceptional Mobile App
+            <br /> Development"
           </p>
           <p
             ref={subHeadingRef}
-            className="mt-9  hidden md:block  text-center scale-[0.5] opacity-0  text-2xl text-white"
+            className="mt-[3.91vh] hidden xl:block  text-center scale-[0.5] opacity-0  text-[2.6vh] leading-[3.91vh] text-white"
           >
-            Step into the cosmic realm of XYZ Studio, where creativity
+            We bring together creative minds and technical prowess
             <br />
-            knows no bounds. Unlock the full potential of your business with our
-            design,
+            to develop mobile apps that Engage users and
             <br />
-            development, and promotion expertise.
-          </p>
-          <p className="mt-4 md:mt-6  block md:hidden text-base md:text-xl text-center  text-white">
-            Step into the cosmic realm of XYZ Studio, where creativity knows no
-            bounds. Unlock the full potential of your business with our design,
-            development, and promotion expertise.
+            deliver measurable results for your business.
           </p>
           <div
             ref={buttonDivRef}
-            className="mt-9  hidden md:block  opacity-0 scale-[0.5] flex flex-col items-center"
+            className="mt-[3.91vh] mx-auto opacity-0   mb-[4.69vh]  flex flex-col items-center"
           >
             <Button
-              width="sm:w-[180px]"
-              height="sm:h-[48px]"
+              width="sm:w-[12.5vw]"
+              height="sm:h-[5.21vh]"
               widthSmall="w-[94px]"
               heightSmall="h-[32px]"
               onPress={() => console.log('Press')}
@@ -118,6 +111,23 @@ const HomeView = () => {
               title={'Get in touch'}
             />
           </div>
+        </div>
+      </div>
+      <div className="pl-[24px] block xl:hidden  pr-[24px] sm:pl-20  sm:pr-20 md:pl-20 md:pr-20 lg:pl-20 lg:pl-20">
+        <Header />
+        <div>
+          <p
+            className={`text-center block xl:hidden mt-[81px] lg:mt-[110px]  text-[6vw] text-white ${chau_philomene.className}`}
+          >
+            "Where <span className="text-orange">Vision</span> Meets Reality,
+            Your Brand Shines Bright!"
+          </p>
+
+          <p className="mt-[3.91vh] block xl:hidden  text-center  text-[2.1vh] leading-[3.1vh] text-white">
+            Step into the cosmic realm of XYZ Studio, where creativity knows no
+            bounds. Unlock the full potential of your business with our design,
+            development, and promotion expertise.
+          </p>
         </div>
       </div>
     </div>

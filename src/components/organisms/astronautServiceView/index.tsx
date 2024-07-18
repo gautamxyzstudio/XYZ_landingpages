@@ -1,6 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
-import styles from './astronaut.module.css';
+import React, { useEffect, useRef, useState } from 'react';
 import { chau_philomene } from '@/ui/fonts';
 import Image from 'next/image';
 import {
@@ -10,72 +9,109 @@ import {
 } from '../../../../public/exporter';
 import SliderButtons from '@/components/molecules/sliderButtons';
 import { IAstronautTabProps } from './types';
-import { log } from 'console';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 const AstronautTab: React.FC<IAstronautTabProps> = ({
   onPressNext,
   onPressPrev,
+  astronautHeight,
+  astronautWidth,
+  width,
+  height,
   index,
 }) => {
-  const getTranslation = (index: number) => {
-    switch (index) {
-      case 0: {
-        return {
-          a: {
-            transform: `translate(0,0)`,
-            scale: 1,
-            transitionDuration: '700ms',
-          },
-          b: {
-            transform: `translate(0,0)`,
-            scale: 0.3,
-            transitionDuration: '700ms',
-          },
-          c: {
-            transform: `translate(0,0)`,
-            scale: 0.3,
-            transitionDuration: '700ms',
-          },
-        };
-      }
-      case 1: {
-        return {
-          a: {
-            transform: `translate(200%,150%)`,
-            transitionDuration: '700ms',
-            scale: 0.4,
-          },
-          b: {
-            transform: `translate(-360%,0%)`,
-            transitionDuration: '700ms',
-            scale: 0.4,
-          },
-          c: {
-            transform: `translate(80%,-70%)`,
-            transitionDuration: '700ms',
-            scale: 1,
-          },
-        };
-      }
-      case 2: {
-        return {
-          a: {
-            transform: `translate(-180%,140%)`,
-            transitionDuration: '700ms',
-            scale: 0.4,
-          },
-          b: {
-            transform: `translate(-75%,-70%)`,
-            transitionDuration: '700ms',
-            scale: 1,
-          },
-          c: {
-            transform: `translate(380%,-20%)`,
-            transitionDuration: '700ms',
-            scale: 0.4,
-          },
-        };
+  const stepOneRef = useRef<HTMLImageElement | null>(null);
+  const stepTwoRef = useRef<HTMLImageElement | null>(null);
+  const stepThreeRef = useRef<HTMLImageElement | null>(null);
+
+  useGSAP(() => {
+    gsap.set(stepOneRef.current, {
+      top: '-75%',
+    });
+    gsap.set(stepTwoRef.current, {
+      scale: 0.4,
+      x: width / 2,
+      y: height / 5,
+    });
+    gsap.set(stepThreeRef.current, {
+      scale: 0.35,
+      x: -width / 2,
+      y: height / 8,
+    });
+  });
+
+  console.log(index);
+
+  const nextHandler = () => {
+    if (stepOneRef.current) {
+      if (index === 0) {
+        gsap.to(stepOneRef.current, {
+          scale: 0.4,
+          x: width / 2,
+          y: height,
+        });
+        gsap.to(stepTwoRef.current, {
+          x: -width / 2,
+        });
+        gsap.to(stepThreeRef.current, {
+          scale: 0.8,
+          x: 0,
+          y: 0,
+          top: '-90%',
+        });
+      } else if (index === 1) {
+        gsap.to(stepOneRef.current, {
+          x: -width / 2,
+        });
+        gsap.to(stepTwoRef.current, {
+          scale: 1,
+          x: 0,
+          y: 0,
+          top: '-75%',
+        });
+        gsap.to(stepThreeRef.current, {
+          scale: 0.4,
+          x: width / 2,
+          y: height,
+        });
       }
     }
+    onPressNext();
+  };
+
+  const prevHandler = () => {
+    if (stepOneRef.current) {
+      if (index === 1) {
+        gsap.to(stepOneRef.current, {
+          scale: 1,
+          x: 0,
+          y: 0,
+        });
+        gsap.to(stepTwoRef.current, {
+          x: width / 2,
+        });
+        gsap.to(stepThreeRef.current, {
+          scale: 0.35,
+          x: -width / 2,
+          y: height,
+        });
+      } else if (index === 2) {
+        gsap.to(stepOneRef.current, {
+          x: width / 2,
+        });
+        gsap.to(stepTwoRef.current, {
+          scale: 0.4,
+          x: -width / 2,
+          y: height,
+        });
+        gsap.to(stepThreeRef.current, {
+          scale: 0.9,
+          x: 0,
+          y: 0,
+        });
+      }
+    }
+    onPressPrev();
   };
 
   const getTitle = (index: number) => {
@@ -93,37 +129,50 @@ const AstronautTab: React.FC<IAstronautTabProps> = ({
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div className={styles.ellipse}>
+    <div className="flex  flex-col items-center">
+      <div
+        className={`relative top-0 flex left-0 text-center  flex-col items-center  bg-[#0775C6]`}
+        style={{
+          width: `${width}px`,
+          height: `${height}px`,
+          borderRadius: `${height}px ${height}px 0 0`,
+        }}
+      >
         <p
           className={`text-white ${chau_philomene.className} bottom-5 w-full self-center text-40px leading-48px absolute`}
         >
           {getTitle(index)}
         </p>
         <Image
-          className="absolute w-[265px]  h-[360px] top-[-185px]"
+          height={astronautHeight}
+          width={astronautWidth}
+          ref={stepOneRef}
+          className="absolute"
           src={ASTRONAUT_PAINTING}
-          style={getTranslation(index)?.a}
           alt="Astronaut Painting"
         />
         <Image
-          className="absolute  w-[265px]  h-[360px] top-[40px] right-[-100px] "
+          className="absolute"
           src={ASTRONAUT_SPEAKINGS}
-          style={getTranslation(index)?.b}
+          height={astronautHeight}
+          width={astronautWidth}
+          ref={stepTwoRef}
           alt="Astronaut Painting"
         />
         <Image
-          className="absolute  w-[265px]  h-[360px] top-[40px] left-[-100px] "
+          className="absolute"
+          height={astronautHeight}
+          width={astronautWidth}
           src={ASTRONAUT_TYPING}
-          style={getTranslation(index)?.c}
+          ref={stepThreeRef}
           alt="Astronaut Painting"
         />
       </div>
       <div className="mt-[80px]">
         <SliderButtons
           index={index}
-          onPressPrev={onPressPrev}
-          onPressNext={onPressNext}
+          onPressPrev={prevHandler}
+          onPressNext={nextHandler}
         />
       </div>
     </div>

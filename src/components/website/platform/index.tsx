@@ -1,5 +1,7 @@
 import PlatformCard from '@/components/organisms/PlatformCard';
 import { chau_philomene } from '@/ui/fonts';
+import { platformData } from '@/utility/mockdata';
+import { it } from 'node:test';
 import React, { useMemo } from 'react';
 
 const Platform = () => {
@@ -25,7 +27,7 @@ const Platform = () => {
         <p
           className={`text-orange ${chau_philomene.className} font-bold leading-44px text-4xl`}
         >
-          Platform
+          Our Methodology
         </p>
         <svg
           className="md:mx-6"
@@ -44,20 +46,21 @@ const Platform = () => {
         </svg>
         <div>
           <p className="text-white leading-38px text-3xl font-medium">
-            Provide independent
+            Mobile Application Devlopment
           </p>
-          <p className="text-white leading-38px text-3xl font-medium">
+          {/* <p className="text-white leading-38px text-3xl font-medium">
             Web/Mobile/Tablet
-          </p>
+          </p> */}
         </div>
       </div>
       <div className="mt-20 gap-x-6 gap-y-6 flex flex-wrap flex-row">
-        <PlatformCard />
-        <PlatformCard />
-        <PlatformCard />
-        <PlatformCard />
-        <PlatformCard />
-        <PlatformCard />
+        {platformData.map((item) => (
+          <PlatformCard
+            key={item.id}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
       </div>
     </div>
   );

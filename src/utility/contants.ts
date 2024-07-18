@@ -16,3 +16,15 @@ export const throttle = <T extends (...args: any[]) => void>(
     }
   };
 };
+
+export const padOrTrimString = (str: string) => {
+  const targetLength = 21;
+
+  if (str.length === targetLength) {
+    return str;
+  } else if (str.length < targetLength) {
+    return str.padEnd(targetLength, '');
+  } else {
+    return str.slice(0, targetLength);
+  }
+};
