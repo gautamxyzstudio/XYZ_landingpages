@@ -48,7 +48,6 @@ const WebsiteView = () => {
       scrollTrigger: {
         trigger: '.about',
         start: 'top 110%',
-        markers: true,
         end: 'top 10%',
         scrub: true,
         pin: '.website',
