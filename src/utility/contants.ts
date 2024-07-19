@@ -28,3 +28,23 @@ export const padOrTrimString = (str: string) => {
     return str.slice(0, targetLength);
   }
 };
+
+export const detectBrowser = () => {
+  const userAgent = navigator.userAgent;
+
+  if (
+    userAgent.includes('Chrome') &&
+    !userAgent.includes('Chromium') &&
+    !userAgent.includes('Edg')
+  ) {
+    return 'chrome';
+  } else if (userAgent.includes('Safari') && !userAgent.includes('Chrome')) {
+    return 'safari';
+  } else if (userAgent.includes('Firefox')) {
+    return 'firefox';
+  } else if (userAgent.includes('Edg')) {
+    return 'edge';
+  } else {
+    return 'unknown';
+  }
+};

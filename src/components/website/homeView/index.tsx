@@ -80,20 +80,23 @@ const HomeView = () => {
             ref={headingRef}
             className={`text-center mt-[6vh]  scale-[0.5] opacity-0 text-[7.39vh] leading-[10.43vh] text-white ${chau_philomene.className}`}
           >
-            "Where <span className="text-orange">Imagination</span> Meets
+            "Your <span className="text-orange">Vision,</span>
             <br />
-            Functionality: Exceptional Mobile App
-            <br /> Development"
+            Our Mission Control: Launching
+            <br />
+            Web Development Success Together!"
           </p>
           <p
             ref={subHeadingRef}
             className="mt-[3.91vh] hidden xl:block  text-center scale-[0.5] opacity-0  text-[2.6vh] leading-[3.91vh] text-white"
           >
-            We bring together creative minds and technical prowess
+            Where Exploration Inspires Technology : XYZ Studio is your
+            Astronomical
             <br />
-            to develop mobile apps that Engage users and
+            Web Development Partner, that leverages the spirit of space
+            exploration
             <br />
-            deliver measurable results for your business.
+            to create innovative digital solutions.
           </p>
           <div
             ref={buttonDivRef}
@@ -117,14 +120,14 @@ const HomeView = () => {
           <p
             className={`text-center block xl:hidden mt-[81px] lg:mt-[110px]  text-[6vw] text-white ${chau_philomene.className}`}
           >
-            "Where <span className="text-orange">Vision</span> Meets Reality,
-            Your Brand Shines Bright!"
+            "Your <span className="text-orange">Vision,</span> Our Mission
+            Control: Launching Web Development Success Together!
           </p>
 
           <p className="mt-[3.91vh] block xl:hidden  text-center  text-[2.1vh] leading-[3.1vh] text-white">
-            Step into the cosmic realm of XYZ Studio, where creativity knows no
-            bounds. Unlock the full potential of your business with our design,
-            development, and promotion expertise.
+            Where Exploration Inspires Technology : XYZ Studio is your
+            Astronomical. Web Development Partner, that leverages the spirit of
+            space exploration to create innovative digital solutions.
           </p>
         </div>
       </div>

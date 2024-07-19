@@ -46,7 +46,7 @@ const Platform = () => {
         </svg>
         <div>
           <p className="text-white leading-38px text-3xl font-medium">
-            Mobile Application Devlopment
+            Web Development Process
           </p>
           {/* <p className="text-white leading-38px text-3xl font-medium">
             Web/Mobile/Tablet
@@ -56,6 +56,7 @@ const Platform = () => {
       <div className="mt-20 gap-x-6 gap-y-6 flex flex-wrap flex-row">
         {platformData.map((item) => (
           <PlatformCard
+            illustration={item.illustration}
             key={item.id}
             title={item.title}
             description={item.description}

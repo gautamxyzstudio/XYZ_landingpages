@@ -5,6 +5,7 @@ import { DESK_ONE, DESK_TWO, WEBSITE_VIDEO } from '../../../../public/exporter';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 
 const WebsiteView = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -24,7 +25,6 @@ const WebsiteView = () => {
         trigger: '.website',
         start: 'top 65%',
         end: 'top 10%',
-        markers: true,
         scrub: true,
       },
       rotate: -5,
@@ -36,8 +36,7 @@ const WebsiteView = () => {
       scrollTrigger: {
         trigger: '.website',
         start: 'top 65%',
-        end: 'top 10%',
-        markers: true,
+        end: 'top 0%',
         scrub: true,
       },
       rotate: 5,
@@ -45,25 +44,48 @@ const WebsiteView = () => {
       bottom: '45%',
       right: 0,
     });
+    gsap.to('.website', {
+      scrollTrigger: {
+        trigger: '.about',
+        start: 'top 110%',
+        markers: true,
+        end: 'top 10%',
+        scrub: true,
+        pin: '.website',
+        pinSpacing: false,
+      },
+      filter: 'blur(10px)',
+      scale: 0.5,
+      ease: 'power3.inOut',
+    });
+    gsap.to('.about', {
+      scrollTrigger: {
+        trigger: '.platform',
+        start: 'top 100%',
+        end: 'top 0%',
+        scrub: 1,
+        pin: '.about',
+        pinSpacing: false,
+      },
+      ease: 'power3.inOut',
+    });
   });
 
   return (
     <div className="w-screen website flex pt-[4vh] flex-col items-center h-screen">
       <div className="absolute webOne left-0">
-        <WebsiteModal
-          height={'h-[34.5vh]'}
-          width={'w-[34.58vw]'}
+        <Image
+          className="h-[34.5vh] w-[34.58vw]"
           src={DESK_ONE}
-          type="image"
+          alt="desktop"
         />
       </div>
 
       <div className="absolute webTwo  right-0">
-        <WebsiteModal
-          height={'h-[34.5vh]'}
-          width={'w-[34.58vw]'}
+        <Image
+          className="h-[34.5vh] w-[34.58vw]"
           src={DESK_TWO}
-          type="image"
+          alt="desktop"
         />
       </div>
       <div className="relative webThree top-0 left-0 z-100">

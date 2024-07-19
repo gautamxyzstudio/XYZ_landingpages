@@ -13,10 +13,12 @@ import HomeView from '@/components/website/homeView';
 import MobilePhoneView from '@/components/website/mobilePhonesView';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { HOME_BG_VIDEO } from '../../public/exporter';
+import { DESK_ONE, HOME_BG_VIDEO, WEBSITE_VIDEO } from '../../public/exporter';
 import Footer from '@/components/website/footer';
 import Mobile from '@/components/website/mobile';
 import WebsiteView from '@/components/website/websiteView';
+import WebsiteModal from '@/components/website/websiteModal';
+import WebFrameMobile from '@/components/website/webFrameMobile';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,7 +26,7 @@ export default function Home() {
   return (
     <div className="w-full  overflow-x-hidden   h-full">
       <HomeView />
-      <div className="w-screen overflow-x-hidden    hidden xl:block  relative">
+      <div className="w-screen overflow-x-hidden  hidden xl:block  relative">
         <video
           className="w-screen video h-full absolute object-contain"
           loop
@@ -35,10 +37,9 @@ export default function Home() {
           <source src={HOME_BG_VIDEO} type="video/mp4" />
         </video>
         <WebsiteView />
-        {/* <MobilePhoneView /> */}
       </div>
-      <div className="block flex my-[7vh] justify-center items-center px-auto xl:hidden">
-        <Mobile height="h-[45.46vh]" width="w-[50vw]" />
+      <div className=" block my-[10vh] xl:hidden">
+        <WebFrameMobile />
       </div>
       <div className="about">
         <div className=" w-screen hidden xl:flex h-screen z-10  relative items-center justify-center bg-cover bg-no-repeat bg-info-bg">
@@ -53,6 +54,7 @@ export default function Home() {
           <div className="px-20  w-full  mx-auto max-w-[1440px] md:pt-[9vh] lg:pt-[112px] xl:pt-10 pb-[112px]">
             <Platform />
           </div>
+          x
         </div>
         <div className="block mt-14 lg:hidden">
           <PlatformMobile />

@@ -3,11 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import FormHeader from '@/components/molecules/formHeader';
 import Form from '@/components/organisms/form';
-import {
-  FRAME_TOP,
-  FRAME_LEFT,
-  FRAME_RIGHT,
-} from '../../../../public/exporter';
+
 const FormView = () => {
   return (
     <div className="bg-info-bg bg-cover bg-no-repeat">

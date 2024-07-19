@@ -1,19 +1,31 @@
 import Image from 'next/image';
 import React, { memo } from 'react';
-import { PLATFORM } from '../../../../public/exporter';
+import { PLANNING, PLATFORM } from '../../../../public/exporter';
 import { padOrTrimString } from '@/utility/contants';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 export type IPlatformCardProps = {
   title: string;
   description: string;
+  illustration: string | StaticImport;
 };
 
-const PlatformCard: React.FC<IPlatformCardProps> = ({ title, description }) => {
+const PlatformCard: React.FC<IPlatformCardProps> = ({
+  title,
+  description,
+  illustration,
+}) => {
   return (
     <div className="bg-[#272727] h-[284px]  cursor-pointer relative flex-1 px-20 rounded-lg shadow-custom py-[30px] transition-all ease-in-out duration-700 hover:flex-[2] group">
       <div className="flex flex-col items-center justify-center h-full">
-        {/* <Image width={230} height={138} src={PLATFORM} alt="" /> */}
-        <p className="mt-6 text-2xl whitespace-pre  text-center text-white font-semibold line-clamp-2">
+        <Image
+          width={170}
+          className="bg-opacity-0"
+          height={158}
+          src={illustration}
+          alt=""
+        />
+        <p className="mt-6 text-2xl w-[10rem] text-center text-white font-semibold">
           {`${padOrTrimString(title)}`}
         </p>
       </div>

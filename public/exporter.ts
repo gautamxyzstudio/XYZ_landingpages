@@ -30,11 +30,23 @@ import UFO from './ufo.svg';
 import MOBILE_SEC from './mobileSec.svg';
 import MOBILE_THIRD from './mobileThird.svg';
 import FRAME_BOTTOM from './frame-bottom.svg';
-import DESK_ONE from './deskOne.jpg';
-import DESK_TWO from './deskTwo.jpg';
+import DESK_ONE from './deskOne.svg';
+import DESK_TWO from './deskTwo.svg';
+import PLANNING from './planning.svg';
+import DESIGN from './design.svg';
+import DEVELOPMENT from './development.svg';
+import TESTING from './testing.svg';
+import DEPLOYMENT from './deployment.svg';
+import MAINTENANCE from './maintenance.svg';
 export {
   LOGO,
   MOBILE_SEC,
+  MAINTENANCE,
+  PLANNING,
+  DEPLOYMENT,
+  DEVELOPMENT,
+  TESTING,
+  DESIGN,
   MOBILE_THIRD,
   DESK_ONE,
   DESK_TWO,

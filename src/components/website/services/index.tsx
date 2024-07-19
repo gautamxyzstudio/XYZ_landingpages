@@ -8,11 +8,14 @@ import AstronautTab from '@/components/organisms/astronautServiceView';
 import ServicesContentTab from '@/components/organisms/servicesContentTab';
 import { chau_philomene } from '@/ui/fonts';
 import { throttle } from '@/utility/contants';
+import { CreationData } from '@/utility/mockdata';
+import './styles.css'; // Import the CSS file
 
 const Services = () => {
   const sliderRef = useRef<Slider | null>(null);
   const [sliderIndex, updateSliderIndex] = useState<number>(0);
   const [clickable, updateIsClickable] = useState<boolean>(true);
+
   // Function to change the slider index
   const changeTab = (type: 'increment' | 'decrement') => {
     if (clickable === true) {
@@ -34,13 +37,13 @@ const Services = () => {
   const settings = {
     dots: false,
     arrows: false,
-    centerMode: true,
+    centerMode: false,
     infinite: false,
     initialSlide: 0,
     rows: 1,
     slidesPerRow: 1,
     speed: 500,
-    centerPadding: '0px',
+    adaptiveHeight: false, // Disable adaptive height
     slidesToShow: 1,
     easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
     vertical: true,
@@ -55,7 +58,7 @@ const Services = () => {
           <p
             className={`text-orange ${chau_philomene.className} font-bold leading-44px text-4xl`}
           >
-            Services
+            Top Reasons
           </p>
           <svg
             className="md:mx-6"
@@ -74,10 +77,10 @@ const Services = () => {
           </svg>
           <div>
             <p className="text-white leading-38px text-3xl font-medium">
-              Fusion of creativity and
+              Choose XYZ Studio as
             </p>
             <p className="text-white leading-38px text-3xl font-medium">
-              functionality
+              your Web Development Company
             </p>
           </div>
         </div>
@@ -106,11 +109,11 @@ const Services = () => {
                 astronautWidth={192}
               />
             </div>
-            <div className="slider-container flex">
+            <div className="slider-container">
               <Slider ref={sliderRef} {...settings}>
-                {[0, 1, 2].map((index) => (
+                {CreationData.map((item, index) => (
                   <div key={index}>
-                    <ServicesContentTab />
+                    <ServicesContentTab item={item} />
                   </div>
                 ))}
               </Slider>
