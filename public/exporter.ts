@@ -38,9 +38,13 @@ import DEVELOPMENT from './development.svg';
 import TESTING from './testing.svg';
 import DEPLOYMENT from './deployment.svg';
 import MAINTENANCE from './maintenance.svg';
+import LOGO_TOP from './logoTop.png';
+import LOGO_BOTTOM from './logoBottom.png';
 export {
   LOGO,
   MOBILE_SEC,
+  LOGO_TOP,
+  LOGO_BOTTOM,
   MAINTENANCE,
   PLANNING,
   DEPLOYMENT,

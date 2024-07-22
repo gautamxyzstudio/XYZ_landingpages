@@ -19,15 +19,15 @@ const PlatformCard: React.FC<IPlatformCardProps> = ({
     <div className="bg-[#272727] h-[284px]  cursor-pointer relative flex-1 px-20 rounded-lg shadow-custom py-[30px] transition-all ease-in-out duration-700 hover:flex-[2] group">
       <div className="flex flex-col items-center justify-center h-full">
         <Image
-          width={170}
+          width={125}
           className="bg-opacity-0"
-          height={158}
+          height={125}
           src={illustration}
           alt=""
         />
-        <p className="mt-6 text-2xl w-[10rem] text-center text-white font-semibold">
+        <h3 className="mt-6 text-2xl w-[10rem] text-center text-white font-semibold">
           {`${padOrTrimString(title)}`}
-        </p>
+        </h3>
       </div>
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100  px-6 flex justify-center items-center rounded-lg bg-white bg-opacity-100 transition-opacity duration-700">
         <div className="w-full h-full flex justify-center items-center">

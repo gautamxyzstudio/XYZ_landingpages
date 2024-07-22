@@ -15,7 +15,7 @@ const ServiceCard: React.FC<IServiceCardProps> = ({ title, des }) => {
           src={MOBILE_DEV}
           alt="Mobile"
         />
-        <p className="ml-4 text-xl text-white font-medium">{title}</p>
+        <h4 className="ml-4 text-xl text-white font-medium">{title}</h4>
       </div>
       <p className="mt-4 text-white text-16px leading-6">{des}</p>
     </div>

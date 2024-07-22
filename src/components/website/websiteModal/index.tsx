@@ -25,11 +25,6 @@ const WebsiteModal: React.FC<IWebsiteModalProps> = ({
   type,
 }) => {
   const [browser, setBrowser] = useState<string | null>(null);
-  const imgStyles =
-    browser === 'chrome'
-      ? 'absolute w-[75%] h-[90%]  bottom-[7%]    rounded-[5px]'
-      : 'absolute w-[79%] h-[90%]  bottom-[7%] rounded-[5px]';
-
   useEffect(() => {
     setBrowser(detectBrowser());
   }, []);
@@ -39,7 +34,7 @@ const WebsiteModal: React.FC<IWebsiteModalProps> = ({
     <>
       {type === 'video' && (
         <div
-          className={`relative ${height}  ${width} flex flex-col items-center justify-center overflow-hidden`}
+          className={`relative ${height}  ${width} flex flex-col  green items-center justify-center overflow-hidden`}
         >
           <div className="absolute top-0 left-0 w-full h-full">
             <Image
@@ -52,7 +47,7 @@ const WebsiteModal: React.FC<IWebsiteModalProps> = ({
           </div>
 
           <video
-            className="absolute w-[90%] h-[90%]  bottom-[7%] object-contain top-2% ml-[0.5%] rounded-2xl"
+            className="absolute w-[90%] h-[90%]   bottom-[7%] object-contain top-2% ml-[0.5%] rounded-2xl"
             playsInline
             autoPlay
             muted
@@ -60,22 +55,6 @@ const WebsiteModal: React.FC<IWebsiteModalProps> = ({
           >
             <source src={src} type="video/mp4" />
           </video>
-        </div>
-      )}
-      {type === 'image' && (
-        <div
-          className={`relative ${height}  ${width} flex flex-col items-center justify-center overflow-hidden`}
-        >
-          <div className="relative overflow-hidden top-0 left-0 w-full h-full">
-            <Image
-              src={LAPTOP_FRAME}
-              alt=""
-              fill={true}
-              objectFit="contain"
-              priority
-            />
-          </div>
-          <Image src={src} alt="" className={imgStyles} />
         </div>
       )}
     </>

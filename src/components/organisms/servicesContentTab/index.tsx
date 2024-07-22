@@ -16,9 +16,9 @@ type IServicesContentTab = {
 const ServicesContentTab: React.FC<IServicesContentTab> = ({ item }) => {
   return (
     <div className="ml-94px xl:mb-94px">
-      <h1 className="text-yellow  leading-10 text-36px font-semibold">
+      <h3 className="text-yellow  leading-10 text-36px font-semibold">
         {item.title}
-      </h1>
+      </h3>
       <p className="mt-3 text-xl text-wrap leading-7 text-white">
         {item.description}
       </p>

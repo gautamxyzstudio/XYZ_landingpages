@@ -9,21 +9,121 @@ import ServicesContentTab from '@/components/organisms/servicesContentTab';
 import { chau_philomene } from '@/ui/fonts';
 import { throttle } from '@/utility/contants';
 import { CreationData } from '@/utility/mockdata';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import './styles.css'; // Import the CSS file
 
-const Services = () => {
+type IServicesProps = {
+  width: number;
+  height: number;
+  astronautHeight: number;
+  astronautWidth: number;
+};
+
+const Services: React.FC<IServicesProps> = ({
+  width,
+  height,
+  astronautHeight,
+  astronautWidth,
+}) => {
   const sliderRef = useRef<Slider | null>(null);
   const [sliderIndex, updateSliderIndex] = useState<number>(0);
   const [clickable, updateIsClickable] = useState<boolean>(true);
+  const stepOneRef = useRef<HTMLImageElement | null>(null);
+  const stepTwoRef = useRef<HTMLImageElement | null>(null);
+  const stepThreeRef = useRef<HTMLImageElement | null>(null);
+
+  useGSAP(() => {
+    gsap.set(stepOneRef.current, {
+      top: '-75%',
+      opacity: 1,
+    });
+    gsap.set(stepTwoRef.current, {
+      scale: 0.4,
+      x: width / 2,
+      y: height / 5,
+      opacity: 1,
+    });
+    gsap.set(stepThreeRef.current, {
+      scale: 0.35,
+      x: -width / 2,
+      y: height / 8,
+      opacity: 1,
+    });
+  });
 
   // Function to change the slider index
   const changeTab = (type: 'increment' | 'decrement') => {
     if (clickable === true) {
       if (type === 'increment' && sliderIndex < 2) {
         updateSliderIndex(sliderIndex + 1);
+        if (stepOneRef.current) {
+          if (sliderIndex === 0) {
+            gsap.to(stepOneRef.current, {
+              scale: 0.4,
+              x: width / 2,
+              y: height,
+            });
+            gsap.to(stepTwoRef.current, {
+              x: -width / 2,
+            });
+            gsap.to(stepThreeRef.current, {
+              scale: 0.8,
+              x: 0,
+              y: 0,
+              top: '-90%',
+            });
+          } else if (sliderIndex === 1) {
+            gsap.to(stepOneRef.current, {
+              x: -width / 2,
+            });
+            gsap.to(stepTwoRef.current, {
+              scale: 1,
+              x: 0,
+              y: 0,
+              top: '-75%',
+            });
+            gsap.to(stepThreeRef.current, {
+              scale: 0.4,
+              x: width / 2,
+              y: height,
+            });
+          }
+        }
         sliderRef.current?.slickGoTo(sliderIndex + 1);
       } else if (type === 'decrement' && sliderIndex > 0) {
         updateSliderIndex(sliderIndex - 1);
+        if (stepOneRef.current) {
+          if (sliderIndex === 1) {
+            gsap.to(stepOneRef.current, {
+              scale: 1,
+              x: 0,
+              y: 0,
+            });
+            gsap.to(stepTwoRef.current, {
+              x: width / 2,
+            });
+            gsap.to(stepThreeRef.current, {
+              scale: 0.35,
+              x: -width / 2,
+              y: height,
+            });
+          } else if (sliderIndex === 2) {
+            gsap.to(stepOneRef.current, {
+              x: width / 2,
+            });
+            gsap.to(stepTwoRef.current, {
+              scale: 0.4,
+              x: -width / 2,
+              y: height,
+            });
+            gsap.to(stepThreeRef.current, {
+              scale: 0.9,
+              x: 0,
+              y: 0,
+            });
+          }
+        }
         sliderRef.current?.slickGoTo(sliderIndex - 1);
       }
       updateIsClickable(false);
@@ -50,16 +150,18 @@ const Services = () => {
     slidesToScroll: 1,
   };
 
+  console.log(sliderIndex, 'SLIDER INDEX');
+
   return (
     <div className="pt-12">
       <div>
         {/* Header Section */}
         <div className="flex flex-row items-center justify-center">
-          <p
+          <h2
             className={`text-orange ${chau_philomene.className} font-bold leading-44px text-4xl`}
           >
             Top Reasons
-          </p>
+          </h2>
           <svg
             className="md:mx-6"
             xmlns="http://www.w3.org/2000/svg"
@@ -76,39 +178,29 @@ const Services = () => {
             />
           </svg>
           <div>
-            <p className="text-white leading-38px text-3xl font-medium">
+            <h2 className="text-white leading-38px text-3xl font-medium">
               Choose XYZ Studio as
-            </p>
-            <p className="text-white leading-38px text-3xl font-medium">
+            </h2>
+            <h2 className="text-white leading-38px text-3xl font-medium">
               your Web Development Company
-            </p>
+            </h2>
           </div>
         </div>
         {/* Content Section */}
         <div className="pt-94px">
           <div className="flex justify-center lg:mb-[100px] xl:mb-0  xl:mt-0 items-center flex-row">
-            <div className="hidden xl:flex">
-              <AstronautTab
-                onPressNext={() => changeTab('increment')}
-                onPressPrev={() => changeTab('decrement')}
-                index={sliderIndex}
-                height={228}
-                width={456}
-                astronautHeight={340}
-                astronautWidth={256}
-              />
-            </div>
-            <div className="hidden lg:flex xl:hidden">
-              <AstronautTab
-                onPressNext={() => changeTab('increment')}
-                onPressPrev={() => changeTab('decrement')}
-                index={sliderIndex}
-                height={168.75}
-                width={342}
-                astronautHeight={255}
-                astronautWidth={192}
-              />
-            </div>
+            <AstronautTab
+              onPressNext={() => changeTab('increment')}
+              onPressPrev={() => changeTab('decrement')}
+              index={sliderIndex}
+              height={228}
+              width={456}
+              astronautHeight={340}
+              astronautWidth={256}
+              refFirst={stepOneRef}
+              refSecond={stepTwoRef}
+              refThird={stepThreeRef}
+            />
             <div className="slider-container">
               <Slider ref={sliderRef} {...settings}>
                 {CreationData.map((item, index) => (

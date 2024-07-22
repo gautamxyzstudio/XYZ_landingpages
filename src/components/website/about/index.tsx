@@ -30,11 +30,11 @@ const About = () => {
   return (
     <div className="max-w-[1240px] overflow-hidden aboutMain relative py-8 pl-4 pr-4 sm:pr-4 lg:pr-0 sm:py-10 sm:pl-10 mx-6 sm:mx-20 bg-dark rounded-4xl">
       <div className="flex  flex-row justify-center  items-center">
-        <p
+        <h2
           className={`text-orange ${chau_philomene.className} text-xl leading-7  sm:text-2xl sm:leading-8 md:text-3xl md:text-10 lg:text-4xl lg:leading-44px `}
         >
           About Us
-        </p>
+        </h2>
         <div className="block md:hidden">
           <svg
             className="mx-3 sm-20 md:mx-6"
@@ -70,12 +70,12 @@ const About = () => {
           </svg>
         </div>
         <div>
-          <p className="text-white text-xs leading-5 sm:text-xl sm:leading-6  md:text-2xl  md:leading-8 lg:text-3xl lg:leading-9 font-medium">
+          <h2 className="text-white text-xs leading-5 sm:text-xl sm:leading-6  md:text-2xl  md:leading-8 lg:text-3xl lg:leading-9 font-medium">
             Cosmic Companion in the
-          </p>
-          <p className="text-white text-xs leading-5 sm:text-xl sm:leading-6  md:text-2xl  md:leading-8 lg:text-3xl lg:leading-9 font-medium">
+          </h2>
+          <h2 className="text-white text-xs leading-5 sm:text-xl sm:leading-6  md:text-2xl  md:leading-8 lg:text-3xl lg:leading-9 font-medium">
             Digital Odyssey
-          </p>
+          </h2>
         </div>
       </div>
 

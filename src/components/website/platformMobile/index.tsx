@@ -1,7 +1,8 @@
 'use client';
 import FormHeader from '@/components/molecules/formHeader';
 import PlatformCardMobile from '@/components/organisms/PlatformCardMobile';
-import React, { useMemo } from 'react';
+import { platformData } from '@/utility/mockdata';
+import React, { memo, useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 const PlatformMobile = () => {
   return (
@@ -18,33 +19,20 @@ const PlatformMobile = () => {
           centeredSlides={true}
           updateOnWindowResize={true}
           cssMode
+          autoHeight
           spaceBetween={'32vw'}
           slidesPerView={'auto'}
           pagination={true}
-          className="mySwiper"
         >
-          <SwiperSlide>
-            <PlatformCardMobile />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PlatformCardMobile />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PlatformCardMobile />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PlatformCardMobile />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PlatformCardMobile />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PlatformCardMobile />
-          </SwiperSlide>
+          {platformData.map((item) => (
+            <SwiperSlide key={item.id}>
+              <PlatformCardMobile {...item} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>
   );
 };
 
-export default PlatformMobile;
+export default memo(PlatformMobile);

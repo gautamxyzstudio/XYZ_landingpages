@@ -76,7 +76,7 @@ const HomeView = () => {
             src={UFO}
             alt="UFO"
           />
-          <p
+          <h1
             ref={headingRef}
             className={`text-center mt-[6vh]  scale-[0.5] opacity-0 text-[7.39vh] leading-[10.43vh] text-white ${chau_philomene.className}`}
           >
@@ -85,7 +85,7 @@ const HomeView = () => {
             Our Mission Control: Launching
             <br />
             Web Development Success Together!"
-          </p>
+          </h1>
           <p
             ref={subHeadingRef}
             className="mt-[3.91vh] hidden xl:block  text-center scale-[0.5] opacity-0  text-[2.6vh] leading-[3.91vh] text-white"
@@ -117,12 +117,12 @@ const HomeView = () => {
       <div className="pl-[24px] block xl:hidden  pr-[24px] sm:pl-20  sm:pr-20 md:pl-20 md:pr-20 lg:pl-20 lg:pl-20">
         <Header />
         <div>
-          <p
+          <h1
             className={`text-center block xl:hidden mt-[81px] lg:mt-[110px]  text-[6vw] text-white ${chau_philomene.className}`}
           >
             "Your <span className="text-orange">Vision,</span> Our Mission
             Control: Launching Web Development Success Together!
-          </p>
+          </h1>
 
           <p className="mt-[3.91vh] block xl:hidden  text-center  text-[2.1vh] leading-[3.1vh] text-white">
             Where Exploration Inspires Technology : XYZ Studio is your

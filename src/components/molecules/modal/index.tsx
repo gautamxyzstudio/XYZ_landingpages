@@ -45,7 +45,7 @@ const CustomModal = () => {
       const timer = setTimeout(() => {
         updateIsModalVisible(true);
         sessionStorage.setItem('modalShown', 'true');
-      }, 1200);
+      }, 3000);
 
       return () => clearTimeout(timer);
     }
@@ -73,11 +73,11 @@ const CustomModal = () => {
     <div className={isModalVisible ? dynamicStyles : dynamicStyles2}>
       <div className="w-[846px] h-[565px] flex overflow-hidden rounded-lg bg-[#FAFAFA]">
         <div className="w-[55%] p-6">
-          <p
+          <h1
             className={`text-blackText text-[24px] leading-7 ${chau_philomene.className}`}
           >
             Get in Touch
-          </p>
+          </h1>
           <p className="text-grey font-regular text-xs leading-6">
             Feel free to drop your details
           </p>

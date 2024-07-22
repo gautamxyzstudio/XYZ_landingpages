@@ -10,15 +10,13 @@ import ServicesMobile from '@/components/website/servicesMobile';
 import Platform from '@/components/website/platform';
 import PlatformMobile from '@/components/website/platformMobile';
 import HomeView from '@/components/website/homeView';
-import MobilePhoneView from '@/components/website/mobilePhonesView';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { DESK_ONE, HOME_BG_VIDEO, WEBSITE_VIDEO } from '../../public/exporter';
+import { HOME_BG_VIDEO } from '../../public/exporter';
 import Footer from '@/components/website/footer';
-import Mobile from '@/components/website/mobile';
 import WebsiteView from '@/components/website/websiteView';
-import WebsiteModal from '@/components/website/websiteModal';
 import WebFrameMobile from '@/components/website/webFrameMobile';
+import Modal from '@/components/molecules/modal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,6 +24,9 @@ export default function Home() {
   return (
     <div className="w-full  overflow-x-hidden   h-full">
       <HomeView />
+      <div>
+        <Modal />
+      </div>
       <div className="w-screen overflow-x-hidden  hidden xl:block  relative">
         <video
           className="w-screen video h-full absolute object-contain"
@@ -64,7 +65,22 @@ export default function Home() {
           <Info />
         </div>
         <div className="bg-contain mx-auto max-w-[1440px] px-[70px] hidden lg:block bg-main-bg">
-          <Services />
+          <div className="hidden  xl:flex">
+            <Services
+              height={228}
+              width={456}
+              astronautHeight={340}
+              astronautWidth={256}
+            />
+          </div>
+          <div className="hidden lg:flex xl:hidden">
+            <Services
+              height={168.75}
+              width={342}
+              astronautHeight={255}
+              astronautWidth={192}
+            />
+          </div>
         </div>
         <div className="block lg:hidden">
           <ServicesMobile />

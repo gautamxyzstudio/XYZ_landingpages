@@ -1,47 +1,42 @@
 'use client';
-import React, { ReactNode, useEffect, useMemo, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { LOADING } from '../../../../public/exporter';
-import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
+import { useLenis } from '@studio-freight/react-lenis';
 
 const Loading = ({ children }: { children: ReactNode }) => {
-  const [showSplash, setShowSplash] = useState(true);
-
-  // Use the useLenis hook to interact with Lenis
-  useLenis(
-    (lenis) => {
-      if (showSplash) {
-        lenis.stop();
-      } else {
-        lenis.start();
-      }
-    },
-    [showSplash]
-  );
+  const loaderElement = useRef<HTMLDivElement | null>(null);
+  const parentElement = useRef<HTMLDivElement | null>(null);
+  const childrenElement = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShowSplash(false);
-    }, 1000);
+    if (loaderElement.current && parentElement.current) {
+      const timer = setTimeout(() => {
+        if (loaderElement.current && parentElement.current) {
+          loaderElement.current.style.display = 'none';
+          parentElement.current.style.display = 'unset';
+        }
+      }, 1000);
 
-    return () => {
-      clearTimeout(timeout);
-    };
+      return () => clearTimeout(timer);
+    }
   }, []);
+
   return (
-    <div>
-      {showSplash && (
-        <div className="absolute flex bg-contain bg-main-bg justify-center items-center z-50 w-full h-full">
-          <video
-            className="w-[240px] bg-opacity-0 video h-[240px] object-contain"
-            loop
-            muted
-            autoPlay
-            playsInline
-          >
-            <source src={LOADING} type="video/mp4" />
-          </video>
-        </div>
-      )}
+    <div className="overflow-hidden h-screen" ref={parentElement}>
+      <div
+        ref={loaderElement}
+        className="absolute  flex bg-contain bg-main-bg justify-center items-center z-50 w-full h-full"
+      >
+        <video
+          className="w-[240px] h-[240px] object-contain"
+          loop
+          muted
+          autoPlay
+          playsInline
+        >
+          <source src={LOADING} type="video/mp4" />
+        </video>
+      </div>
       {children}
     </div>
   );

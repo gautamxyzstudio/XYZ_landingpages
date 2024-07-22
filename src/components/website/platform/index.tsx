@@ -24,11 +24,11 @@ const Platform = () => {
   return (
     <div>
       <div className="flex flex-row items-center justify-center">
-        <p
+        <h2
           className={`text-orange ${chau_philomene.className} font-bold leading-44px text-4xl`}
         >
           Our Methodology
-        </p>
+        </h2>
         <svg
           className="md:mx-6"
           xmlns="http://www.w3.org/2000/svg"
@@ -45,9 +45,9 @@ const Platform = () => {
           />
         </svg>
         <div>
-          <p className="text-white leading-38px text-3xl font-medium">
+          <h2 className="text-white leading-38px text-3xl font-medium">
             Web Development Process
-          </p>
+          </h2>
           {/* <p className="text-white leading-38px text-3xl font-medium">
             Web/Mobile/Tablet
           </p> */}

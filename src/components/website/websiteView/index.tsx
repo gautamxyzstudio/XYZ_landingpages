@@ -36,7 +36,7 @@ const WebsiteView = () => {
       scrollTrigger: {
         trigger: '.website',
         start: 'top 65%',
-        end: 'top 0%',
+        end: 'top 10%',
         scrub: true,
       },
       rotate: 5,
@@ -90,7 +90,7 @@ const WebsiteView = () => {
       <div className="relative webThree top-0 left-0 z-100">
         <WebsiteModal
           height={'h-[55.55vh]'}
-          width={'w-[55.55vw]'}
+          width={'w-[100.55vh]'}
           src={WEBSITE_VIDEO}
           type="video"
         />

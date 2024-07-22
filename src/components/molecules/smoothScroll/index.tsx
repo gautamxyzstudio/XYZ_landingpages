@@ -1,19 +1,26 @@
 'use client';
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
-import React, { useEffect } from 'react';
-
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
-  const lenis = useLenis();
+  const lenisRef = useRef<any>(null);
+
   useEffect(() => {
-    if (performance.navigation.type === 1 && lenis) {
-      lenis.scrollTo(0, { duration: 0, force: true });
+    function update(time: number) {
+      lenisRef.current?.lenis?.raf(time * 1000);
     }
-  }, [lenis]);
+
+    gsap.ticker.add(update);
+    gsap.ticker.lagSmoothing(0);
+    return () => {
+      gsap.ticker.remove(update);
+    };
+  }, []);
+
   return (
     <ReactLenis
+      ref={lenisRef}
       options={{
-        duration: 1.5,
-
         smoothWheel: true,
       }}
       root

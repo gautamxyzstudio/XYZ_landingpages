@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import { chau_philomene } from '@/ui/fonts';
 import Image from 'next/image';
 import {
@@ -16,106 +16,84 @@ const AstronautTab: React.FC<IAstronautTabProps> = ({
   onPressPrev,
   astronautHeight,
   astronautWidth,
+  refFirst,
+  refSecond,
+  refThird,
   width,
   height,
   index,
 }) => {
-  const stepOneRef = useRef<HTMLImageElement | null>(null);
-  const stepTwoRef = useRef<HTMLImageElement | null>(null);
-  const stepThreeRef = useRef<HTMLImageElement | null>(null);
+  // const nextHandler = () => {
+  //   if (stepOneRef.current) {
+  //     if (index === 0) {
+  //       gsap.to(stepOneRef.current, {
+  //         scale: 0.4,
+  //         x: width / 2,
+  //         y: height,
+  //       });
+  //       gsap.to(stepTwoRef.current, {
+  //         x: -width / 2,
+  //       });
+  //       gsap.to(stepThreeRef.current, {
+  //         scale: 0.8,
+  //         x: 0,
+  //         y: 0,
+  //         top: '-90%',
+  //       });
+  //     } else if (index === 1) {
+  //       gsap.to(stepOneRef.current, {
+  //         x: -width / 2,
+  //       });
+  //       gsap.to(stepTwoRef.current, {
+  //         scale: 1,
+  //         x: 0,
+  //         y: 0,
+  //         top: '-75%',
+  //       });
+  //       gsap.to(stepThreeRef.current, {
+  //         scale: 0.4,
+  //         x: width / 2,
+  //         y: height,
+  //       });
+  //     }
+  //   }
+  //   onPressNext();
+  // };
 
-  useGSAP(() => {
-    gsap.set(stepOneRef.current, {
-      top: '-75%',
-      opacity: 1,
-    });
-    gsap.set(stepTwoRef.current, {
-      scale: 0.4,
-      x: width / 2,
-      y: height / 5,
-      opacity: 1,
-    });
-    gsap.set(stepThreeRef.current, {
-      scale: 0.35,
-      x: -width / 2,
-      y: height / 8,
-      opacity: 1,
-    });
-  });
-
-  console.log(index);
-
-  const nextHandler = () => {
-    if (stepOneRef.current) {
-      if (index === 0) {
-        gsap.to(stepOneRef.current, {
-          scale: 0.4,
-          x: width / 2,
-          y: height,
-        });
-        gsap.to(stepTwoRef.current, {
-          x: -width / 2,
-        });
-        gsap.to(stepThreeRef.current, {
-          scale: 0.8,
-          x: 0,
-          y: 0,
-          top: '-90%',
-        });
-      } else if (index === 1) {
-        gsap.to(stepOneRef.current, {
-          x: -width / 2,
-        });
-        gsap.to(stepTwoRef.current, {
-          scale: 1,
-          x: 0,
-          y: 0,
-          top: '-75%',
-        });
-        gsap.to(stepThreeRef.current, {
-          scale: 0.4,
-          x: width / 2,
-          y: height,
-        });
-      }
-    }
-    onPressNext();
-  };
-
-  const prevHandler = () => {
-    if (stepOneRef.current) {
-      if (index === 1) {
-        gsap.to(stepOneRef.current, {
-          scale: 1,
-          x: 0,
-          y: 0,
-        });
-        gsap.to(stepTwoRef.current, {
-          x: width / 2,
-        });
-        gsap.to(stepThreeRef.current, {
-          scale: 0.35,
-          x: -width / 2,
-          y: height,
-        });
-      } else if (index === 2) {
-        gsap.to(stepOneRef.current, {
-          x: width / 2,
-        });
-        gsap.to(stepTwoRef.current, {
-          scale: 0.4,
-          x: -width / 2,
-          y: height,
-        });
-        gsap.to(stepThreeRef.current, {
-          scale: 0.9,
-          x: 0,
-          y: 0,
-        });
-      }
-    }
-    onPressPrev();
-  };
+  // const prevHandler = () => {
+  //   if (stepOneRef.current) {
+  //     if (index === 1) {
+  //       gsap.to(stepOneRef.current, {
+  //         scale: 1,
+  //         x: 0,
+  //         y: 0,
+  //       });
+  //       gsap.to(stepTwoRef.current, {
+  //         x: width / 2,
+  //       });
+  //       gsap.to(stepThreeRef.current, {
+  //         scale: 0.35,
+  //         x: -width / 2,
+  //         y: height,
+  //       });
+  //     } else if (index === 2) {
+  //       gsap.to(stepOneRef.current, {
+  //         x: width / 2,
+  //       });
+  //       gsap.to(stepTwoRef.current, {
+  //         scale: 0.4,
+  //         x: -width / 2,
+  //         y: height,
+  //       });
+  //       gsap.to(stepThreeRef.current, {
+  //         scale: 0.9,
+  //         x: 0,
+  //         y: 0,
+  //       });
+  //     }
+  //   }
+  //   onPressPrev();
+  // };
 
   const getTitle = (index: number) => {
     switch (index) {
@@ -123,10 +101,10 @@ const AstronautTab: React.FC<IAstronautTabProps> = ({
         return 'Creation';
       }
       case 1: {
-        return 'Development';
+        return 'Design';
       }
       case 2: {
-        return 'Campaign';
+        return 'Development';
       }
     }
   };
@@ -141,15 +119,15 @@ const AstronautTab: React.FC<IAstronautTabProps> = ({
           borderRadius: `${height}px ${height}px 0 0`,
         }}
       >
-        <p
+        <h3
           className={`text-white ${chau_philomene.className} bottom-5 w-full self-center text-40px leading-48px absolute`}
         >
           {getTitle(index)}
-        </p>
+        </h3>
         <Image
           height={astronautHeight}
           width={astronautWidth}
-          ref={stepOneRef}
+          ref={refFirst}
           className="absolute opacity-0"
           src={ASTRONAUT_PAINTING}
           alt="Astronaut Painting"
@@ -159,7 +137,7 @@ const AstronautTab: React.FC<IAstronautTabProps> = ({
           src={ASTRONAUT_SPEAKINGS}
           height={astronautHeight}
           width={astronautWidth}
-          ref={stepTwoRef}
+          ref={refSecond}
           alt="Astronaut Painting"
         />
         <Image
@@ -167,19 +145,19 @@ const AstronautTab: React.FC<IAstronautTabProps> = ({
           height={astronautHeight}
           width={astronautWidth}
           src={ASTRONAUT_TYPING}
-          ref={stepThreeRef}
+          ref={refThird}
           alt="Astronaut Painting"
         />
       </div>
       <div className="mt-[80px]">
         <SliderButtons
           index={index}
-          onPressPrev={prevHandler}
-          onPressNext={nextHandler}
+          onPressPrev={onPressPrev}
+          onPressNext={onPressNext}
         />
       </div>
     </div>
   );
 };
 
-export default AstronautTab;
+export default memo(AstronautTab);

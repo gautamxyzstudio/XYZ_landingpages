@@ -9,11 +9,11 @@ const FormHeader: React.FC<IFormHeaderProps> = ({
 }) => {
   return (
     <div className="flex z-10 w-full items-center justify-center flex-row">
-      <p
+      <h2
         className={`text-orange ${chau_philomene.className} text-xl sm:text-xl md:text-2xl lg:text-3xl whitespace-nowrap font-bold xl:text-4xl`}
       >
         {title ?? 'Contact Us'}
-      </p>
+      </h2>
       <div className="block lg:hidden">
         <svg
           className="mx-3 sm-20 md:mx-6"
