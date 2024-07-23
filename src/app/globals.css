@@ -30,10 +30,6 @@ body{
 }
 
 
-.bg{
-  background-color: red;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;

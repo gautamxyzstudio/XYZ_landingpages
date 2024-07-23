@@ -71,10 +71,10 @@ const About = () => {
         </div>
         <div>
           <h2 className="text-white text-xs leading-5 sm:text-xl sm:leading-6  md:text-2xl  md:leading-8 lg:text-3xl lg:leading-9 font-medium">
-            Cosmic Companion in the
+            Mobile App development Company
           </h2>
           <h2 className="text-white text-xs leading-5 sm:text-xl sm:leading-6  md:text-2xl  md:leading-8 lg:text-3xl lg:leading-9 font-medium">
-            Digital Odyssey
+            in Vancouver
           </h2>
         </div>
       </div>
@@ -82,10 +82,10 @@ const About = () => {
       <div className="mt-10 md:mt-[30px] items-center justify-between flex flex-row">
         <div className="w-full lg:w-6/12">
           <p className="text-white text-xs leading-5 sm:text-base  sm:leading-6 md:text-xl md:leading-6   lg:text-2xl lg:leading-36px font-regular">
-            XYZ Studio is a leading website development company specializing in
-            dynamic, visually stunning websites and web applications. Focusing
-            on innovation and performance, we start with clients’ digital
-            presence.
+            XYZ Studio is a leading website development company in Vancouver,
+            specializing in dynamic, visually stunning websites and web
+            applications. Focusing on innovation and performance, we start with
+            enhancing our clients’ digital presence.
           </p>
           <p className="text-white text-xs leading-5 sm:text-base  sm:leading-6 md:text-xl md:leading-6   lg:text-2xl lg:leading-36px font-regular">
             Powering businesses with cutting-edge technology and seamless user

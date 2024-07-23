@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div className="w-full  overflow-x-hidden   h-full">
       <HomeView />
-      <div>
+      <div className="hidden md:block">
         <Modal />
       </div>
       <div className="w-screen overflow-x-hidden  hidden xl:block  relative">
@@ -91,7 +91,7 @@ export default function Home() {
         className="block mt-[56px] pb-[56px] mx-auto  w-full sm:w-[80%] lg:hidden"
       >
         <FormMobile />
-        <div className="mt-[-132px]  relative">
+        <div className="mt-[-132px]   relative">
           <Form />
         </div>
       </div>

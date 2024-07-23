@@ -28,9 +28,10 @@ const Header = () => {
 
   useGSAP(() => {
     logoTweenRef.current = gsap.to(logoRef.current, {
-      rotate: 180,
+      rotate: 360,
       ease: 'none',
       paused: true,
+      duration: 0.3,
     });
   });
 

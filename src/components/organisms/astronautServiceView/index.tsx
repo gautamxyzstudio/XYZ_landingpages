@@ -1,5 +1,5 @@
 'use client';
-import React, { memo, useEffect, useRef, useState } from 'react';
+import React, { memo } from 'react';
 import { chau_philomene } from '@/ui/fonts';
 import Image from 'next/image';
 import {
@@ -9,8 +9,6 @@ import {
 } from '../../../../public/exporter';
 import SliderButtons from '@/components/molecules/sliderButtons';
 import { IAstronautTabProps } from './types';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 const AstronautTab: React.FC<IAstronautTabProps> = ({
   onPressNext,
   onPressPrev,
@@ -23,78 +21,6 @@ const AstronautTab: React.FC<IAstronautTabProps> = ({
   height,
   index,
 }) => {
-  // const nextHandler = () => {
-  //   if (stepOneRef.current) {
-  //     if (index === 0) {
-  //       gsap.to(stepOneRef.current, {
-  //         scale: 0.4,
-  //         x: width / 2,
-  //         y: height,
-  //       });
-  //       gsap.to(stepTwoRef.current, {
-  //         x: -width / 2,
-  //       });
-  //       gsap.to(stepThreeRef.current, {
-  //         scale: 0.8,
-  //         x: 0,
-  //         y: 0,
-  //         top: '-90%',
-  //       });
-  //     } else if (index === 1) {
-  //       gsap.to(stepOneRef.current, {
-  //         x: -width / 2,
-  //       });
-  //       gsap.to(stepTwoRef.current, {
-  //         scale: 1,
-  //         x: 0,
-  //         y: 0,
-  //         top: '-75%',
-  //       });
-  //       gsap.to(stepThreeRef.current, {
-  //         scale: 0.4,
-  //         x: width / 2,
-  //         y: height,
-  //       });
-  //     }
-  //   }
-  //   onPressNext();
-  // };
-
-  // const prevHandler = () => {
-  //   if (stepOneRef.current) {
-  //     if (index === 1) {
-  //       gsap.to(stepOneRef.current, {
-  //         scale: 1,
-  //         x: 0,
-  //         y: 0,
-  //       });
-  //       gsap.to(stepTwoRef.current, {
-  //         x: width / 2,
-  //       });
-  //       gsap.to(stepThreeRef.current, {
-  //         scale: 0.35,
-  //         x: -width / 2,
-  //         y: height,
-  //       });
-  //     } else if (index === 2) {
-  //       gsap.to(stepOneRef.current, {
-  //         x: width / 2,
-  //       });
-  //       gsap.to(stepTwoRef.current, {
-  //         scale: 0.4,
-  //         x: -width / 2,
-  //         y: height,
-  //       });
-  //       gsap.to(stepThreeRef.current, {
-  //         scale: 0.9,
-  //         x: 0,
-  //         y: 0,
-  //       });
-  //     }
-  //   }
-  //   onPressPrev();
-  // };
-
   const getTitle = (index: number) => {
     switch (index) {
       case 0: {

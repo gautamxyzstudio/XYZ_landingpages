@@ -10,7 +10,6 @@ import {
   STAR_BG,
 } from '../../../../public/exporter';
 import Button from '@/components/atoms/button';
-import { Position } from 'postcss';
 
 // Initial state for the form
 const initialState = {

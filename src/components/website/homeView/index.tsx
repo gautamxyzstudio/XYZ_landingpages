@@ -15,36 +15,50 @@ const HomeView = () => {
   const subHeadingRef = useRef<HTMLParagraphElement | null>(null);
   const buttonDivRef = useRef<HTMLDivElement | null>(null);
   const ufoImageRef = useRef<HTMLImageElement | null>(null);
-  const htmlSourceElement = useRef<HTMLDivElement | null>(null);
   const upperDivRef = useRef<HTMLDivElement | null>(null);
   gsap.registerPlugin(ScrollTrigger);
+
+  const scrollToComp = () => {
+    var comp = document.getElementById('form');
+    var compSec = document.getElementById('formSec');
+    comp?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+    if (compSec) {
+      compSec?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
 
   useGSAP(() => {
     gsap.from(ufoImageRef.current, {
       bottom: 0,
       top: '100%',
       left: 0,
-      delay: 1,
+      delay: 2,
       opacity: 0,
       rotate: 0,
     });
     gsap.to(buttonDivRef.current, {
       opacity: 1,
       scale: 1,
-      delay: 1,
+      delay: 2,
       duration: 1.5,
       ease: 'power3.inOut',
     });
     gsap.to(headingRef.current, {
       opacity: 1,
       scale: 1,
-      delay: 1,
+      delay: 2,
       duration: 1.5,
       ease: 'power3.inOut',
     });
     gsap.to(subHeadingRef.current, {
       opacity: 1,
-      delay: 1,
+      delay: 2,
       scale: 1,
       duration: 1.5,
       ease: 'power3.inOut',
@@ -104,10 +118,10 @@ const HomeView = () => {
           >
             <Button
               width="sm:w-[12.5vw]"
-              height="sm:h-[5.21vh]"
+              height="sm:h-[6.21vh]"
               widthSmall="w-[94px]"
               heightSmall="h-[32px]"
-              onPress={() => console.log('Press')}
+              onPress={() => scrollToComp()}
               buttonType={'orange'}
               title={'Get in touch'}
             />

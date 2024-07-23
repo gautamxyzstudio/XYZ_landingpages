@@ -1,12 +1,10 @@
 'use client';
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { LOADING } from '../../../../public/exporter';
-import { useLenis } from '@studio-freight/react-lenis';
 
 const Loading = ({ children }: { children: ReactNode }) => {
   const loaderElement = useRef<HTMLDivElement | null>(null);
   const parentElement = useRef<HTMLDivElement | null>(null);
-  const childrenElement = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (loaderElement.current && parentElement.current) {
@@ -15,7 +13,7 @@ const Loading = ({ children }: { children: ReactNode }) => {
           loaderElement.current.style.display = 'none';
           parentElement.current.style.display = 'unset';
         }
-      }, 1000);
+      }, 2000);
 
       return () => clearTimeout(timer);
     }
@@ -25,7 +23,7 @@ const Loading = ({ children }: { children: ReactNode }) => {
     <div className="overflow-hidden h-screen" ref={parentElement}>
       <div
         ref={loaderElement}
-        className="absolute  flex bg-contain bg-main-bg justify-center items-center z-50 w-full h-full"
+        className="absolute  flex bg-contain bg-black justify-center items-center z-50 w-full h-full"
       >
         <video
           className="w-[240px] h-[240px] object-contain"

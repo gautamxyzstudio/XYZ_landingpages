@@ -35,14 +35,8 @@ export default function RootLayout({
           >
             <source src={HOME_BG_VIDEO} type="video/mp4" />
           </video>
-
-          {/* <SmoothScroll> */}
           <Loading>{children}</Loading>
-          {/* </SmoothScroll> */}
         </div>
-
-        {/* {children} */}
-        {/* <Footer /> */}
       </body>
     </html>
   );
