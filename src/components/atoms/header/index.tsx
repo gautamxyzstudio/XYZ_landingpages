@@ -1,7 +1,7 @@
 'use client';
 import React, { RefObject, memo, useRef } from 'react';
 import Image from 'next/image';
-import { LOGO, LOGO_BOTTOM, LOGO_TOP } from '../../../../public/exporter';
+import { LOGO_BOTTOM, LOGO_TOP } from '../../../../public/exporter';
 import Button from '../button';
 import { scrollIntoView } from 'seamless-scroll-polyfill';
 import { useRouter } from 'next/navigation';
