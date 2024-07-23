@@ -11,7 +11,7 @@ const Footer = () => {
     <div className="flex-wrap  mx-auto max-w-[1440px]    py-6 px-6 sm:py-12 sm:px-20 flex sm:justify-between flex-row">
       <div className="hidden sm:block">
         <Image
-          className="w-[41px] resize-contain h-[41px]  sm:w-[81px] sm:h-[81px]"
+          className="w-[41px] resize-contain h-[41px]  sm:w-[100px] sm:h-[50px]"
           src={LOGO_WHITE}
           alt="LOGO"
         />

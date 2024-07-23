@@ -8,9 +8,9 @@ const PlatformMobile = () => {
   return (
     <div>
       <FormHeader
-        title="Platform"
-        subtitle="Provide independent"
-        secondarySubTitle="web/mobile/tablet"
+        title="Our Methodology"
+        subtitle="Web Development Process"
+        secondarySubTitle=""
       />
       <div className="mt-10 mb-6">
         <Swiper
@@ -20,6 +20,7 @@ const PlatformMobile = () => {
           updateOnWindowResize={true}
           cssMode
           autoHeight
+          scrollbar
           spaceBetween={'32vw'}
           slidesPerView={'auto'}
           pagination={true}

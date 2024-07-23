@@ -69,9 +69,17 @@ const About = () => {
             />
           </svg>
         </div>
-        <div>
+        <div className="hidden md:block">
           <h2 className="text-white text-xs leading-5 sm:text-xl sm:leading-6  md:text-2xl  md:leading-8 lg:text-3xl lg:leading-9 font-medium">
-            Mobile App development Company
+            Web App development Company
+          </h2>
+          <h2 className="text-white text-xs leading-5 sm:text-xl sm:leading-6  md:text-2xl  md:leading-8 lg:text-3xl lg:leading-9 font-medium">
+            in Vancouver
+          </h2>
+        </div>
+        <div className="md:hidden flex flex-row flex-wrap w-[50%]">
+          <h2 className="text-white text-xs leading-5 sm:text-xl sm:leading-6  md:text-2xl  md:leading-8 lg:text-3xl lg:leading-9 font-medium">
+            Web App development Company
           </h2>
           <h2 className="text-white text-xs leading-5 sm:text-xl sm:leading-6  md:text-2xl  md:leading-8 lg:text-3xl lg:leading-9 font-medium">
             in Vancouver

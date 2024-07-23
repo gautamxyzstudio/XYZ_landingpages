@@ -139,6 +139,8 @@ const Services: React.FC<IServicesProps> = ({
     arrows: false,
     centerMode: false,
     infinite: false,
+    swipeToSlide: false,
+    swipe: false,
     initialSlide: 0,
     rows: 1,
     slidesPerRow: 1,
@@ -149,8 +151,6 @@ const Services: React.FC<IServicesProps> = ({
     vertical: true,
     slidesToScroll: 1,
   };
-
-  console.log(sliderIndex, 'SLIDER INDEX');
 
   return (
     <div className="pt-12">

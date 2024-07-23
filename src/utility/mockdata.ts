@@ -4,9 +4,17 @@ import {
   DEPLOYMENT,
   DESIGN,
   DEVELOPMENT,
+  FRAME_WORK,
+  IDEATION,
   MAINTENANCE,
+  PERFORMANCE,
   PLANNING,
+  RESPONSIVENESS,
+  SECURITY,
+  TECH_SUPPORT,
   TESTING,
+  USER,
+  UX,
 } from '../../public/exporter';
 
 export type IPlatformCard = {
@@ -68,6 +76,7 @@ type ICreation = {
   subSteps: {
     id: number;
     title: string;
+    illustration: string | StaticImport;
     des: string;
   }[];
 };
@@ -82,15 +91,18 @@ export const CreationData: ICreation[] = [
       {
         id: 2,
         title: 'Ideation and Concept Development',
+        illustration: IDEATION,
         des: 'Identify problems your app solves. Research market and competition. Develop clear, compelling value proposition for users',
       },
       {
         id: 3,
         title: 'User Experience (UX) Design',
+        illustration: UX,
         des: 'Create user personas and scenarios. String frames and prototypes should be developed. Conduct testing usage to check claims and make policy changes.',
       },
       {
         id: 4,
+        illustration: TECH_SUPPORT,
         title: 'Technical Architecture and Planning',
         des: 'Identify development plans and tools to be used. Describe the features, functions, and requirements of the app. Create a project roadmap and timeline to guide progress.',
       },
@@ -104,16 +116,19 @@ export const CreationData: ICreation[] = [
     subSteps: [
       {
         id: 5,
+        illustration: USER,
         title: 'Understand user needs',
         des: 'Assess user needs, create personas, prioritize based on feedback and trends to design mobile apps that captivate audiences.',
       },
       {
         id: 6,
+        illustration: FRAME_WORK,
         title: 'Simplicity and Clarity',
         des: 'Make the app easy to use. Use clear words to guide users. Important things should be easy to find.',
       },
       {
         id: 7,
+        illustration: RESPONSIVENESS,
         title: 'Responsive and Adaptive Design',
         des: 'Optimize layouts for all screens. App works smoothly on different platforms. Use natural gestures and touch on mobile.',
       },
@@ -127,16 +142,19 @@ export const CreationData: ICreation[] = [
     subSteps: [
       {
         id: 8,
+        illustration: FRAME_WORK,
         title: 'Choose Right Development Framework',
         des: 'Select a framework that aligns with project needs. Consider native, hybrid, cross-platform pros and cons. Evaluate learning curve and support.',
       },
       {
         id: 9,
+        illustration: PERFORMANCE,
         title: 'Designing for Performance',
         des: 'Optimize app architecture for data efficiency. Implement caching and CDNs for latency. Profiling tools fix performance issues.',
       },
       {
         id: 10,
+        illustration: SECURITY,
         title: 'Ensuring Security and Compliance',
         des: 'Implement strong authentication and authorization. Encrypt sensitive data and protect against vulnerabilities. Ensure compliance with regulations like GDPR and HIPAA.',
       },

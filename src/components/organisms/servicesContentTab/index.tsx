@@ -1,4 +1,5 @@
 import ServiceCard from '@/components/molecules/serviceCard';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import React from 'react';
 
 type IServicesContentTab = {
@@ -9,6 +10,7 @@ type IServicesContentTab = {
       id: number;
       title: string;
       des: string;
+      illustration: string | StaticImport;
     }[];
   };
 };

@@ -95,7 +95,7 @@ export default function Home() {
           <Form />
         </div>
       </div>
-      <div className="hidden lg:block">
+      <div id="formSec" className="hidden lg:block">
         <FormView />
       </div>
       <div className="bg-contain bg-main-bg">

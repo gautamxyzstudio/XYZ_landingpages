@@ -34,13 +34,32 @@ import HOME_BG_VIDEO from './homebg.mp4';
 import WEBSITE_VIDEO from './webVideo.mp4';
 import LOADING from './loading.mp4';
 import LOGO_WHITE from './whiteLogo.svg';
+import FRAME_WORK from './framework.svg';
+import IDEATION from './ideation.svg';
+import NEEDS from './needs.svg';
+import PERFORMANCE from './performance.svg';
+import SECURITY from './security.svg';
+import TECH_SUPPORT from './techSupport.svg';
+import UX from './ux.svg';
+import USER from './user.svg';
+import RESPONSIVENESS from './responsiveness.svg';
+
 export {
   LOGO_TOP,
   LOGO_BOTTOM,
+  USER,
+  RESPONSIVENESS,
+  UX,
   LOGO_WHITE,
   MAINTENANCE,
   WEBSITE_VIDEO,
   LOADING,
+  FRAME_WORK,
+  IDEATION,
+  NEEDS,
+  PERFORMANCE,
+  SECURITY,
+  TECH_SUPPORT,
   PLANNING,
   HOME_BG_VIDEO,
   DEPLOYMENT,
